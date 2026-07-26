@@ -22,8 +22,8 @@ export default function Header() {
       <nav className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/images/sportsfest-logo.png"
-            alt="JT SportsFest"
+            src="/images/nobglogo.png"
+            alt="logo"
             width={65}
             height={65}
           />
