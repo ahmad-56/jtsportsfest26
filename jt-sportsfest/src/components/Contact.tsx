@@ -20,7 +20,7 @@ const eventHeads = [
     role: "Event Head",
     phone: "+92 316 4846440",
     phoneHref: "tel:+923164846440",
-    email: "email@gmail.com",
+    email: "email2@gmail.com",
   },
 ];
 
@@ -33,7 +33,7 @@ const contactItems = [
     external: false,
   },
   {
-    label: "Director Registrations",
+    label: "Co Director Registrations",
     value: "Mr Someone: +92 42 35165647",
     href: "tel:+924235165647",
     icon: FaPhone,
