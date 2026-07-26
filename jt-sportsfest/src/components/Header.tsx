@@ -24,12 +24,13 @@ export default function Header() {
           <Image
             src="/images/nobglogo.png"
             alt="logo"
-            width={65}
-            height={65}
+            width={75}
+            height={75}
           />
 
           <span className="text-xl font-bold uppercase">
-            JT SportsFest
+            JT SportsFest{" "}
+            <span className="text-[#36e29b]">&apos;26</span>
           </span>
         </Link>
 
