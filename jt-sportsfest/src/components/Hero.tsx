@@ -7,7 +7,7 @@ import Timer from "@/components/Timer";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#020d20] pt-32">
+    <section className="relative min-h-screen overflow-hidden bg-[#020d20] pt-16">
       <Image
         src="/images/hero-sports.jpg"
         alt=""
@@ -85,8 +85,8 @@ export default function Hero() {
             <Image
               src="/images/nobglogo.png"
               alt="SportsFest Edition XIII"
-              width={520}
-              height={520}
+              width={600}
+              height={600}
               priority
               className="w-full max-w-[480px] object-contain drop-shadow-2xl"
             />

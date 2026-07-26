@@ -13,14 +13,14 @@ const eventHeads = [
     role: "Event Head",
     phone: "+92 327 4527530",
     phoneHref: "tel:+923274527530",
-    email: "email@gmail.com",
+    email: "saqibwazir13579@gmail.com",
   },
   {
     name: "Ayaan Aquib",
     role: "Event Head",
     phone: "+92 316 4846440",
     phoneHref: "tel:+923164846440",
-    email: "email2@gmail.com",
+    email: "ayaanaquib31@gmail.com",
   },
 ];
 
