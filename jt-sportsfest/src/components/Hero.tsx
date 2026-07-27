@@ -16,7 +16,7 @@ export default function Hero() {
         className="absolute inset-0 z-0 object-cover opacity-25"
       />
 
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_40%,rgba(0,99,62,.45),transparent_35%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_79%_40%,rgba(0,99,62,.45),transparent_35%)]" />
 
       <div className="relative mx-auto grid min-h-[800px] max-w-7xl items-center gap-10 px-6 lg:grid-cols-2">
         <div>
