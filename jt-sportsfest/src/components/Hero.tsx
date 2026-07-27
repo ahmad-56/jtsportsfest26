@@ -63,7 +63,7 @@ export default function Hero() {
 
               <div className="mt-3 border-t border-white/10 pt-3">
                 <p className="text-sm font-bold uppercase tracking-wide text-white/75">
-                  Cricket & Athletics
+                  Cricket, Athletics, & Tug of War
                 </p>
               </div>
 
@@ -79,7 +79,7 @@ export default function Hero() {
 
               <div className="mt-2 flex items-end gap-3">
                 <span className="text-3xl font-black leading-none text-white">
-                  4 – 6
+                  2 – 4
                 </span>
 
                 <span className="text-xs font-bold uppercase tracking-wider text-white/40">

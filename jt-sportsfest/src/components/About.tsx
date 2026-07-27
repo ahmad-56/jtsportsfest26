@@ -50,7 +50,7 @@ export default function About() {
 
             <p className="mt-4 text-sm leading-7 text-white/60">
               Review the official rules, participation guidelines and expected
-              conduct before entering the SportsFest Event.
+              conduct before entering the Event.
             </p>
 
             <div className="mt-6 border-t border-white/10 pt-6">
