@@ -169,7 +169,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="relative min-h-[420px] flex-1 overflow-hidden border border-white/10">
+              <div className="relative min-h-[400px] flex-1 overflow-hidden border border-white/10">
                 <iframe
                   src="https://www.google.com/maps?q=LGS+Johar+Town+Senior+Boys+Lahore&output=embed"
                   title="LGS Johar Town Senior Boys location"
@@ -183,7 +183,7 @@ export default function Contact() {
                 href="https://www.google.com/maps/search/?api=1&query=LGS+Johar+Town+Senior+Boys+Lahore"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-5 flex items-center justify-center gap-3 border border-white/15 bg-white/5 px-6 py-4 text-sm font-black uppercase tracking-wider transition hover:border-[#36e29b] hover:bg-[#36e29b] hover:text-[#020d20]"
+                className="mt-5 flex items-center justify-center gap-3 border border-white/15 bg-white/5 px-6 py-4 text-sm font-black uppercase tracking-wider transition hover:border-[#36e29b] hover:bg-[#36e29b] hover:text-[#020d20] hover:translate-y-1"
               >
                 <FaLocationDot size={17} />
                 Open in Google Maps
