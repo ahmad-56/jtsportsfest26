@@ -16,7 +16,7 @@ export default function Hero() {
         className="absolute inset-0 z-0 object-cover opacity-25"
       />
 
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_40%,rgba(0,99,62,.45),transparent_35%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_40%,rgba(0,99,62,.45),transparent_35%)]" />
 
       <div className="relative mx-auto grid min-h-[800px] max-w-7xl items-center gap-10 px-6 lg:grid-cols-2">
         <div>
@@ -93,7 +93,7 @@ export default function Hero() {
                 </p>
               </div>
 
-              <div className="absolute -bottom-12 -right-12 h-28 w-28 rounded-full bg-[#36e29b]/0 blur-2xl transition group-hover:bg-[#36e29b]/20" />
+              <div className="absolute -bottom-12 -right-40 h-28 w-28 rounded-full bg-[#36e29b]/0 blur-2xl transition group-hover:bg-[#36e29b]/20" />
             </div>
           </motion.div>
         </div>
@@ -102,7 +102,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8, rotate: 4 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative flex -translate-y-4 flex-col items-center justify-center lg:translate-x-20 lg:-translate-y-10"
+          className="relative flex -translate-y-4 flex-col items-center justify-center lg:translate-x-30 lg:-translate-y-10"
         >
           <Image
             src="/images/nobglogo.png"
