@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import Header from "@/components/Header";
 import {
   AlertTriangle,
   ArrowLeft,
@@ -9,6 +11,13 @@ import {
   ShieldAlert,
   VolumeX,
 } from "lucide-react";
+
+const links = [
+  { label: "Home", href: "/#home" },
+  { label: "About", href: "/#about" },
+  { label: "Sports", href: "/#sports" },
+  { label: "Contact", href: "/#contact" },
+];
 
 const rules = [
   {
@@ -79,18 +88,23 @@ const rules = [
 export default function CodeOfConductPage() {
   return (
     <main className="min-h-screen bg-[#020d20] text-white">
+      <Header />
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-white/10 px-6 pb-20 pt-36">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(0,99,62,0.4),transparent_40%)]" />
+        <Image
+          src="/images/hero4-sports.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="absolute inset-0 z-0 object-cover opacity-35"
+        />
 
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -bottom-8 right-0 text-[100px] font-black uppercase leading-none text-white/[0.025] md:text-[180px]"
-        >
-          Conduct
-        </div>
+        <div className="absolute inset-0 z-0 bg-[#020d20]/70" />
 
-        <div className="relative mx-auto max-w-7xl">
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_75%_35%,rgba(0,99,62,0.55),transparent_42%)]" />
+
+        <div className="relative z-10 mx-auto max-w-7xl">
           <Link
             href="/#about"
             className="group mb-10 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.15em] text-white/55 transition hover:text-[#36e29b]"
@@ -111,13 +125,13 @@ export default function CodeOfConductPage() {
           </h1>
 
           <p className="mt-7 max-w-3xl text-base leading-8 text-white/65 md:text-lg">
-            A delegate or delegation will be disqualified if they fail to
-            refrain from any of the following actions.
+            A delegate or delegation will be disqualified if they fail to refrain
+            from any of the following actions.
           </p>
         </div>
       </section>
 
-      {/* Important notice */}
+      {/* all rules */}
       <section className="px-6 pt-16">
         <div className="mx-auto max-w-7xl">
           <div className="relative overflow-hidden border border-[#36e29b]/30 bg-[#00633e]/20 p-6 md:flex md:items-center md:gap-6 md:p-8">
@@ -180,9 +194,22 @@ export default function CodeOfConductPage() {
         </div>
       </section>
 
-      {/* Final statement */}
-      <section className="border-t border-white/10 bg-[#00633e] px-6 py-16">
-        <div className="mx-auto max-w-4xl text-center">
+      {/* Final section */}
+      <section className="relative overflow-hidden border-t border-white/10 bg-[#00633e] px-6 py-20">
+        <Image
+          src="/images/hero6-sports.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="absolute inset-0 z-0 object-cover opacity-35"
+        />
+
+        {/* Transparent green overlay */}
+        <div className="absolute inset-0 z-0 bg-[#00633e]/60" />
+        {/* Dark gradient */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#020d20]/70 via-[#00633e]/25 to-[#020d20]/70" />
+
+        <div className="relative z-10 mx-auto max-w-4xl text-center">
           <p className="text-xs font-black uppercase tracking-[0.25em] text-[#36e29b]">
             Respect the game
           </p>
@@ -193,7 +220,7 @@ export default function CodeOfConductPage() {
 
           <p className="mx-auto mt-5 max-w-2xl leading-7 text-white/70">
             Every participant is expected to respect the venue, management,
-            officials and fellow competitors throughout SportsFest.
+            officials and fellow competitors throughout JT SportsFest XIII.
           </p>
 
           <Link

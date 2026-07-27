@@ -6,11 +6,11 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const links = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
+  { label: "Home", href: "/#home" },
+  { label: "About", href: "/#about" },
   { label: "Code Of Conduct", href: "/rules" },
-  { label: "Sports", href: "#sports" },
-  { label: "Contact", href: "#contact" },
+  { label: "Sports", href: "/#sports" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Header() {
@@ -20,7 +20,7 @@ export default function Header() {
     <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#020d20]/80 backdrop-blur-xl">
       <nav className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6">
         {/* Logo */}
-        <Link href="#home" className="flex items-center gap-3">
+        <a href="/#home" className="flex items-center gap-3">
           <Image
             src="/images/nobglogo.png"
             alt="JT SportsFest logo"
@@ -33,21 +33,19 @@ export default function Header() {
             JT SportsFest{" "}
             <span className="text-[#36e29b]">&apos;26</span>
           </span>
-        </Link>
+        </a>
 
         <div className="hidden items-center gap-2 lg:flex">
           {links.map((link) => (
-            <Link
+            <a
               key={link.href}
               href={link.href}
               className="group relative rounded-lg px-4 py-2 text-sm font-bold uppercase tracking-wider text-white/70 transition-colors duration-300 hover:text-[#36e29b]"
             >
               <span className="relative z-10">{link.label}</span>
 
-              <span className="absolute inset-0 scale-90 rounded-lg bg-[#36e29b]/0 transition-all duration-300 group-hover:scale-100" />
-
               <span className="absolute bottom-0 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-[#36e29b] transition-all duration-300 group-hover:w-2/3" />
-            </Link>
+            </a>
           ))}
 
           <Link
@@ -74,14 +72,14 @@ export default function Header() {
       {menuOpen && (
         <div className="border-t border-white/10 bg-[#020d20] px-6 pb-6 lg:hidden">
           {links.map((link) => (
-            <Link
+            <a
               key={link.href}
               href={link.href}
               className="block border-b border-white/10 py-4 font-bold uppercase tracking-wider text-white/75 transition hover:pl-2 hover:text-[#36e29b]"
               onClick={() => setMenuOpen(false)}
             >
               {link.label}
-            </Link>
+            </a>
           ))}
 
           <Link
