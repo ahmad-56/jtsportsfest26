@@ -1,122 +1,456 @@
-export const sports = [
+export type Sport = {
+  number: string;
+  name: string;
+  slug: string;
+  category: string;
+  image: string;
+  description: string;
+  teamSize: string;
+  date: string;
+  venue: string;
+  eligibility: string;
+  rules: string[];
+  note?: string;
+};
+
+export const sports: Sport[] = [
   {
     number: "01",
-    slug: "archery",
-    name: "Archery",
-    category: "Precision Sport",
+    name: "Cricket",
+    slug: "cricket",
+    category: "Team Sport",
+    image: "/images/cricket.png",
+    description:
+      "Compete in an exciting cricket tournament that tests teamwork, strategy, discipline and individual performance.",
+    teamSize: "11 players + 1 rolling",
+    date: "September 24–27",
+    venue: "LGS JT Cricket Ground",
+    eligibility: "Registered delegates",
+    rules: [
+      "All teams must report at least 30 minutes before their scheduled match.",
+      "Boys Category: 10 Overs per Innings.",
+      "Girls Category: 5 Overs per Innings.",
+      "Boys Category: Hardball.",
+      "Girls Category: Tapeball.",
+    ],
+    note:
+      "Teams must bring their own approved cricket equipment unless informed otherwise. The umpire’s decision will be considered final.",
   },
   {
     number: "02",
-    slug: "arm-wrestling",
-    name: "Arm Wrestling",
-    category: "Strength Sport",
+    name: "Futsal",
+    slug: "football",
+    category: "Team Sport",
+    image: "/images/sports/football.jpg",
+    description:
+      "A fast-paced football competition focused on teamwork, skill, coordination and sportsmanship.",
+    teamSize: "7 players",
+    date: "October 4–6",
+    venue: "LGS JT Football Ground",
+    eligibility: "Registered delegates",
+    rules: [
+      "Teams must arrive 30 minutes before their match.",
+      "Only registered players may participate.",
+      "The referee’s decision will be final.",
+      "Serious misconduct may result in immediate disqualification.",
+    ],
+    note:
+      "Players should bring appropriate footwear and protective equipment.",
   },
   {
     number: "03",
-    slug: "badminton",
-    name: "Badminton",
-    category: "Racquet Sport",
+    name: "Archery",
+    slug: "archery",
+    category: "Individual Sport",
+    image: "/images/sports/archery.jpg",
+    description:
+      "A precision archery competition testing focus, accuracy, consistency, and composure under pressure.",
+    teamSize: "Individual",
+    date: "October 4–6",
+    venue: "LGS JT Sports Arena",
+    eligibility: "Registered delegates",
+    rules: [
+      "Participants must follow all range safety instructions.",
+      "Only official equipment is permitted.",
+      "Each shot must be taken within the allotted time.",
+      "The judges’ decisions will be final.",
+    ],
+    note:
+      "Participants should handle equipment responsibly and follow all safety guidelines.",
   },
+
   {
     number: "04",
-    slug: "athletics",
-    name: "Athletics",
-    category: "Track & Field",
+    name: "Arm Wrestling",
+    slug: "arm-wrestling",
+    category: "Individual Sport",
+    image: "/images/sports/arm-wrestling.jpg",
+    description:
+      "A strength-based contest emphasizing power, technique, endurance, and fair competition.",
+    teamSize: "Individual",
+    date: "October 4–6",
+    venue: "LGS JT Sports Hall",
+    eligibility: "Registered delegates",
+    rules: [
+      "Matches begin only on the referee’s signal.",
+      "Elbows must remain on the designated pad.",
+      "Unsportsmanlike conduct may result in disqualification.",
+      "The referee’s decision is final.",
+    ],
+    note:
+      "Participants should warm up properly before competing.",
   },
+
   {
     number: "05",
-    slug: "basketball",
-    name: "Basketball",
-    category: "Team Sport",
+    name: "Badminton",
+    slug: "badminton",
+    category: "Racquet Sport",
+    image: "/images/sports/badminton.jpg",
+    description:
+      "A fast-paced badminton tournament showcasing agility, precision, strategy, and quick reflexes.",
+    teamSize: "Singles / Doubles",
+    date: "October 4–6",
+    venue: "LGS JT Indoor Courts",
+    eligibility: "Registered delegates",
+    rules: [
+      "Players must report before their scheduled match.",
+      "Standard badminton rules will apply.",
+      "Only registered participants may compete.",
+      "Officials' decisions are final.",
+    ],
+    note:
+      "Participants should bring their own racquets if possible.",
   },
+
   {
     number: "06",
-    slug: "chess",
-    name: "Chess",
-    category: "Mind Sport",
+    name: "Athletics",
+    slug: "athletics",
+    category: "Track & Field",
+    image: "/images/sports/athletics.jpg",
+    description:
+      "A competitive athletics event featuring speed, endurance, strength, and determination across multiple disciplines.",
+    teamSize: "Individual",
+    date: "October 4–6",
+    venue: "LGS JT Athletics Track",
+    eligibility: "Registered delegates",
+    rules: [
+      "Athletes must compete only in registered events.",
+      "False starts may result in disqualification.",
+      "Officials' decisions are final.",
+      "Proper sports attire is required.",
+    ],
+    note:
+      "Arrive early for event check-in and warm-up.",
   },
+
   {
     number: "07",
-    slug: "cricket",
-    name: "Cricket",
+    name: "Basketball",
+    slug: "basketball",
     category: "Team Sport",
+    image: "/images/sports/basketball.jpg",
+    description:
+      "An exciting basketball tournament highlighting teamwork, skill, speed, and competitive spirit.",
+    teamSize: "5 players",
+    date: "October 4–6",
+    venue: "LGS JT Basketball Court",
+    eligibility: "Registered delegates",
+    rules: [
+      "Teams must report 30 minutes before matches.",
+      "Only registered players may participate.",
+      "FIBA-based rules will be followed.",
+      "Referees’ decisions are final.",
+    ],
+    note:
+      "Players should wear appropriate non-marking sports shoes.",
   },
+
   {
     number: "08",
-    slug: "darts",
-    name: "Darts",
-    category: "Precision Sport",
+    name: "Chess",
+    slug: "chess",
+    category: "Mind Sport",
+    image: "/images/sports/chess.jpg",
+    description:
+      "A strategic chess competition testing critical thinking, planning, patience, and decision-making skills.",
+    teamSize: "Individual",
+    date: "October 4–6",
+    venue: "LGS JT Activity Hall",
+    eligibility: "Registered delegates",
+    rules: [
+      "Standard chess rules will apply.",
+      "Touch-move rule is enforced.",
+      "Players must respect time controls.",
+      "Arbiters' decisions are final.",
+    ],
+    note:
+      "Maintain silence throughout all matches.",
   },
+
   {
     number: "09",
-    slug: "futsal",
-    name: "Futsal",
-    category: "Team Sport",
+    name: "Darts",
+    slug: "darts",
+    category: "Precision Sport",
+    image: "/images/sports/darts.jpg",
+    description:
+      "A precision darts competition rewarding accuracy, consistency, concentration, and steady nerves.",
+    teamSize: "Individual",
+    date: "October 4–6",
+    venue: "LGS JT Indoor Arena",
+    eligibility: "Registered delegates",
+    rules: [
+      "Players throw only after the previous turn ends.",
+      "Official scoring will be maintained.",
+      "Unsportsmanlike conduct is prohibited.",
+      "Judges' decisions are final.",
+    ],
+    note:
+      "Handle darts safely at all times.",
   },
+
   {
     number: "10",
-    slug: "gaming",
     name: "Gaming",
+    slug: "gaming",
     category: "Esports",
+    image: "/images/sports/gaming.jpg",
+    description:
+      "A competitive esports tournament showcasing teamwork, strategy, quick decision-making, and gaming excellence.",
+    teamSize: "Depends on game",
+    date: "October 4–6",
+    venue: "LGS JT Gaming Zone",
+    eligibility: "Registered delegates",
+    rules: [
+      "Only approved game settings may be used.",
+      "Cheating results in immediate disqualification.",
+      "Players must arrive before match time.",
+      "Tournament officials' decisions are final.",
+    ],
+    note:
+      "Bring personal peripherals if permitted by organizers.",
   },
+
   {
     number: "11",
-    slug: "hockey",
     name: "Hockey",
+    slug: "hockey",
     category: "Team Sport",
+    image: "/images/sports/hockey.jpg",
+    description:
+      "A dynamic hockey competition emphasizing teamwork, speed, coordination, and tactical gameplay.",
+    teamSize: "11 players",
+    date: "October 4–6",
+    venue: "LGS JT Hockey Ground",
+    eligibility: "Registered delegates",
+    rules: [
+      "Teams must report before match time.",
+      "Only registered players may participate.",
+      "Officials' decisions are final.",
+      "Dangerous play may result in penalties.",
+    ],
+    note:
+      "Players should wear appropriate protective equipment.",
   },
+
   {
     number: "12",
-    slug: "scavenger-hunt",
     name: "Scavenger Hunt",
-    category: "Team Challenge",
+    slug: "scavenger-hunt",
+    category: "Adventure Event",
+    image: "/images/sports/scavenger-hunt.jpg",
+    description:
+      "An engaging scavenger hunt challenging teamwork, creativity, problem-solving, and time management skills.",
+    teamSize: "4–6 players",
+    date: "October 4–6",
+    venue: "LGS JT Campus",
+    eligibility: "Registered delegates",
+    rules: [
+      "Teams must stay together throughout the event.",
+      "All clues must be completed fairly.",
+      "Damaging property is strictly prohibited.",
+      "Organizers' decisions are final.",
+    ],
+    note:
+      "Comfortable footwear is recommended.",
   },
+
   {
     number: "13",
-    slug: "snooker",
     name: "Snooker",
+    slug: "snooker",
     category: "Cue Sport",
+    image: "/images/sports/snooker.jpg",
+    description:
+      "A snooker tournament testing precision, strategy, patience, and tactical shot-making abilities.",
+    teamSize: "Individual",
+    date: "October 4–6",
+    venue: "LGS JT Indoor Arena",
+    eligibility: "Registered delegates",
+    rules: [
+      "Standard snooker rules apply.",
+      "Respect opponents and equipment.",
+      "Only registered players may compete.",
+      "Referees' decisions are final.",
+    ],
+    note:
+      "Handle cues and tables with care.",
   },
+
   {
     number: "14",
-    slug: "strongman",
     name: "Strongman",
+    slug: "strongman",
     category: "Strength Sport",
+    image: "/images/sports/strongman.jpg",
+    description:
+      "A challenging strongman competition measuring strength, endurance, determination, and resilience.",
+    teamSize: "Individual",
+    date: "October 4–6",
+    venue: "LGS JT Sports Ground",
+    eligibility: "Registered delegates",
+    rules: [
+      "Participants must follow event instructions.",
+      "Unsafe lifting techniques are prohibited.",
+      "Officials' decisions are final.",
+      "Proper sports attire is required.",
+    ],
+    note:
+      "Warm up thoroughly before participating.",
   },
+
   {
     number: "15",
-    slug: "swimming",
     name: "Swimming",
-    category: "Aquatics",
+    slug: "swimming",
+    category: "Aquatic Sport",
+    image: "/images/sports/swimming.jpg",
+    description:
+      "A competitive swimming event highlighting speed, endurance, technique, and determination in the pool.",
+    teamSize: "Individual",
+    date: "October 4–6",
+    venue: "LGS JT Swimming Pool",
+    eligibility: "Registered delegates",
+    rules: [
+      "Swimmers must report before race time.",
+      "False starts may result in penalties.",
+      "Officials' decisions are final.",
+      "Appropriate swimwear is mandatory.",
+    ],
+    note:
+      "Bring your own swim cap and goggles.",
   },
+
   {
     number: "16",
-    slug: "tennis",
     name: "Tennis",
+    slug: "tennis",
     category: "Racquet Sport",
+    image: "/images/sports/tennis.jpg",
+    description:
+      "A competitive tennis tournament showcasing agility, precision, endurance, and strategic gameplay.",
+    teamSize: "Singles / Doubles",
+    date: "October 4–6",
+    venue: "LGS JT Tennis Court",
+    eligibility: "Registered delegates",
+    rules: [
+      "Players must arrive before scheduled matches.",
+      "Standard tennis rules apply.",
+      "Only registered participants may compete.",
+      "Officials' decisions are final.",
+    ],
+    note:
+      "Participants are encouraged to bring their own racquets.",
   },
+
   {
     number: "17",
-    slug: "tug-of-war",
     name: "Tug of War",
-    category: "Team Strength",
+    slug: "tug-of-war",
+    category: "Team Sport",
+    image: "/images/sports/tug-of-war.jpg",
+    description:
+      "A thrilling tug of war contest emphasizing teamwork, coordination, strength, and determination.",
+    teamSize: "8 players",
+    date: "October 4–6",
+    venue: "LGS JT Sports Ground",
+    eligibility: "Registered delegates",
+    rules: [
+      "Teams compete only on the referee’s signal.",
+      "Only registered players may participate.",
+      "Unsportsmanlike conduct is prohibited.",
+      "Referees' decisions are final.",
+    ],
+    note:
+      "Wear shoes with good grip for safety.",
   },
+
   {
     number: "18",
-    slug: "throwball",
     name: "Throwball",
+    slug: "throwball",
     category: "Team Sport",
+    image: "/images/sports/throwball.jpg",
+    description:
+      "A fast-moving throwball tournament focused on teamwork, coordination, communication, and quick reflexes.",
+    teamSize: "7 players",
+    date: "October 4–6",
+    venue: "LGS JT Sports Court",
+    eligibility: "Registered delegates",
+    rules: [
+      "Teams must report before match time.",
+      "Only registered players may participate.",
+      "Standard throwball rules apply.",
+      "Officials' decisions are final.",
+    ],
+    note:
+      "Players should wear appropriate sports attire.",
   },
+
   {
     number: "19",
-    slug: "table-tennis",
     name: "Table Tennis",
+    slug: "table-tennis",
     category: "Racquet Sport",
+    image: "/images/sports/table-tennis.jpg",
+    description:
+      "A competitive table tennis tournament testing speed, precision, reflexes, and tactical play.",
+    teamSize: "Singles / Doubles",
+    date: "October 4–6",
+    venue: "LGS JT Indoor Hall",
+    eligibility: "Registered delegates",
+    rules: [
+      "Standard table tennis rules apply.",
+      "Players must arrive before their match.",
+      "Only registered participants may compete.",
+      "Officials' decisions are final.",
+    ],
+    note:
+      "Participants are encouraged to bring their own paddles.",
   },
+
   {
     number: "20",
-    slug: "volleyball",
     name: "Volleyball",
+    slug: "volleyball",
     category: "Team Sport",
+    image: "/images/sports/volleyball.jpg",
+    description:
+      "An energetic volleyball tournament celebrating teamwork, coordination, athleticism, and competitive excellence.",
+    teamSize: "6 players",
+    date: "October 4–6",
+    venue: "LGS JT Volleyball Court",
+    eligibility: "Registered delegates",
+    rules: [
+      "Teams must report before match time.",
+      "Only registered players may participate.",
+      "Standard volleyball rules apply.",
+      "Referees' decisions are final.",
+    ],
+    note:
+      "Players should wear appropriate sports shoes and attire.",
   },
+
 ];
