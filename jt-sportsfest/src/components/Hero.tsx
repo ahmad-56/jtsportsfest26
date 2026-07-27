@@ -32,7 +32,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15 }}
-            className="text-7xl font-black uppercase leading-[0.88] md:text-9xl"
+            className="text-6xl font-NexaXBold font-black uppercase leading-[0.9] sm:text-7xl md:text-8xl lg:text-9xl"
           >
             SPORTSFEST
             <span className="block text-[#36e29b]">Edition XIII</span>
@@ -102,7 +102,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8, rotate: 4 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative flex -translate-y-4 flex-col items-center justify-center lg:-translate-y-10"
+          className="relative flex -translate-y-4 flex-col items-center justify-center lg:translate-x-20 lg:-translate-y-10"
         >
           <Image
             src="/images/nobglogo.png"

@@ -60,7 +60,7 @@ export default function SportsGrid() {
                   Participate in upto 3 sports
                 </p>
 
-                <h2 className="mt-3 max-w-4xl text-6xl font-black uppercase leading-[1.0] md:text-8xl">
+                <h2 className="mt-3 max-w-5xl text-6xl font-black uppercase leading-[1.0] md:text-10xl">
                   sports & categories
                   <span className="block text-[#00633e]">
                     JT Sportsfest XIII

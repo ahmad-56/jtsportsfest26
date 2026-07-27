@@ -1,23 +1,28 @@
 import type { Metadata } from "next";
-import { Inter, Oswald } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const oswald = Oswald({
-  subsets: ["latin"],
-  variable: "--font-oswald",
+const nexa = localFont({
+  src: [
+    {
+      path: "./fonts/NexaRegular.otf",
+      weight: "400",
+    },
+    {
+      path: "./fonts/Nexa Bold.otf",
+      weight: "700",
+    },
+    {
+      path: "./fonts/NexaXBold.otf",
+      weight: "800",
+    },
+  ],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "JT SportsFest XIII",
-  description:
-    "LGS Johar Town SportsFest Edition XIII.",
+  title: "JT SportsFest '26",
+  description: "JT SportsFest Edition XIII",
 };
 
 export default function RootLayout({
@@ -27,9 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${oswald.variable}`}>
-        {children}
-      </body>
+      <body className={nexa.className}>{children}</body>
     </html>
   );
 }

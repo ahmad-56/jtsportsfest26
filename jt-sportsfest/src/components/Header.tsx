@@ -29,7 +29,7 @@ export default function Header() {
             priority
           />
 
-          <span className="text-xl font-serif font-bold uppercase">
+          <span className="text-xl font-bold uppercase">
             JT SportsFest{" "}
             <span className="text-[#36e29b]">&apos;26</span>
           </span>
@@ -52,7 +52,7 @@ export default function Header() {
 
           <Link
             href="/register"
-            className="ml-3 rounded-lg bg-[#36e29b] px-5 py-3 font-mono font-bold uppercase text-[#020d20] shadow-lg shadow-[#36e29b]/10 transition-all duration-300 hover:-translate-y-1 hover:bg-[#48f0aa] hover:shadow-xl hover:shadow-[#36e29b]/30 active:translate-y-0"
+            className="ml-3 rounded-lg bg-[#36e29b] px-5 py-3 font-bold uppercase text-[#020d20] shadow-lg shadow-[#36e29b]/10 transition-all duration-300 hover:-translate-y-1 hover:bg-[#48f0aa] hover:shadow-xl hover:shadow-[#36e29b]/30 active:translate-y-0"
           >
             Register now
           </Link>
@@ -86,7 +86,7 @@ export default function Header() {
 
           <Link
             href="/register"
-            className="mt-5 block rounded-lg bg-[#36e29b] px-5 py-4 text-center font-mono font-bold uppercase text-[#020d20]"
+            className="mt-5 block rounded-lg bg-[#36e29b] px-5 py-4 text-center font-bold uppercase text-[#020d20]"
             onClick={() => setMenuOpen(false)}
           >
             Register now
