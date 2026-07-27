@@ -55,7 +55,7 @@ export default function About() {
 
             <div className="mt-6 border-t border-white/10 pt-6">
               <Link
-                href="/code-of-conduct"
+                href="/rules"
                 className="inline-flex rounded-lg bg-[#36e29b] px-6 py-4 text-sm font-black uppercase tracking-wider text-[#020d20] shadow-lg shadow-[#36e29b]/10 transition-all duration-300 hover:-translate-y-1 hover:bg-[#48f0aa] hover:shadow-xl hover:shadow-[#36e29b]/30 active:translate-y-0"
               >
                 View Code of Conduct
