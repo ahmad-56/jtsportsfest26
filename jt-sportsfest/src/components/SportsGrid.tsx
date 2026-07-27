@@ -1,7 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowUpRight, CalendarDays, MapPin, Users, X } from "lucide-react";
+import {
+  CalendarDays,
+  MapPin,
+  User2Icon,
+  Users,
+  Users2,
+  X,
+  type LucideIcon,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { sports, type Sport } from "@/data/sports";
@@ -84,16 +92,16 @@ export default function SportsGrid() {
                     alt={sport.name}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover opacity-55 transition duration-700 group-hover:scale-110 group-hover:opacity-35"
+                    className="object-cover opacity-80 transition duration-700 group-hover:scale-110 group-hover:opacity-35"
                   />
 
-                  {/* Dark image overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#020d20] via-[#020d20]/45 to-[#020d20]/15" />
+                  {/*black overlay*/}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#020d20] via-[#020d20]/25 to-[#020d20]/15" />
 
-                  {/* Green hover overlay */}
+                  {/*hover*/}
                   <div className="absolute inset-0 bg-[#00633e]/0 transition-colors duration-500 group-hover:bg-[#00633e]/15" />
 
-                  {/* Card number */}
+                  {/*Card number*/}
                   <span className="relative z-10 text-4xl font-black italic text-white/20 transition duration-500 group-hover:text-[#36e29b]/50">
                     {sport.number}
                   </span>
@@ -126,11 +134,11 @@ export default function SportsGrid() {
           role="dialog"
           aria-modal="true"
           aria-label={`${selectedSport.name} details`}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#020d20]/90 p-4 backdrop-blur-md md:p-8"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#020d20]/90 p-3 backdrop-blur-md md:p-6"
           onClick={() => setSelectedSport(null)}
         >
           <div
-            className="relative grid max-h-[90vh] w-full max-w-5xl overflow-y-auto border border-white/15 bg-[#020d20] shadow-[0_30px_100px_rgba(0,0,0,0.65)] lg:grid-cols-[0.9fr_1.1fr]"
+            className="relative grid max-h-[94vh] w-full max-w-7xl overflow-hidden rounded-2xl border border-white/15 bg-[#020d20] shadow-[0_30px_100px_rgba(0,0,0,0.65)] lg:h-[88vh] lg:grid-cols-[minmax(420px,0.85fr)_minmax(0,1.15fr)]"
             onClick={(event) => event.stopPropagation()}
           >
             {/* Close button */}
@@ -138,50 +146,48 @@ export default function SportsGrid() {
               type="button"
               onClick={() => setSelectedSport(null)}
               aria-label="Close sport details"
-              className="absolute right-4 top-4 z-30 flex h-11 w-11 items-center justify-center bg-[#36e29b] text-[#020d20] transition hover:scale-105 hover:bg-white"
+              className="absolute right-8 top-4 z-30 flex h-11 w-11 cursor-pointer items-center justify-center rounded-lg bg-[#36e29b] text-[#020d20] transition hover:scale-105 hover:bg-white"
             >
               <X size={22} />
             </button>
 
-            {/* Modal image */}
-            <div className="relative min-h-[320px] overflow-hidden lg:min-h-[650px]">
+            {/* Left-side PNG image */}
+            <div className="relative flex min-h-[340px] items-center justify-center overflow-hidden bg-black/30 lg:min-h-0">
               <Image
                 src={
                   selectedSport.image ||
-                  "/images/sports/placeholder.jpg"
+                  "/images/sports/placeholder.png"
                 }
                 alt={selectedSport.name}
-                fill
+                width={1086}
+                height={1448}
                 sizes="(max-width: 1024px) 100vw, 45vw"
-                className="object-cover"
+                className="h-full max-h-[88vh] w-full object-contain"
+                priority
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-[#020d20] via-transparent to-[#020d20]/20" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#020d20]/45 via-transparent to-[#020d20]/10" />
 
-              <span className="absolute bottom-6 left-6 text-8xl font-black italic text-white/20">
+              <span className="absolute bottom-6 left-6 text-7xl font-black italic text-white/20">
                 {selectedSport.number}
               </span>
             </div>
 
-            {/* Modal information */}
-            <div className="relative overflow-hidden p-7 text-white sm:p-10 lg:p-12">
-              <div className="absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-[#36e29b]/15 blur-[90px]" />
+            {/* Right-side details and rules */}
+            <div className="relative overflow-y-auto p-7 text-white sm:p-10 lg:p-12">
+              <div className="pointer-events-none absolute -bottom-24 h-64 w-64 rounded-full bg-[#36e29b]/15 blur-[90px]" />
 
               <div className="relative z-10">
-                <p className="text-xs font-black uppercase tracking-[0.22em] text-[#36e29b]">
+                <p className="pr-14 text-xs font-black uppercase tracking-[0.22em] text-[#36e29b]">
                   {selectedSport.category}
                 </p>
 
-                <h2 className="mt-4 text-5xl font-black uppercase leading-none md:text-6xl">
+                <h2 className="mt-4 pr-14 text-4xl font-black uppercase leading-none md:text-5xl lg:text-6xl">
                   {selectedSport.name}
                 </h2>
 
-                <p className="mt-6 leading-8 text-white/65">
-                  {selectedSport.description}
-                </p>
-
                 {/* Quick details */}
-                <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                <div className="mt-3 grid gap-3 sm:grid-cols-3">
                   <DetailItem
                     icon={Users}
                     label="Team size"
@@ -195,14 +201,14 @@ export default function SportsGrid() {
                   />
 
                   <DetailItem
-                    icon={MapPin}
-                    label="Venue"
+                    icon={Users}
+                    label="Boys Category"
                     value={selectedSport.venue}
                   />
 
                   <DetailItem
                     icon={Users}
-                    label="Categories"
+                    label="Girls Category"
                     value={selectedSport.eligibility}
                   />
                 </div>
@@ -216,10 +222,10 @@ export default function SportsGrid() {
                   <ul className="mt-5 space-y-4">
                     {selectedSport.rules.map((rule, index) => (
                       <li
-                        key={rule}
+                        key={`${selectedSport.slug}-rule-${index}`}
                         className="flex gap-4 text-sm leading-7 text-white/65"
                       >
-                        <span className="flex h-7 w-7 shrink-0 items-center justify-center bg-[#36e29b]/10 text-xs font-black text-[#36e29b]">
+                        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-[#36e29b]/10 text-xs font-black text-[#36e29b]">
                           {index + 1}
                         </span>
 
@@ -229,6 +235,7 @@ export default function SportsGrid() {
                   </ul>
                 </div>
 
+                {/* Important note */}
                 {selectedSport.note && (
                   <div className="mt-8 border-l-2 border-[#36e29b] bg-[#36e29b]/10 p-5">
                     <p className="text-xs font-black uppercase tracking-[0.18em] text-[#36e29b]">
@@ -244,18 +251,22 @@ export default function SportsGrid() {
             </div>
           </div>
         </div>
-      )}
+            )}
     </>
   );
 }
 
 type DetailItemProps = {
-  icon: React.ElementType;
+  icon: LucideIcon;
   label: string;
   value: string;
 };
 
-function DetailItem({ icon: Icon, label, value }: DetailItemProps) {
+function DetailItem({
+  icon: Icon,
+  label,
+  value,
+}: DetailItemProps) {
   return (
     <div className="border border-white/10 bg-white/[0.035] p-4">
       <Icon size={18} className="text-[#36e29b]" />

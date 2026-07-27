@@ -19,7 +19,7 @@ export const sports: Sport[] = [
     name: "Cricket",
     slug: "cricket",
     category: "Team Sport",
-    image: "/images/cricket.png",
+    image: "/images/sports/cricket.png",
     description:
       "Compete in an exciting cricket tournament that tests teamwork, strategy, discipline and individual performance.",
     teamSize: "11 players + 1 rolling",
@@ -41,13 +41,13 @@ export const sports: Sport[] = [
     name: "Futsal",
     slug: "football",
     category: "Team Sport",
-    image: "/images/sports/football.jpg",
+    image: "/images/sports/futsal.png",
     description:
       "A fast-paced football competition focused on teamwork, skill, coordination and sportsmanship.",
-    teamSize: "7 players",
+    teamSize: "6 players + 2 subs",
     date: "October 4–6",
-    venue: "LGS JT Football Ground",
-    eligibility: "Registered delegates",
+    venue: "U17, U19",
+    eligibility: "U17, U19",
     rules: [
       "Teams must arrive 30 minutes before their match.",
       "Only registered players may participate.",
@@ -301,7 +301,7 @@ export const sports: Sport[] = [
 
   {
     number: "14",
-    name: "Strongman",
+    name: "Strongmen",
     slug: "strongman",
     category: "Strength Sport",
     image: "/images/sports/strongman.jpg",
@@ -451,6 +451,72 @@ export const sports: Sport[] = [
     ],
     note:
       "Players should wear appropriate sports shoes and attire.",
+  },
+
+  {
+    number: "21",
+    name: "Tapeball Cricket",
+    slug: "tapeball-cricket",
+    category: "Team Sport",
+    image: "/images/sports/tapeball-cricket.jpg",
+    description:
+      "A thrilling tapeball cricket tournament emphasizing teamwork, strategy, batting skills, and sportsmanship.",
+    teamSize: "8 players",
+    date: "October 4–6",
+    venue: "LGS JT Cricket Ground",
+    eligibility: "Registered delegates",
+    rules: [
+      "Teams must arrive 30 minutes before their match.",
+      "Only registered players may participate.",
+      "Tournament-specific tapeball rules will apply.",
+      "The umpire’s decision will be final.",
+    ],
+    note:
+      "Players are encouraged to bring appropriate cricket shoes and protective gear.",
+  },
+
+  {
+    number: "22",
+    name: "Water Polo",
+    slug: "water-polo",
+    category: "Team Sport",
+    image: "/images/sports/water-polo.jpg",
+    description:
+      "A fast-paced water polo competition showcasing teamwork, endurance, tactical play, and swimming ability.",
+    teamSize: "7 players",
+    date: "October 4–6",
+    venue: "LGS JT Swimming Pool",
+    eligibility: "Registered delegates",
+    rules: [
+      "Teams must report before their scheduled match.",
+      "Only registered players may participate.",
+      "Dangerous play may result in penalties or disqualification.",
+      "The referee’s decision will be final.",
+    ],
+    note:
+      "Participants should wear appropriate swimwear and water polo caps.",
+  },
+
+  {
+    number: "23",
+    name: "Padel",
+    slug: "padel",
+    category: "Racquet Sport",
+    image: "/images/sports/padel.jpg",
+    description:
+      "A dynamic padel tournament combining teamwork, quick reflexes, precision, and strategic shot-making.",
+    teamSize: "Doubles (2 players)",
+    date: "October 4–6",
+    venue: "LGS JT Padel Court",
+    eligibility: "Registered delegates",
+    rules: [
+      "Players must report before their scheduled match.",
+      "Standard padel rules will be followed.",
+      "Only registered participants may compete.",
+      "Officials' decisions are final.",
+    ],
+    note:
+      "Participants are encouraged to bring their own padel racquets if available.",
   },
 
 ];
