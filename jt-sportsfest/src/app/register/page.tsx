@@ -18,7 +18,6 @@ export default function RegisterPage() {
     <main className="min-h-screen bg-[#081324] py-20 px-6">
       <div className="mx-auto max-w-5xl">
 
-        {/* Heading */}
         <div className="mb-10 text-center">
           <p className="text-[#36E6A5] uppercase tracking-[0.3em] font-semibold">
             LGS Johar Town Presents
@@ -34,7 +33,6 @@ export default function RegisterPage() {
           </p>
         </div>
 
-        {/* Form Container */}
         <div className="rounded-3xl bg-white shadow-2xl overflow-hidden p-4">
 
           <div
