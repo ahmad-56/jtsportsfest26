@@ -24,7 +24,7 @@ const developers = [
   },
   {
     name: "Hannan Aqil",
-    href: "https://github.com/ahmad-56",
+    href: "https://github.com/blaadz",
   },
 ];
 
