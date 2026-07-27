@@ -57,7 +57,7 @@ export default function Contact() {
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#020d20]/25 via-transparent to-[#020d20]/55" />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-10 left-0 whitespace-nowrap text-[150px] font-black uppercase leading-none text-white/[0.035] md:text-[240px]"
+        className="pointer-events-none absolute -bottom-10 left-0 whitespace-nowrap text-[140px] font-black uppercase leading-none text-white/[0.035] md:text-[220px]"
       >
         SportsFest
       </div>

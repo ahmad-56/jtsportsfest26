@@ -10,12 +10,11 @@ import {
 import { FaInstagram } from "react-icons/fa6";
 
 const navigation = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Sports", href: "/sports" },
-  { label: "Rules", href: "/rules" },
-  { label: "Team", href: "/team" },
-  { label: "Register", href: "/register" },
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Code Of Conduct", href: "/rules" },
+  { label: "Sports", href: "#sports" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const developers = [
@@ -23,7 +22,18 @@ const developers = [
     name: "Ahmad Hassan",
     href: "https://github.com/ahmad-56",
   },
+  {
+    name: "Hannan Aqil",
+    href: "https://github.com/ahmad-56",
+  },
 ];
+
+const society = [
+  {
+    name: "LGS JT IT Society",
+    href: "https://www.instagram.com/lgsjt.itsociety",
+  },
+]
 
 export default function Footer() {
   return (
@@ -80,9 +90,7 @@ export default function Footer() {
             </Link>
 
             <p className="mt-7 max-w-md text-sm leading-7 text-white/55">
-              Where competition meets character. Bringing together young
-              athletes, institutions and sporting communities for an
-              unforgettable celebration of talent and sportsmanship.
+              Become part of an unforgettable Event.
             </p>
 
             <Link
@@ -195,7 +203,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom credits */}
         <div className="flex flex-col items-center justify-between gap-5 pt-8 text-center text-xs text-white/40 lg:flex-row lg:text-left">
           <p>
             Copyright © 2026 LGS Johar Town. All rights reserved.
@@ -227,10 +234,19 @@ export default function Footer() {
             </span>
 
             <span>
-              Graphics by{" "}
-              <strong className="font-semibold text-white/65">
-                Abdul Basit
-              </strong>
+              Presented by{" "}
+              {society.map((society, index) => (
+                <span key={society.href}>
+                  <a
+                    href={society.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-[#36e29b] transition hover:text-white"
+                  >
+                    {society.name}
+                  </a>
+                </span>
+              ))}
             </span>
           </div>
         </div>

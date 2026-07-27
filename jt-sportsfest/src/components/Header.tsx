@@ -35,7 +35,6 @@ export default function Header() {
           </span>
         </Link>
 
-        {/* Desktop navigation */}
         <div className="hidden items-center gap-2 lg:flex">
           {links.map((link) => (
             <Link
@@ -45,7 +44,7 @@ export default function Header() {
             >
               <span className="relative z-10">{link.label}</span>
 
-              <span className="absolute inset-0 scale-90 rounded-lg bg-[#36e29b]/0 transition-all duration-300 group-hover:scale-100 group-hover:bg-[#36e29b]/10" />
+              <span className="absolute inset-0 scale-90 rounded-lg bg-[#36e29b]/0 transition-all duration-300 group-hover:scale-100" />
 
               <span className="absolute bottom-0 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-[#36e29b] transition-all duration-300 group-hover:w-2/3" />
             </Link>

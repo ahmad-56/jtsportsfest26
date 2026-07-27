@@ -63,7 +63,7 @@ export default function Hero() {
 
               <div className="mt-3 border-t border-white/10 pt-3">
                 <p className="text-sm font-bold uppercase tracking-wide text-white/75">
-                  Cricket, Athletics, & Tug of War
+                  Cricket, Athletics & Tug of War
                 </p>
               </div>
 
