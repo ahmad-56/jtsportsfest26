@@ -7,6 +7,7 @@ import {
   User2Icon,
   Users,
   Users2,
+  Trophy,
   X,
   type LucideIcon,
 } from "lucide-react";
@@ -125,6 +126,42 @@ export default function SportsGrid() {
                 </button>
               </Reveal>
             ))}
+            {/* final panel */}
+            <Reveal>
+              <div className="group relative flex min-h-72 w-full cursor-default flex-col justify-end overflow-hidden rounded-2xl border border-white/15 bg-[#020d20] p-7 text-left text-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-[#36e29b] hover:shadow-[0_0_0_1px_rgba(54,226,155,0.25),0_25px_60px_rgba(0,99,62,0.35)]">
+                {/* bg image */}
+                <Image
+                  src="/images/hero-sports.jpg"
+                  alt=""
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover opacity-40 transition duration-700 group-hover:scale-105 group-hover:opacity-30"
+                />
+
+                {/* Background overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#020d20] via-[#020d20]/65 to-[#020d20]/20" />
+
+                {/* Green hover overlay */}
+                <div className="absolute inset-0 bg-[#00633e]/0 transition-colors duration-500 group-hover:bg-[#00633e]/15" />
+
+                <div className="relative z-10">
+                  <p className="mb-3 text-xs font-black uppercase tracking-[0.18em] text-[#36e29b]">
+                    LGS JT
+                  </p>
+
+                  <h3 className="text-3xl font-black uppercase leading-none">
+                    SPOrtsfest XIII
+                  </h3>
+
+                  <p className="mt-4 text-sm leading-6 text-white/60">
+                    24-27 Sep & 2-4 Oct
+                  </p>
+                </div>
+
+                {/* Hover glow */}
+                <div className="pointer-events-none absolute -bottom-16 -right-16 h-40 w-40 rounded-full bg-[#36e29b]/0 blur-3xl transition-all duration-500 group-hover:bg-[#36e29b]/30" />
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -187,7 +224,7 @@ export default function SportsGrid() {
                 </h2>
 
                 {/* Quick details */}
-                <div className="mt-3 grid gap-3 sm:grid-cols-3">
+                <div className="mt-3 grid gap-3 sm:grid-cols-4">
                   <DetailItem
                     icon={Users}
                     label="Team size"
@@ -196,20 +233,20 @@ export default function SportsGrid() {
 
                   <DetailItem
                     icon={CalendarDays}
-                    label="Event date"
+                    label="Category date"
                     value={selectedSport.date}
                   />
 
                   <DetailItem
                     icon={Users}
-                    label="Boys Category"
-                    value={selectedSport.venue}
+                    label="Age Groups"
+                    value={selectedSport.age}
                   />
 
                   <DetailItem
-                    icon={Users}
-                    label="Girls Category"
-                    value={selectedSport.eligibility}
+                    icon={Trophy}
+                    label="Competition Format"
+                    value={selectedSport.format}
                   />
                 </div>
 

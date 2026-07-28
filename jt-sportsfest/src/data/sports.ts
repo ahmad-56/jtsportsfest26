@@ -7,8 +7,8 @@ export type Sport = {
   description: string;
   teamSize: string;
   date: string;
-  venue: string;
-  eligibility: string;
+  age: string;
+  format: string;
   rules: string[];
   note?: string;
 };
@@ -24,8 +24,8 @@ export const sports: Sport[] = [
       "Compete in an exciting cricket tournament that tests teamwork, strategy, discipline and individual performance.",
     teamSize: "11 players + 1 rolling",
     date: "September 24–27",
-    venue: "LGS JT Cricket Ground",
-    eligibility: "Registered delegates",
+    age: "",
+    format: "Registered delegates",
     rules: [
       "All teams must report at least 30 minutes before their scheduled match.",
       "Boys Category: 10 Overs per Innings.",
@@ -46,8 +46,8 @@ export const sports: Sport[] = [
       "A fast-paced football competition focused on teamwork, skill, coordination and sportsmanship.",
     teamSize: "6 players + 2 subs",
     date: "October 4–6",
-    venue: "U17, U19",
-    eligibility: "U17, U19",
+    age: "U17, U19",
+    format: "Knockout",
     rules: [
       "Teams must arrive 30 minutes before their match.",
       "Only registered players may participate.",
@@ -67,8 +67,8 @@ export const sports: Sport[] = [
       "A precision archery competition testing focus, accuracy, consistency, and composure under pressure.",
     teamSize: "Individual",
     date: "October 4–6",
-    venue: "LGS JT Sports Arena",
-    eligibility: "Registered delegates",
+    age: "LGS JT Sports Arena",
+    format: "Registered delegates",
     rules: [
       "Participants must follow all range safety instructions.",
       "Only official equipment is permitted.",
@@ -89,8 +89,8 @@ export const sports: Sport[] = [
       "A strength-based contest emphasizing power, technique, endurance, and fair competition.",
     teamSize: "Individual",
     date: "October 4–6",
-    venue: "LGS JT Sports Hall",
-    eligibility: "Registered delegates",
+    age: "LGS JT Sports Hall",
+    format: "Registered delegates",
     rules: [
       "Matches begin only on the referee’s signal.",
       "Elbows must remain on the designated pad.",
@@ -111,8 +111,8 @@ export const sports: Sport[] = [
       "A fast-paced badminton tournament showcasing agility, precision, strategy, and quick reflexes.",
     teamSize: "Singles / Doubles",
     date: "October 4–6",
-    venue: "LGS JT Indoor Courts",
-    eligibility: "Registered delegates",
+    age: "LGS JT Indoor Courts",
+    format: "Registered delegates",
     rules: [
       "Players must report before their scheduled match.",
       "Standard badminton rules will apply.",
@@ -133,8 +133,8 @@ export const sports: Sport[] = [
       "A competitive athletics event featuring speed, endurance, strength, and determination across multiple disciplines.",
     teamSize: "Individual",
     date: "October 4–6",
-    venue: "LGS JT Athletics Track",
-    eligibility: "Registered delegates",
+    age: "LGS JT Athletics Track",
+    format: "Registered delegates",
     rules: [
       "Athletes must compete only in registered events.",
       "False starts may result in disqualification.",
@@ -155,8 +155,8 @@ export const sports: Sport[] = [
       "An exciting basketball tournament highlighting teamwork, skill, speed, and competitive spirit.",
     teamSize: "5 players",
     date: "October 4–6",
-    venue: "LGS JT Basketball Court",
-    eligibility: "Registered delegates",
+    age: "LGS JT Basketball Court",
+    format: "Registered delegates",
     rules: [
       "Teams must report 30 minutes before matches.",
       "Only registered players may participate.",
@@ -177,8 +177,8 @@ export const sports: Sport[] = [
       "A strategic chess competition testing critical thinking, planning, patience, and decision-making skills.",
     teamSize: "Individual",
     date: "October 4–6",
-    venue: "LGS JT Activity Hall",
-    eligibility: "Registered delegates",
+    age: "LGS JT Activity Hall",
+    format: "Registered delegates",
     rules: [
       "Standard chess rules will apply.",
       "Touch-move rule is enforced.",
@@ -199,8 +199,8 @@ export const sports: Sport[] = [
       "A precision darts competition rewarding accuracy, consistency, concentration, and steady nerves.",
     teamSize: "Individual",
     date: "October 4–6",
-    venue: "LGS JT Indoor Arena",
-    eligibility: "Registered delegates",
+    age: "LGS JT Indoor Arena",
+    format: "Registered delegates",
     rules: [
       "Players throw only after the previous turn ends.",
       "Official scoring will be maintained.",
@@ -221,8 +221,8 @@ export const sports: Sport[] = [
       "A competitive esports tournament showcasing teamwork, strategy, quick decision-making, and gaming excellence.",
     teamSize: "Depends on game",
     date: "October 4–6",
-    venue: "LGS JT Gaming Zone",
-    eligibility: "Registered delegates",
+    age: "LGS JT Gaming Zone",
+    format: "Registered delegates",
     rules: [
       "Only approved game settings may be used.",
       "Cheating results in immediate disqualification.",
@@ -243,8 +243,8 @@ export const sports: Sport[] = [
       "A dynamic hockey competition emphasizing teamwork, speed, coordination, and tactical gameplay.",
     teamSize: "11 players",
     date: "October 4–6",
-    venue: "LGS JT Hockey Ground",
-    eligibility: "Registered delegates",
+    age: "LGS JT Hockey Ground",
+    format: "Registered delegates",
     rules: [
       "Teams must report before match time.",
       "Only registered players may participate.",
@@ -265,8 +265,8 @@ export const sports: Sport[] = [
       "An engaging scavenger hunt challenging teamwork, creativity, problem-solving, and time management skills.",
     teamSize: "4–6 players",
     date: "October 4–6",
-    venue: "LGS JT Campus",
-    eligibility: "Registered delegates",
+    age: "LGS JT Campus",
+    format: "Registered delegates",
     rules: [
       "Teams must stay together throughout the event.",
       "All clues must be completed fairly.",
@@ -287,8 +287,8 @@ export const sports: Sport[] = [
       "A snooker tournament testing precision, strategy, patience, and tactical shot-making abilities.",
     teamSize: "Individual",
     date: "October 4–6",
-    venue: "LGS JT Indoor Arena",
-    eligibility: "Registered delegates",
+    age: "LGS JT Indoor Arena",
+    format: "Registered delegates",
     rules: [
       "Standard snooker rules apply.",
       "Respect opponents and equipment.",
@@ -309,8 +309,8 @@ export const sports: Sport[] = [
       "A challenging strongman competition measuring strength, endurance, determination, and resilience.",
     teamSize: "Individual",
     date: "October 4–6",
-    venue: "LGS JT Sports Ground",
-    eligibility: "Registered delegates",
+    age: "LGS JT Sports Ground",
+    format: "Registered delegates",
     rules: [
       "Participants must follow event instructions.",
       "Unsafe lifting techniques are prohibited.",
@@ -331,8 +331,8 @@ export const sports: Sport[] = [
       "A competitive swimming event highlighting speed, endurance, technique, and determination in the pool.",
     teamSize: "Individual",
     date: "October 4–6",
-    venue: "LGS JT Swimming Pool",
-    eligibility: "Registered delegates",
+    age: "LGS JT Swimming Pool",
+    format: "Registered delegates",
     rules: [
       "Swimmers must report before race time.",
       "False starts may result in penalties.",
@@ -353,8 +353,8 @@ export const sports: Sport[] = [
       "A competitive tennis tournament showcasing agility, precision, endurance, and strategic gameplay.",
     teamSize: "Singles / Doubles",
     date: "October 4–6",
-    venue: "LGS JT Tennis Court",
-    eligibility: "Registered delegates",
+    age: "LGS JT Tennis Court",
+    format: "Registered delegates",
     rules: [
       "Players must arrive before scheduled matches.",
       "Standard tennis rules apply.",
@@ -375,8 +375,8 @@ export const sports: Sport[] = [
       "A thrilling tug of war contest emphasizing teamwork, coordination, strength, and determination.",
     teamSize: "8 players",
     date: "October 4–6",
-    venue: "LGS JT Sports Ground",
-    eligibility: "Registered delegates",
+    age: "LGS JT Sports Ground",
+    format: "Registered delegates",
     rules: [
       "Teams compete only on the referee’s signal.",
       "Only registered players may participate.",
@@ -397,8 +397,8 @@ export const sports: Sport[] = [
       "A fast-moving throwball tournament focused on teamwork, coordination, communication, and quick reflexes.",
     teamSize: "7 players",
     date: "October 4–6",
-    venue: "LGS JT Sports Court",
-    eligibility: "Registered delegates",
+    age: "LGS JT Sports Court",
+    format: "Registered delegates",
     rules: [
       "Teams must report before match time.",
       "Only registered players may participate.",
@@ -419,8 +419,8 @@ export const sports: Sport[] = [
       "A competitive table tennis tournament testing speed, precision, reflexes, and tactical play.",
     teamSize: "Singles / Doubles",
     date: "October 4–6",
-    venue: "LGS JT Indoor Hall",
-    eligibility: "Registered delegates",
+    age: "LGS JT Indoor Hall",
+    format: "Registered delegates",
     rules: [
       "Standard table tennis rules apply.",
       "Players must arrive before their match.",
@@ -441,8 +441,8 @@ export const sports: Sport[] = [
       "An energetic volleyball tournament celebrating teamwork, coordination, athleticism, and competitive excellence.",
     teamSize: "6 players",
     date: "October 4–6",
-    venue: "LGS JT Volleyball Court",
-    eligibility: "Registered delegates",
+    age: "LGS JT Volleyball Court",
+    format: "Registered delegates",
     rules: [
       "Teams must report before match time.",
       "Only registered players may participate.",
@@ -463,8 +463,8 @@ export const sports: Sport[] = [
       "A thrilling tapeball cricket tournament emphasizing teamwork, strategy, batting skills, and sportsmanship.",
     teamSize: "8 players",
     date: "October 4–6",
-    venue: "LGS JT Cricket Ground",
-    eligibility: "Registered delegates",
+    age: "LGS JT Cricket Ground",
+    format: "Registered delegates",
     rules: [
       "Teams must arrive 30 minutes before their match.",
       "Only registered players may participate.",
@@ -485,8 +485,8 @@ export const sports: Sport[] = [
       "A fast-paced water polo competition showcasing teamwork, endurance, tactical play, and swimming ability.",
     teamSize: "7 players",
     date: "October 4–6",
-    venue: "LGS JT Swimming Pool",
-    eligibility: "Registered delegates",
+    age: "LGS JT Swimming Pool",
+    format: "Registered delegates",
     rules: [
       "Teams must report before their scheduled match.",
       "Only registered players may participate.",
@@ -507,8 +507,8 @@ export const sports: Sport[] = [
       "A dynamic padel tournament combining teamwork, quick reflexes, precision, and strategic shot-making.",
     teamSize: "Doubles (2 players)",
     date: "October 4–6",
-    venue: "LGS JT Padel Court",
-    eligibility: "Registered delegates",
+    age: "LGS JT Padel Court",
+    format: "Registered delegates",
     rules: [
       "Players must report before their scheduled match.",
       "Standard padel rules will be followed.",
@@ -518,5 +518,4 @@ export const sports: Sport[] = [
     note:
       "Participants are encouraged to bring their own padel racquets if available.",
   },
-
 ];
