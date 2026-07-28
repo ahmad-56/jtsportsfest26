@@ -31,41 +31,90 @@ function calculateTimeRemaining(): TimeRemaining {
     minutes: Math.floor(
       (difference / (1000 * 60)) % 60,
     ),
-    seconds: Math.floor(
-      (difference / 1000) % 60,
-    ),
+    seconds: Math.floor((difference / 1000) % 60),
   };
 }
 
-function FlipCard({
+function formatValue(value: number) {
+  return String(value).padStart(2, "0");
+}
+
+function NumberHalf({
+  value,
+  position,
+  className = "",
+}: {
+  value: string;
+  position: "top" | "bottom";
+  className?: string;
+}) {
+  return (
+    <div
+      className={`timer-half timer-${position} ${className}`}
+    >
+      <span className="timer-number">{value}</span>
+    </div>
+  );
+}
+
+function TimerCard({
   value,
   label,
 }: {
   value: number;
   label: string;
 }) {
-  const formattedValue = String(value).padStart(2, "0");
+  const [previousValue, setPreviousValue] = useState(value);
+  const [isFlipping, setIsFlipping] = useState(false);
+
+  useEffect(() => {
+    if (value === previousValue) return;
+
+    setIsFlipping(true);
+
+    const timeout = window.setTimeout(() => {
+      setPreviousValue(value);
+      setIsFlipping(false);
+    }, 600);
+
+    return () => window.clearTimeout(timeout);
+  }, [value, previousValue]);
+
+  const oldValue = formatValue(previousValue);
+  const newValue = formatValue(value);
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="relative min-w-[64px] overflow-hidden border border-white/15 bg-[#010916]/90 shadow-2xl backdrop-blur-md sm:min-w-[76px]">
-        {/* Middle flip line */}
-        <div className="pointer-events-none absolute left-0 top-1/2 z-20 h-px w-full bg-black/70" />
+    <div className="timer-unit">
+      <div className="timer-display">
+        {/* New upper half behind the animation */}
+        <NumberHalf value={newValue} position="top" />
 
-        {/* Light reflection */}
-        <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-1/2 bg-gradient-to-b from-white/10 to-transparent" />
+        {/* Old lower half until the animation completes */}
+        <NumberHalf
+          value={isFlipping ? oldValue : newValue}
+          position="bottom"
+        />
 
-        <div
-          key={formattedValue}
-          className="animate-[flipNumber_0.45s_ease-out] px-3 py-4 text-center text-3xl font-black tabular-nums text-white sm:text-4xl"
-        >
-          {formattedValue}
-        </div>
+        {isFlipping && (
+          <>
+            <NumberHalf
+              value={oldValue}
+              position="top"
+              className="timer-top-animation"
+            />
+
+            <NumberHalf
+              value={newValue}
+              position="bottom"
+              className="timer-bottom-animation"
+            />
+          </>
+        )}
+
+        <div className="timer-middle-line" />
       </div>
 
-      <span className="mt-3 text-[9px] font-black uppercase tracking-[0.2em] text-[#36e29b] sm:text-[10px]">
-        {label}
-      </span>
+      <span className="timer-label">{label}</span>
     </div>
   );
 }
@@ -75,35 +124,72 @@ export default function Timer() {
     useState<TimeRemaining | null>(null);
 
   useEffect(() => {
-    setTimeRemaining(calculateTimeRemaining());
-
-    const timer = window.setInterval(() => {
+    const updateTimer = () => {
       setTimeRemaining(calculateTimeRemaining());
-    }, 1000);
+    };
 
-    return () => window.clearInterval(timer);
+    updateTimer();
+
+    const interval = window.setInterval(updateTimer, 1000);
+
+    return () => window.clearInterval(interval);
   }, []);
 
   if (!timeRemaining) {
     return (
-      <div className="mt-7 h-24" aria-label="Loading countdown" />
+      <div
+        className="mt-7 h-28"
+        aria-label="Loading countdown"
+      />
+    );
+  }
+
+  const timeFinished =
+    timeRemaining.days === 0 &&
+    timeRemaining.hours === 0 &&
+    timeRemaining.minutes === 0 &&
+    timeRemaining.seconds === 0;
+
+  if (timeFinished) {
+    return (
+      <div
+        className="mt-7 flex min-h-28 items-center justify-center text-center text-2xl font-black uppercase text-[#36e29b]"
+        aria-live="polite"
+      >
+        JT SportsFest XIII is live!
+      </div>
     );
   }
 
   return (
     <div className="mt-7">
-      <p className="mb-4 text-center text-[10px] font-black uppercase tracking-[0.25em] text-white/45">
-        Countdown:
+      <p className="mb-5 text-center text-[10px] font-black uppercase tracking-[0.3em] text-white/45">
+        Countdown
       </p>
 
       <div
-        className="flex justify-center gap-2 sm:gap-3"
+        className="flex justify-center gap-2 sm:gap-4"
         aria-label={`${timeRemaining.days} days, ${timeRemaining.hours} hours, ${timeRemaining.minutes} minutes and ${timeRemaining.seconds} seconds until SportsFest`}
       >
-        <FlipCard value={timeRemaining.days} label="Days" />
-        <FlipCard value={timeRemaining.hours} label="Hours" />
-        <FlipCard value={timeRemaining.minutes} label="Minutes" />
-        <FlipCard value={timeRemaining.seconds} label="Seconds" />
+        <TimerCard
+          value={timeRemaining.days}
+          label="Days"
+        />
+
+        <TimerCard
+          value={timeRemaining.hours}
+          label="Hours"
+        />
+
+        <TimerCard
+          value={timeRemaining.minutes}
+          label="Minutes"
+        />
+
+        <TimerCard
+          value={timeRemaining.seconds}
+          label="Seconds"
+        />
       </div>
     </div>
   );
