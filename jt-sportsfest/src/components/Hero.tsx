@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section 
     id="home" 
-    className="relative min-h-screen overflow-hidden bg-[#020d20] pt-6">
+    className="relative min-h-screen scroll-mt-24 overflow-hidden bg-[#020d20] pt-24 text-white">
       <Image
         src="/images/hero-sports.jpg"
         alt=""
@@ -20,7 +20,7 @@ export default function Hero() {
 
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_79%_40%,rgba(0,99,62,.45),transparent_35%)]" />
 
-      <div className="relative mx-auto grid min-h-[800px] max-w-7xl items-center gap-10 px-6 lg:grid-cols-2">
+      <div className="relative mx-auto grid min-h-screen max-w-7xl items-center gap-10 px-5 py-12 lg:grid-cols-2 lg:px-6 lg:py-0">
         <div>
           <motion.p
             initial={{ opacity: 0, y: 25 }}

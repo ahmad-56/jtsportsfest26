@@ -9,7 +9,7 @@ type TimeRemaining = {
   seconds: number;
 };
 
-const EVENT_DATE = new Date("2026-10-04T00:00:00+05:00");
+const EVENT_DATE = new Date("2026-10-02T00:00:00+05:00");
 
 function calculateTimeRemaining(): TimeRemaining {
   const difference = EVENT_DATE.getTime() - Date.now();

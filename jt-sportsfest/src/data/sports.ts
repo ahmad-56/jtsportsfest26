@@ -22,7 +22,7 @@ export const sports: Sport[] = [
     image: "/images/sports/cricket.png",
     description:
       "Compete in an exciting cricket tournament that tests teamwork, strategy, discipline and individual performance.",
-    teamSize: "11 compulsory + 2 subs",
+    teamSize: "11 playing + 2 subs",
     date: "September 24–27",
     age: "U17, U19",
     format: "10 Overs / 5 Overs",
@@ -44,7 +44,7 @@ export const sports: Sport[] = [
     image: "/images/sports/futsal.png",
     description:
       "A fast-paced football competition focused on teamwork, skill, coordination and sportsmanship.",
-    teamSize: "6 compulsory + 2 subs",
+    teamSize: "6 playing + 2 subs",
     date: "October 4–6",
     age: "U17, U19",
     format: "Knockout",
@@ -153,7 +153,7 @@ export const sports: Sport[] = [
     image: "/images/sports/basketball.jpg",
     description:
       "An exciting basketball tournament highlighting teamwork, skill, speed, and competitive spirit.",
-    teamSize: "6 compulsory + 2 subs",
+    teamSize: "6 playing + 2 subs",
     date: "October 4–6",
     age: "U17, U19",
     format: "Knockout",
@@ -241,7 +241,7 @@ export const sports: Sport[] = [
     image: "/images/sports/hockey.jpg",
     description:
       "A dynamic hockey competition emphasizing teamwork, speed, coordination, and tactical gameplay.",
-    teamSize: "11 compulsory + 2 subs",
+    teamSize: "11 playing + 2 subs",
     date: "October 4–6",
     age: "U17, U19",
     format: "Knockout",
@@ -263,7 +263,7 @@ export const sports: Sport[] = [
     image: "/images/sports/scavenger-hunt.jpg",
     description:
       "An engaging scavenger hunt challenging teamwork, creativity, problem-solving, and time management skills.",
-    teamSize: "4 compulsory + 2 subs",
+    teamSize: "4 playing + 2 subs",
     date: "October 4–6",
     age: "U17, U19",
     format: "Team Challenge",
@@ -373,7 +373,7 @@ export const sports: Sport[] = [
     image: "/images/sports/tug-of-war.jpg",
     description:
       "A thrilling tug of war contest emphasizing teamwork, coordination, strength, and determination.",
-    teamSize: "8 compulsory",
+    teamSize: "8 playing",
     date: "October 4–6",
     age: "U17, U19",
     format: "Knockout",
@@ -395,7 +395,7 @@ export const sports: Sport[] = [
     image: "/images/sports/throwball.jpg",
     description:
       "A fast-moving throwball tournament focused on teamwork, coordination, communication, and quick reflexes.",
-    teamSize: "7 compulsory + 2 subs",
+    teamSize: "7 playing + 2 subs",
     date: "October 4–6",
     age: "U17, U19",
     format: "Knockout",
@@ -439,7 +439,7 @@ export const sports: Sport[] = [
     image: "/images/sports/volleyball.jpg",
     description:
       "An energetic volleyball tournament celebrating teamwork, coordination, athleticism, and competitive excellence.",
-    teamSize: "6 compulsory + 2 subs",
+    teamSize: "6 playing + 2 subs",
     date: "October 4–6",
     age: "U17, U19",
     format: "Knockout",
@@ -461,7 +461,7 @@ export const sports: Sport[] = [
     image: "/images/sports/tapeball-cricket.jpg",
     description:
       "A thrilling tapeball cricket tournament emphasizing teamwork, strategy, batting skills, and sportsmanship.",
-    teamSize: "8 compulsory + 2 subs",
+    teamSize: "8 playing + 2 subs",
     date: "October 4–6",
     age: "U17, U19",
     format: "Knockout",
@@ -483,7 +483,7 @@ export const sports: Sport[] = [
     image: "/images/sports/water-polo.jpg",
     description:
       "A fast-paced water polo competition showcasing teamwork, endurance, tactical play, and swimming ability.",
-    teamSize: "7 compulsory + 2 subs",
+    teamSize: "7 playing + 2 subs",
     date: "October 4–6",
     age: "U17, U19",
     format: "Knockout",
@@ -505,7 +505,7 @@ export const sports: Sport[] = [
     image: "/images/sports/padel.jpg",
     description:
       "A dynamic padel tournament combining teamwork, quick reflexes, precision, and strategic shot-making.",
-    teamSize: "2 compulsory",
+    teamSize: "2 playing",
     date: "October 4–6",
     age: "U17, U19",
     format: "Doubles Only",
