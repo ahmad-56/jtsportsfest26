@@ -86,10 +86,8 @@ function TimerCard({
   return (
     <div className="timer-unit">
       <div className="timer-display">
-        {/* New upper half behind the animation */}
         <NumberHalf value={newValue} position="top" />
 
-        {/* Old lower half until the animation completes */}
         <NumberHalf
           value={isFlipping ? oldValue : newValue}
           position="bottom"
@@ -164,7 +162,7 @@ export default function Timer() {
   return (
     <div className="mt-7">
       <p className="mb-5 text-center text-[10px] font-black uppercase tracking-[0.3em] text-white/45">
-        Countdown
+        Countdown:
       </p>
 
       <div
