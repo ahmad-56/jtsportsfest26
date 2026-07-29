@@ -208,7 +208,7 @@ export default function Footer() {
                     href={developer.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block font-semibold text-[#36e29b] transition-all duration-300 hover:-translate-y-1 hover:text-white hover:drop-shadow-[0_0_7px_rgba(54,226,155,0.6)]"
+                    className="inline-block font-semibold text-[#36e29b] transition-all duration-300 hover:-translate-y-0.25 hover:text-white hover:drop-shadow-[0_0_7px_rgba(54,226,155,0.6)]"
                   >
                     {developer.name}
                   </a>
@@ -235,7 +235,7 @@ export default function Footer() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block font-semibold text-[#36e29b] transition-all duration-300 hover:-translate-y-1 hover:text-white hover:drop-shadow-[0_0_7px_rgba(54,226,155,0.6)]"
+                  className="inline-block font-semibold text-[#36e29b] transition-all duration-300 hover:-translate-y-0.25 hover:text-white hover:drop-shadow-[0_0_7px_rgba(54,226,155,0.6)]"
                 >
                   {item.name}
                 </a>
