@@ -205,7 +205,7 @@ export default function Footer() {
 
         <div className="flex flex-col items-center justify-between gap-5 pt-8 text-center text-xs text-white/40 lg:flex-row lg:text-left">
           <p>
-            Copyright © 2026 LGS Johar Town. All rights reserved.
+            Copyright © 2026 Lahore Grammar School Senior Boys Johar Town. All rights reserved.
           </p>
 
           <div className="flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
@@ -217,7 +217,7 @@ export default function Footer() {
                     href={developer.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-semibold text-[#36e29b] transition hover:text-white"
+                    className="inline-block font-semibold text-[#36e29b] transition-all duration-300 hover:-translate-y-0.25 hover:text-white"
                   >
                     {developer.name}
                   </a>
@@ -241,7 +241,7 @@ export default function Footer() {
                     href={society.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-semibold text-[#36e29b] transition hover:text-white"
+                    className="inline-block font-semibold text-[#36e29b] transition-all duration-300 hover:-translate-y-0.25 hover:text-white"
                   >
                     {society.name}
                   </a>

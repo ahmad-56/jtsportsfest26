@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import {
   AlertTriangle,
   ArrowLeft,
@@ -231,6 +232,7 @@ export default function CodeOfConductPage() {
           </Link>
         </div>
       </section>
+      <Footer />
     </main>
   );
 }

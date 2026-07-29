@@ -137,7 +137,7 @@ export default function SportsGrid() {
                   alt=""
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className="object-cover opacity-40 transition duration-700 group-hover:scale-105 group-hover:opacity-30"
+                  className="object-cover opacity-45 transition duration-700 group-hover:scale-105 group-hover:opacity-30"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-[#020d20] via-[#020d20]/65 to-[#020d20]/20" />
