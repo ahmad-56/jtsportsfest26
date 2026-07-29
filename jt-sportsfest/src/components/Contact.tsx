@@ -4,7 +4,6 @@ import {
   FaLocationDot,
   FaPhone,
 } from "react-icons/fa6";
-
 import Reveal from "@/components/Reveal";
 import Image from "next/image";
 

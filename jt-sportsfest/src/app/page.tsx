@@ -4,6 +4,7 @@ import About from "@/components/About";
 import SportsGrid from "@/components/SportsGrid";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Sponsors from "@/components/Sponsors";
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
         <Hero />
         <About />
         <SportsGrid />
+        <Sponsors />
         <Contact />
       </main>
 

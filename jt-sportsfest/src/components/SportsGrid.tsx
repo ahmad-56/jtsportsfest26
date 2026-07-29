@@ -12,8 +12,8 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { useEffect, useState } from "react";
-
 import { sports, type Sport } from "@/data/sports";
+import TeamCounter from "@/components/Counter";
 import Reveal from "@/components/Reveal";
 
 export default function SportsGrid() {
@@ -75,6 +75,9 @@ export default function SportsGrid() {
                     JT Sportsfest XIII
                   </span>
                 </h2>
+              </div>
+              <div className="mt-1">
+                  <TeamCounter initialCount={0} />
               </div>
             </div>
           </Reveal>
