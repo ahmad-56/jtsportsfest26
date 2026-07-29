@@ -107,7 +107,7 @@ export default function CodeOfConductPage() {
 
         <div className="relative z-10 mx-auto max-w-7xl">
           <Link
-            href="/#about"
+            href="/#home"
             className="group mb-10 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.15em] text-white/55 transition hover:text-[#36e29b]"
           >
             <ArrowLeft
