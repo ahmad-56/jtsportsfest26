@@ -13,8 +13,17 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { sports, type Sport } from "@/data/sports";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import TeamCounter from "@/components/Counter";
 import Reveal from "@/components/Reveal";
+
+const links = [
+  { label: "Home", href: "/#home" },
+  { label: "About", href: "/#about" },
+  { label: "Sports", href: "/sports" },
+  { label: "Contact", href: "/#contact" },
+];
 
 export default function SportsGrid() {
   const [selectedSport, setSelectedSport] = useState<Sport | null>(null);
@@ -38,6 +47,7 @@ export default function SportsGrid() {
 
   return (
     <>
+        <Header />
       <section
         id="sports"
         className="relative overflow-hidden bg-[#f3f4ef] py-24 text-[#020d20] md:py-32"
@@ -288,7 +298,9 @@ export default function SportsGrid() {
           </div>
         </div>
             )}
+    <Footer />
     </>
+
   );
 }
 

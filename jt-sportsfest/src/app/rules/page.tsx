@@ -16,7 +16,7 @@ import {
 const links = [
   { label: "Home", href: "/#home" },
   { label: "About", href: "/#about" },
-  { label: "Sports", href: "/#sports" },
+  { label: "Sports", href: "/sports" },
   { label: "Contact", href: "/#contact" },
 ];
 
@@ -225,7 +225,7 @@ export default function CodeOfConductPage() {
           </p>
 
           <Link
-            href="/#sports"
+            href="/sports"
             className="mt-8 inline-flex rounded-lg bg-[#36e29b] px-7 py-4 font-black uppercase tracking-wider text-[#020d20] shadow-lg shadow-[#020d20]/20 transition-all duration-300 hover:-translate-y-1 hover:bg-[#48f0aa] hover:shadow-xl"
           >
             Explore Sports

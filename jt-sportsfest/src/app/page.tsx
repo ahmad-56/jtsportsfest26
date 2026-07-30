@@ -14,7 +14,6 @@ export default function HomePage() {
       <main>
         <Hero />
         <About />
-        <SportsGrid />
         <Sponsors />
         <Contact />
       </main>
