@@ -41,24 +41,26 @@ export default function About() {
             <div className="absolute left-0 top-0 h-full w-1 bg-[#36e29b]" />
 
             <p className="text-xs font-black uppercase tracking-[0.2em] text-[#36e29b]">
-              Official guidelines
+              JT Sportsfest XIII
             </p>
 
             <h3 className="mt-3 text-3xl font-black uppercase leading-tight text-white">
-              Code of Conduct
+              Participate in JT Sportsfest
             </h3>
 
-            <p className="mt-4 text-sm leading-7 text-white/60">
-              Review the official rules, participation guidelines and expected
-              conduct before entering the Event.
-            </p>
-
-            <div className="mt-6 border-t border-white/10 pt-6">
+            <div className="mt-6 flex flex-wrap gap-4 border-t border-white/10 pt-6">
               <Link
-                href="/rules"
+                href="/register"
                 className="inline-flex rounded-lg bg-[#36e29b] px-6 py-4 text-sm font-black uppercase tracking-wider text-[#020d20] shadow-lg shadow-[#36e29b]/10 transition-all duration-300 hover:-translate-y-1 hover:bg-[#48f0aa] hover:shadow-xl hover:shadow-[#36e29b]/30 active:translate-y-0"
               >
-                View Code of Conduct
+                Register Now
+              </Link>
+
+              <Link
+                href="/sports"
+                className="inline-flex rounded-lg bg-[#36e29b] px-6 py-4 text-sm font-black uppercase tracking-wider text-[#020d20] shadow-lg shadow-[#36e29b]/10 transition-all duration-300 hover:-translate-y-1 hover:bg-[#48f0aa] hover:shadow-xl hover:shadow-[#36e29b]/30 active:translate-y-0"
+              >
+                Categories
               </Link>
             </div>
 
