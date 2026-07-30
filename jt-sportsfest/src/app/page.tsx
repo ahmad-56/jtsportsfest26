@@ -5,6 +5,7 @@ import SportsGrid from "@/app/sports/page";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Sponsors from "@/components/Sponsors";
+import IntegritySection from "@/components/IntegritySection";
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
         <About />
         <Sponsors />
         <Contact />
+        <IntegritySection />
       </main>
 
       <Footer />
