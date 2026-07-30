@@ -21,7 +21,7 @@ const nexa = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "JT SportsFest '26",
+  title: "JT SportsFest XIII",
   description: "JT SportsFest Edition XIII",
 };
 
