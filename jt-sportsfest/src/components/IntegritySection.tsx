@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function IntegritySection() {
   return (
-    <section className="relative overflow-hidden border-t border-white/10 bg-[#00633e] px-6 py-20">
+    <section className="relative overflow-hidden border-t border-white/10 bg-[#00633e] px-6 py-12">
         <Image
           src="/images/hero6-sports.jpg"
           alt=""
