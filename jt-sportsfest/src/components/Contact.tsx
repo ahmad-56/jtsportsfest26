@@ -78,7 +78,7 @@ export default function Contact() {
           </div>
         </Reveal>
 
-        <div className="grid gap-8 lg:gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+        <div className="grid gap-8 lg:gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-stretch">
           <Reveal>
             <div className="grid grid-cols-2 gap-3 sm:gap-6">
               {teamMembers.map((person, index) => (
@@ -94,13 +94,13 @@ export default function Contact() {
                     }`}
                   />
 
-                  <div className="relative flex flex-col border border-white/15 bg-[#020d20]/80 p-4 shadow-2xl backdrop-blur-xl transition duration-300 group-hover:-translate-y-2 sm:p-6">
+                  <div className="relative flex h-full min-h-[220px] flex-col border border-[#36e29b]/40 bg-[#020d20]/80 p-4 shadow-2xl backdrop-blur-xl transition duration-300 group-hover:-translate-y-2 sm:min-h-[315px] sm:p-7">
                     <div className="absolute right-3 top-3 h-3 w-3 sm:right-5 sm:top-5">
                       <span className="absolute inset-0 animate-ping rounded-full bg-[#36e29b] opacity-60" />
                       <span className="absolute inset-0 rounded-full bg-[#36e29b]" />
                     </div>
 
-                    <div className="flex h-10 w-10 items-center justify-center border border-[#36e29b]/30 bg-[#36e29b]/10 text-base font-black text-[#36e29b] sm:h-14 sm:w-14 sm:text-xl">
+                    <div className="mb-3 flex h-9 w-9 items-center justify-center border border-[#36e29b]/30 bg-[#36e29b]/10 text-xs font-black text-[#36e29b] sm:mb-7 sm:h-14 sm:w-14 sm:text-xl">
                       {person.name
                         .split(" ")
                         .map((word) => word.charAt(0))
@@ -108,21 +108,21 @@ export default function Contact() {
                         .join("")}
                     </div>
 
-                    <h3 className="mt-3 line-clamp-2 text-sm font-black uppercase text-white sm:mt-4 sm:text-2xl">
+                    <h3 className="line-clamp-2 text-xs font-black uppercase text-white sm:text-2xl sm:leading-tight">
                       {person.name}
                     </h3>
 
-                    <p className="mt-1 text-xs font-black uppercase tracking-[0.18em] text-[#36e29b] sm:mt-2">
+                    <p className="mt-1 text-[10px] font-black uppercase tracking-[0.15em] text-[#36e29b] sm:mt-2 sm:text-xs sm:tracking-[0.18em]">
                       {person.role}
                     </p>
 
-                    <div className="mt-4 space-y-2 sm:mt-6 sm:space-y-3">
+                    <div className="mt-auto space-y-1.5 pt-3 sm:space-y-4 sm:pt-8">
                       <a
                         href={person.phoneHref}
-                        className="flex items-center gap-2 text-xs text-white/65 transition hover:text-white sm:gap-3 sm:text-sm"
+                        className="flex items-center gap-2 text-[10px] text-white/65 transition hover:text-white sm:gap-3 sm:text-sm"
                       >
-                        <span className="flex h-7 w-7 shrink-0 items-center justify-center bg-white/5 text-[#36e29b] sm:h-9 sm:w-9">
-                          <FaPhone size={12} className="sm:hidden" />
+                        <span className="flex h-6 w-6 shrink-0 items-center justify-center bg-white/5 text-[#36e29b] sm:h-9 sm:w-9">
+                          <FaPhone size={10} className="sm:hidden" />
                           <FaPhone size={15} className="hidden sm:block" />
                         </span>
 
@@ -131,10 +131,10 @@ export default function Contact() {
 
                       <a
                         href={`mailto:${person.email}`}
-                        className="flex items-center gap-2 text-xs text-white/65 transition hover:text-white sm:gap-3 sm:text-sm"
+                        className="flex items-center gap-2 text-[10px] text-white/65 transition hover:text-white sm:gap-3 sm:text-sm"
                       >
-                        <span className="flex h-7 w-7 shrink-0 items-center justify-center bg-white/5 text-[#36e29b] sm:h-9 sm:w-9">
-                          <FaEnvelope size={12} className="sm:hidden" />
+                        <span className="flex h-6 w-6 shrink-0 items-center justify-center bg-white/5 text-[#36e29b] sm:h-9 sm:w-9">
+                          <FaEnvelope size={10} className="sm:hidden" />
                           <FaEnvelope size={15} className="hidden sm:block" />
                         </span>
 
@@ -148,47 +148,45 @@ export default function Contact() {
           </Reveal>
 
           <Reveal>
-            <div className="flex flex-col border border-white/15 bg-[#020d20]/80 shadow-2xl backdrop-blur-xl">
-              <div className="flex items-start gap-3 border-b border-white/10 p-4 sm:gap-4 sm:p-6">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center border border-white/10 bg-white/5 text-[#36e29b] sm:h-12 sm:w-12">
-                  <FaLocationDot size={18} className="sm:hidden" />
+            <div className="flex h-full flex-col border border-[#36e29b]/40 bg-[#020d20]/80 p-4 shadow-2xl backdrop-blur-xl sm:p-6 lg:p-8">
+              <div className="mb-4 flex items-start gap-3 sm:mb-6 sm:gap-4">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center border border-white/10 bg-white/5 text-[#36e29b] sm:h-12 sm:w-12">
+                  <FaLocationDot size={16} className="sm:hidden" />
                   <FaLocationDot size={20} className="hidden sm:block" />
                 </span>
 
                 <div className="min-w-0 flex-1">
-                  <p className="text-xs font-black uppercase tracking-[0.22em] text-[#36e29b]">
+                  <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#36e29b] sm:text-xs sm:tracking-[0.22em]">
                     Location
                   </p>
 
-                  <h3 className="mt-1 line-clamp-2 text-base font-black uppercase text-white sm:mt-2 sm:text-xl">
+                  <h3 className="mt-0.5 line-clamp-2 text-xs font-black uppercase text-white sm:mt-2 sm:text-xl">
                     LGS Johar Town Senior Boys
                   </h3>
 
-                  <p className="mt-1 text-xs leading-5 text-white/55 sm:mt-2 sm:text-sm sm:leading-6">
+                  <p className="mt-0.5 text-[10px] leading-4 text-white/55 sm:mt-2 sm:text-sm sm:leading-6">
                     364-E/1, Block E1, Johar Town, Lahore
                   </p>
                 </div>
               </div>
 
-              <div className="relative overflow-hidden border-b border-white/10">
-                <div className="relative h-64 sm:h-80 lg:h-96">
-                  <iframe
-                    src="https://www.google.com/maps?q=LGS+Johar+Town+Senior+Boys+Lahore&output=embed"
-                    title="LGS Johar Town Senior Boys location"
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    className="absolute inset-0 h-full w-full"
-                  />
-                </div>
+              <div className="relative min-h-[200px] flex-1 overflow-hidden border border-white/10 sm:min-h-[300px] lg:min-h-[400px]">
+                <iframe
+                  src="https://www.google.com/maps?q=LGS+Johar+Town+Senior+Boys+Lahore&output=embed"
+                  title="LGS Johar Town Senior Boys location"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="absolute inset-0 h-full w-full"
+                />
               </div>
 
               <a
                 href="https://www.google.com/maps/search/?api=1&query=LGS+Johar+Town+Senior+Boys+Lahore"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 p-3 text-xs font-black uppercase tracking-wider transition hover:bg-white/10 sm:gap-3 sm:p-4 sm:text-sm"
+                className="mt-3 flex items-center justify-center gap-2 border border-white/15 bg-white/5 px-3 py-2 text-[10px] font-black uppercase tracking-wider transition hover:border-[#36e29b] hover:bg-white/10 sm:mt-5 sm:gap-3 sm:px-6 sm:py-4 sm:text-sm"
               >
-                <FaLocationDot size={15} className="sm:hidden" />
+                <FaLocationDot size={13} className="sm:hidden" />
                 <FaLocationDot size={17} className="hidden sm:block" />
                 Open in Google Maps
               </a>
