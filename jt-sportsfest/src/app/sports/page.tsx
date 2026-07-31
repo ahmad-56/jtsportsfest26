@@ -16,6 +16,7 @@ import { sports, type Sport } from "@/data/sports";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TeamCounter from "@/components/Counter";
+import RegisterNowSection from "@/components/RegisterNowSection";
 import Reveal from "@/components/Reveal";
 
 const links = [
@@ -298,6 +299,7 @@ export default function SportsGrid() {
           </div>
         </div>
             )}
+    <RegisterNowSection />
     <Footer />
     </>
 
