@@ -48,10 +48,10 @@ export default function SportsGrid() {
 
   return (
     <>
-        <Header />
+      <Header />
       <section
         id="sports"
-        className="relative overflow-hidden bg-[#f3f4ef] py-24 text-[#020d20] md:py-32"
+        className="relative overflow-hidden bg-[#f3f4ef] py-20 text-[#020d20] md:py-32"
       >
         <Image
           src="/images/hero3-sports.jpg"
@@ -67,39 +67,50 @@ export default function SportsGrid() {
           className="pointer-events-none absolute inset-0 opacity-[0.07]"
           style={{
             backgroundImage:
-                           "linear-gradient(#020d20 1px, transparent 1px), linear-gradient(90deg, #020d20 1px, transparent 1px)",
+              "linear-gradient(#020d20 1px, transparent 1px), linear-gradient(90deg, #020d20 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
         />
 
         <div className="relative mx-auto max-w-7xl px-6">
           <Reveal>
-            <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+            {/* Make the header relative so we can position a small counter on mobile */}
+            <div className="relative flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
               <div>
-                <p className="font-bold uppercase tracking-[0.22em] text-[#00633e]">
+                <p className="font-bold uppercase tracking-[0.12em] text-[#00633e] text-xs sm:text-sm">
                   Participate in upto 3 sports
                 </p>
 
-                <h2 className="mt-3 max-w-5xl text-6xl font-black uppercase leading-[1.0] md:text-10xl">
+                {/* Use clamp for responsive heading sizes so they scale with viewport */}
+                <h2 className="mt-3 max-w-5xl font-black uppercase leading-[1.0] text-[clamp(1.6rem,6.5vw,3.2rem)] sm:text-[clamp(1.8rem,6vw,3.8rem)] md:text-[clamp(2.6rem,4.5vw,4.8rem)] lg:text-[clamp(3.5rem,3.2vw,6rem)]">
                   sports & categories
-                  <span className="block text-[#00633e]">
+                  <span className="block text-[#00633e] text-[clamp(1.05rem,3.5vw,1.4rem)]">
                     JT Sportsfest XIII
                   </span>
                 </h2>
               </div>
-              <div className="mt-1">
+
+              {/* On larger screens show the normal (bigger) counter on the header area */}
+              <div className="mt-1 hidden lg:block">
+                <TeamCounter initialCount={0} />
+              </div>
+
+              {/* Small counter shown at top-right on mobile/sm screens. We wrap and scale it so it stays small */}
+              <div className="absolute right-4 top-4 z-20 block lg:hidden">
+                <div className="pointer-events-auto transform scale-90 origin-top-right">
                   <TeamCounter initialCount={0} />
+                </div>
               </div>
             </div>
           </Reveal>
 
-          <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
             {sports.map((sport) => (
               <Reveal key={sport.slug}>
                 <button
                   type="button"
                   onClick={() => setSelectedSport(sport)}
-                  className="group relative flex min-h-72 w-full cursor-pointer flex-col justify-between overflow-hidden rounded-2xl border border-white/15 bg-[#020d20] p-7 text-left text-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-[#36e29b] hover:shadow-[0_0_0_1px_rgba(54,226,155,0.25),0_25px_60px_rgba(0,99,62,0.35)]"
+                  className="group relative flex min-h-[180px] sm:min-h-72 w-full cursor-pointer flex-col justify-between overflow-hidden rounded-2xl border border-white/15 bg-[#020d20] p-6 sm:p-7 text-left text-white shadow-lg"
                 >
                   {/* Sport image */}
                   <Image
@@ -122,15 +133,15 @@ export default function SportsGrid() {
                   </span>
 
                   <div className="relative z-10">
-                    <p className="mb-3 text-xs font-black uppercase tracking-[0.18em] text-[#36e29b]">
+                    <p className="mb-2 text-xs font-black uppercase tracking-[0.18em] text-[#36e29b]">
                       {sport.category}
                     </p>
 
-                    <h3 className="text-3xl font-black uppercase leading-none">
+                    <h3 className="text-2xl sm:text-3xl font-black uppercase leading-none">
                       {sport.name}
                     </h3>
 
-                    <p className="mt-3 text-xs font-bold uppercase tracking-wider text-white/45 transition group-hover:text-white/70">
+                    <p className="mt-2 text-xs font-bold uppercase tracking-wider text-white/45 transition group-hover:text-white/70">
                       View event details
                     </p>
                   </div>
@@ -142,7 +153,7 @@ export default function SportsGrid() {
             ))}
             {/* final panel */}
             <Reveal>
-              <div className="group relative flex min-h-72 w-full cursor-default flex-col justify-end overflow-hidden rounded-2xl border border-white/15 bg-[#020d20] p-7 text-left text-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-[#36e29b] hover:shadow-[0_0_0_1px_rgba(54,226,155,0.25),0_25px_60px_rgba(0,99,62,0.35)]">
+              <div className="group relative flex min-h-[180px] sm:min-h-72 w-full cursor-default flex-col justify-end overflow-hidden rounded-2xl border border-white/15 bg-[#020d20] p-6 sm:p-7 text-left text-white shadow-lg">
                 <Image
                   src="/images/hero-sports.jpg"
                   alt=""
@@ -156,15 +167,15 @@ export default function SportsGrid() {
                 <div className="absolute inset-0 bg-[#00633e]/0 transition-colors duration-500 group-hover:bg-[#00633e]/15" />
 
                 <div className="relative z-10">
-                  <p className="mb-3 text-xs font-black uppercase tracking-[0.18em] text-[#36e29b]">
+                  <p className="mb-2 text-xs font-black uppercase tracking-[0.18em] text-[#36e29b]">
                     LGS JT
                   </p>
 
-                  <h3 className="text-3xl font-black uppercase leading-none">
+                  <h3 className="text-2xl sm:text-3xl font-black uppercase leading-none">
                     SPOrtsfest XIII
                   </h3>
 
-                  <p className="mt-4 text-sm leading-6 text-white/60">
+                  <p className="mt-3 text-sm leading-6 text-white/60">
                     24-27 Sep & 2-4 Oct
                   </p>
                 </div>
@@ -185,7 +196,7 @@ export default function SportsGrid() {
           onClick={() => setSelectedSport(null)}
         >
           <div
-            className="relative grid max-h-[94vh] w-full max-w-7xl overflow-hidden rounded-2xl border border-white/15 bg-[#020d20] shadow-[0_30px_100px_rgba(0,0,0,0.65)] lg:h-[88vh] lg:grid-cols-[minmax(420px,0.85fr)_minmax(0,1.15fr)]"
+            className="relative grid max-h-[94vh] w-full max-w-7xl overflow-hidden rounded-2xl border border-white/15 bg-[#020d20] shadow-[0_30px_100px_rgba(0,0,0,0.65)] lg:h-[88vh] lg:grid-cols-[minmax(380px,45%)_1fr]"
             onClick={(event) => event.stopPropagation()}
           >
             {/* Close button */}
@@ -199,7 +210,7 @@ export default function SportsGrid() {
             </button>
 
             {/* Left-side PNG image */}
-            <div className="relative flex min-h-[340px] items-center justify-center overflow-hidden bg-black/30 lg:min-h-0">
+            <div className="relative flex min-h-[240px] items-center justify-center overflow-hidden bg-black/30 lg:min-h-0">
               <Image
                 src={
                   selectedSport.image ||
@@ -221,7 +232,7 @@ export default function SportsGrid() {
             </div>
 
             {/* Right-side details and rules */}
-            <div className="relative overflow-y-auto p-7 text-white sm:p-10 lg:p-12">
+            <div className="relative overflow-y-auto p-6 sm:p-7 lg:p-12 text-white">
               <div className="pointer-events-none absolute -bottom-24 h-64 w-64 rounded-full bg-[#36e29b]/15 blur-[90px]" />
 
               <div className="relative z-10">
@@ -229,12 +240,12 @@ export default function SportsGrid() {
                   {selectedSport.category}
                 </p>
 
-                <h2 className="mt-4 pr-14 text-4xl font-black uppercase leading-none md:text-5xl lg:text-6xl">
+                <h2 className="mt-4 pr-14 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase leading-none">
                   {selectedSport.name}
                 </h2>
 
                 {/* Quick details */}
-                <div className="mt-3 grid gap-3 sm:grid-cols-4">
+                <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                   <DetailItem
                     icon={Users}
                     label="Team size"
@@ -261,7 +272,7 @@ export default function SportsGrid() {
                 </div>
 
                 {/* Rules */}
-                <div className="mt-9 border-t border-white/10 pt-8">
+                <div className="mt-8 border-t border-white/10 pt-6">
                   <h3 className="text-sm font-black uppercase tracking-[0.2em] text-[#36e29b]">
                     Event rules
                   </h3>
@@ -298,11 +309,10 @@ export default function SportsGrid() {
             </div>
           </div>
         </div>
-            )}
-    <RegisterNowSection />
-    <Footer />
+      )}
+      <RegisterNowSection />
+      <Footer />
     </>
-
   );
 }
 
