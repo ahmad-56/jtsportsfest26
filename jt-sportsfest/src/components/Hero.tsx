@@ -22,7 +22,7 @@ function EventDates() {
 
         <div className="mt-2 flex flex-wrap items-end gap-1.5 sm:flex-nowrap sm:gap-3">
           <span className="text-xl font-black leading-none text-white sm:text-3xl">
-            25 – 27
+            24 – 27
           </span>
 
           <span className="text-[9px] font-bold uppercase tracking-wider text-white/40 sm:text-xs">
@@ -127,7 +127,7 @@ export default function Hero() {
               width={500}
               height={500}
               priority
-              className="relative z-10 h-[clamp(250px,45svh,285px)] w-auto max-w-full object-contain drop-shadow-[0_30px_50px_rgba(0,0,0,0.45)] sm:h-[clamp(260px,38svh,380px)] lg:h-auto lg:w-full lg:max-w-[500px]"
+              className="relative z-10 h-[clamp(250px,45svh,285px)] w-auto max-w-full object-contain drop-shadow-[0_30px_50px_rgba(0,0,0,0.45)] sm:h-[clamp(260px,38svh,380px)] lg:h-auto lg:w-full"
             />
           </div>
 
@@ -137,7 +137,7 @@ export default function Hero() {
 
           <Link
             href="/register"
-            className="mt-5 inline-flex min-h-12 items-center justify-center rounded-lg bg-[#36e29b] px-7 py-3 text-sm font-black uppercase tracking-wider text-[#020d20] shadow-lg shadow-[#36e29b]/15 transition-all duration-300 hover:-translate-y-1 hover:bg-[#48f0aa] hover:shadow-xl hover:shadow-[#36e29b]/30 active:scale-[0.98] lg:hidden"
+            className="mt-5 inline-flex min-h-12 items-center justify-center rounded-lg bg-[#36e29b] px-7 py-3 text-sm font-black uppercase tracking-wider text-[#020d20] shadow-lg shadow-[#36e29b]/15"
           >
             Register Now
           </Link>
