@@ -22,7 +22,7 @@ function EventDates() {
 
         <div className="mt-2 flex flex-wrap items-end gap-1.5 sm:flex-nowrap sm:gap-3">
           <span className="text-xl font-black leading-none text-white sm:text-3xl">
-            24 – 27
+            25 – 27
           </span>
 
           <span className="text-[9px] font-bold uppercase tracking-wider text-white/40 sm:text-xs">
