@@ -127,7 +127,7 @@ export default function Hero() {
               width={500}
               height={500}
               priority
-              className="relative z-10 h-[clamp(250px,45svh,285px)] w-auto max-w-full object-contain drop-shadow-[0_30px_50px_rgba(0,0,0,0.45)] sm:h-[clamp(260px,38svh,380px)] lg:h-auto lg:w-full"
+              className="relative z-10 h-[clamp(190px,45svh,285px)] w-auto max-w-full object-contain drop-shadow-[0_30px_50px_rgba(0,0,0,0.45)] sm:h-[clamp(260px,38svh,380px)] lg:h-auto lg:w-full"
             />
           </div>
 
