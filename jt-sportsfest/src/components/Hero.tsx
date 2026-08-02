@@ -22,7 +22,7 @@ function EventDates() {
 
         <div className="mt-2 flex flex-wrap items-end gap-1.5 sm:flex-nowrap sm:gap-3">
           <span className="text-xl font-black leading-none text-white sm:text-3xl">
-            24 – 27
+            25 – 27
           </span>
 
           <span className="text-[9px] font-bold uppercase tracking-wider text-white/40 sm:text-xs">
@@ -127,7 +127,7 @@ export default function Hero() {
               width={500}
               height={500}
               priority
-              className="relative z-10 h-[clamp(190px,30svh,285px)] w-auto max-w-full object-contain drop-shadow-[0_30px_50px_rgba(0,0,0,0.45)] sm:h-[clamp(260px,38svh,380px)] lg:h-auto lg:w-full lg:max-w-[500px]"
+              className="relative z-10 h-[clamp(250px,45svh,285px)] w-auto max-w-full object-contain drop-shadow-[0_30px_50px_rgba(0,0,0,0.45)] sm:h-[clamp(260px,38svh,380px)] lg:h-auto lg:w-full lg:max-w-[500px]"
             />
           </div>
 
