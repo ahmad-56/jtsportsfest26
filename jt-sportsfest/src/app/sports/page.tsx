@@ -183,11 +183,11 @@ export default function SportsGrid() {
           role="dialog"
           aria-modal="true"
           aria-label={`${selectedSport.name} details`}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#020d20]/92 p-2 backdrop-blur-md sm:p-4 lg:p-6"
+          className="fixed inset-0 z-[100] flex items-center justify-center overflow-x-hidden bg-[#020d20]/92 p-2 backdrop-blur-md sm:p-4 lg:p-6"
           onClick={() => setSelectedSport(null)}
         >
           <div
-            className="relative grid max-h-[94svh] w-full max-w-6xl overflow-y-auto rounded-xl border border-white/15 bg-[#020d20] shadow-[0_30px_100px_rgba(0,0,0,0.7)] lg:h-[86vh] lg:grid-cols-[30%_70%] lg:overflow-hidden lg:rounded-2xl"
+            className="relative grid max-h-[94svh] min-w-0 w-full max-w-6xl overflow-x-hidden overflow-y-auto rounded-xl border border-white/15 bg-[#020d20] shadow-[0_30px_100px_rgba(0,0,0,0.7)] lg:h-[86vh] lg:grid-cols-[minmax(0,3fr)_minmax(0,7fr)] lg:overflow-hidden lg:rounded-2xl"
             onClick={(event) => event.stopPropagation()}
           >
             <button
@@ -203,7 +203,7 @@ export default function SportsGrid() {
               />
             </button>
 
-            <div className="relative h-[170px] overflow-hidden bg-black/30 sm:h-[220px] lg:h-full">
+            <div className="relative h-[170px] min-w-0 overflow-hidden bg-black/30 sm:h-[220px] lg:h-full">
               <Image
                 src={
                   selectedSport.image ||
@@ -223,19 +223,19 @@ export default function SportsGrid() {
               </span>
             </div>
 
-            <div className="relative p-4 text-white sm:p-6 lg:overflow-y-auto lg:p-8 xl:p-10">
+            <div className="relative min-w-0 overflow-x-hidden p-4 text-white sm:p-6 lg:overflow-y-auto lg:p-8 xl:p-10">
               <div className="pointer-events-none absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-[#36e29b]/15 blur-[90px]" />
 
-              <div className="relative z-10">
-                <p className="pr-12 text-[10px] font-black uppercase tracking-[0.2em] text-[#36e29b] sm:text-xs sm:tracking-[0.22em]">
+              <div className="relative z-10 min-w-0">
+                <p className="min-w-0 break-words pr-12 text-[10px] font-black uppercase tracking-[0.2em] text-[#36e29b] sm:text-xs sm:tracking-[0.22em]">
                   {selectedSport.category}
                 </p>
 
-                <h2 className="mt-3 pr-12 text-3xl font-black uppercase leading-none sm:text-4xl lg:text-5xl">
+                <h2 className="mt-3 min-w-0 break-words pr-12 text-3xl font-black uppercase leading-none sm:text-4xl lg:text-5xl">
                   {selectedSport.name}
                 </h2>
 
-                <div className="mt-5 grid grid-cols-2 gap-2.5 sm:gap-3 xl:grid-cols-4">
+                <div className="mt-5 grid min-w-0 grid-cols-2 gap-2.5 sm:gap-3 xl:grid-cols-4">
                   <DetailItem
                     icon={Users}
                     label="Team size"
@@ -261,34 +261,36 @@ export default function SportsGrid() {
                   />
                 </div>
 
-                <div className="mt-6 border-t border-white/10 pt-5 sm:mt-8 sm:pt-6">
+                <div className="mt-6 min-w-0 border-t border-white/10 pt-5 sm:mt-8 sm:pt-6">
                   <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#36e29b] sm:text-sm">
                     Event rules
                   </h3>
 
-                  <ul className="mt-4 space-y-3 sm:mt-5 sm:space-y-4">
+                  <ul className="mt-4 min-w-0 space-y-3 sm:mt-5 sm:space-y-4">
                     {selectedSport.rules.map((rule, index) => (
                       <li
                         key={`${selectedSport.slug}-rule-${index}`}
-                        className="flex gap-3 text-xs leading-6 text-white/65 sm:gap-4 sm:text-sm sm:leading-7"
+                        className="flex min-w-0 gap-3 text-xs leading-6 text-white/65 sm:gap-4 sm:text-sm sm:leading-7"
                       >
                         <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-[#36e29b]/10 text-[10px] font-black text-[#36e29b] sm:h-7 sm:w-7 sm:text-xs">
                           {index + 1}
                         </span>
 
-                        <span>{rule}</span>
+                        <span className="min-w-0 break-words">
+                          {rule}
+                        </span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
                 {selectedSport.note && (
-                  <div className="mt-6 border-l-2 border-[#36e29b] bg-[#36e29b]/10 p-4 sm:mt-8 sm:p-5">
-                    <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#36e29b] sm:text-xs">
+                  <div className="mt-6 min-w-0 overflow-hidden border-l-2 border-[#36e29b] bg-[#36e29b]/10 p-4 sm:mt-8 sm:p-5">
+                    <p className="break-words text-[10px] font-black uppercase tracking-[0.18em] text-[#36e29b] sm:text-xs">
                       Important note
                     </p>
 
-                    <p className="mt-2 text-xs leading-6 text-white/65 sm:text-sm sm:leading-7">
+                    <p className="mt-2 break-words text-xs leading-6 text-white/65 sm:text-sm sm:leading-7">
                       {selectedSport.note}
                     </p>
                   </div>
@@ -316,14 +318,17 @@ function DetailItem({
   value,
 }: DetailItemProps) {
   return (
-    <div className="border border-white/10 bg-white/[0.035] p-4">
-      <Icon size={18} className="text-[#36e29b]" />
+    <div className="min-w-0 overflow-hidden border border-white/10 bg-white/[0.035] p-3 sm:p-4">
+      <Icon
+        size={18}
+        className="text-[#36e29b]"
+      />
 
-      <p className="mt-4 text-[10px] font-black uppercase tracking-[0.18em] text-white/35">
+      <p className="mt-3 min-w-0 break-words text-[9px] font-black uppercase tracking-[0.12em] text-white/35 sm:mt-4 sm:text-[10px] sm:tracking-[0.18em]">
         {label}
       </p>
 
-      <p className="mt-2 text-sm font-bold text-white/80">
+      <p className="mt-2 min-w-0 break-words text-xs font-bold text-white/80 sm:text-sm">
         {value}
       </p>
     </div>
