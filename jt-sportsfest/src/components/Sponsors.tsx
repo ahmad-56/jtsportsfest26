@@ -38,7 +38,7 @@ export default function Sponsors() {
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#36e29b] to-transparent" />
 
       <div className="mx-auto max-w-7xl px-6">
-        <h2 className="text-center text-4xl font-black uppercase md:text-5xl">
+        <h2 className="text-center text-3xl font-black uppercase md:text-5xl">
           Our <span className="text-[#36e29b]">Sponsors</span>
         </h2>
       </div>

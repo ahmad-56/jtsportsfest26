@@ -77,11 +77,17 @@ export default function Header() {
             }
             aria-expanded={menuOpen}
           >
-            {menuOpen ? (
-              <X size={28} />
-            ) : (
-              <Menu size={28} />
-            )}
+            <span
+              className={`block transition-transform duration-500 ${
+                menuOpen ? "rotate-180" : "rotate-0"
+              }`}
+            >
+              {menuOpen ? (
+                <X size={28} />
+              ) : (
+                <Menu size={28} />
+              )}
+            </span>
           </button>
         </nav>
 
