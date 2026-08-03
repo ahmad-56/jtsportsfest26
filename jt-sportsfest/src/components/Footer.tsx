@@ -86,10 +86,6 @@ export default function Footer() {
               </div>
             </Link>
 
-            <p className="mt-7 max-w-md text-sm leading-7 text-white/55">
-              Become part of an unforgettable event.
-            </p>
-
             <Link
               href="/register"
               className="mt-8 inline-flex items-center gap-3 rounded-lg bg-[#36e29b] px-6 py-4 text-sm font-black uppercase tracking-wider text-[#020d20] transition duration-300 hover:-translate-y-1 hover:bg-white"

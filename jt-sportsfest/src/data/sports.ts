@@ -23,7 +23,7 @@ export const sports: Sport[] = [
     description:
       "Compete in an exciting cricket tournament that tests teamwork, strategy, discipline and individual performance.",
     teamSize: "11 playing + 2 subs",
-    date: "September 24–27",
+    date: "September 25–27",
     age: "U17, U19",
     format: "10 Overs / 5 Overs",
     rules: [

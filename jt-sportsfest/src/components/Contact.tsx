@@ -184,7 +184,7 @@ export default function Contact() {
                 href="https://www.google.com/maps/search/?api=1&query=LGS+Johar+Town+Senior+Boys+Lahore"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-3 flex items-center justify-center gap-2 border border-white/15 bg-white/5 px-3 py-2 text-[10px] font-black uppercase tracking-wider transition hover:border-[#36e29b] hover:bg-white/10 sm:mt-5 sm:gap-3 sm:px-6 sm:py-4 sm:text-sm"
+                className="mt-3 flex items-center justify-center gap-2 border border-white/15 bg-white/5 px-3 py-2 text-[10px] font-black uppercase tracking-wider transition hover:bg-[#36e29b] hover:text-black hover:translate-y-1 sm:mt-5 sm:gap-3 sm:px-6 sm:py-4 sm:text-sm"
               >
                 <FaLocationDot size={13} className="sm:hidden" />
                 <FaLocationDot size={17} className="hidden sm:block" />
