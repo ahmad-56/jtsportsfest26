@@ -13,13 +13,6 @@ import {
   VolumeX,
 } from "lucide-react";
 
-const links = [
-  { label: "Home", href: "/#home" },
-  { label: "About", href: "/#about" },
-  { label: "Sports", href: "/sports" },
-  { label: "Contact", href: "/#contact" },
-];
-
 const rules = [
   {
     number: "01",
@@ -90,8 +83,8 @@ export default function CodeOfConductPage() {
   return (
     <main className="min-h-screen bg-[#020d20] text-white">
       <Header />
-      {/* Hero */}
-      <section className="relative overflow-hidden border-b border-white/10 px-6 pb-20 pt-36">
+
+      <section className="relative overflow-hidden border-b border-white/10 px-4 pb-14 pt-32 sm:px-6 sm:pb-20 sm:pt-36">
         <Image
           src="/images/hero4-sports.jpg"
           alt=""
@@ -108,46 +101,45 @@ export default function CodeOfConductPage() {
         <div className="relative z-10 mx-auto max-w-7xl">
           <Link
             href="/#home"
-            className="group mb-10 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.15em] text-white/55 transition hover:text-[#36e29b]"
+            className="group mb-6 inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.12em] text-white/55 transition hover:text-[#36e29b] sm:mb-10 sm:gap-2 sm:text-sm sm:tracking-[0.15em]"
           >
-            <ArrowLeft
-              size={18}
-              className="transition-transform group-hover:-translate-x-1"
-            />
+            <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1 sm:h-[18px] sm:w-[18px]" />
             Back to SportsFest
           </Link>
 
-          <p className="mb-5 text-sm font-black uppercase tracking-[0.25em] text-[#36e29b]">
+          <p className="mb-3 text-[9px] font-black uppercase tracking-[0.18em] text-[#36e29b] sm:mb-5 sm:text-sm sm:tracking-[0.25em]">
             JT SportsFest Edition XIII
           </p>
 
-          <h1 className="max-w-5xl text-5xl font-black uppercase leading-[0.95] md:text-7xl lg:text-8xl">
-            Code of <span className="text-[#36e29b]">Conduct</span>
+          <h1 className="max-w-5xl text-4xl font-black uppercase leading-[0.95] sm:text-5xl md:text-7xl lg:text-8xl">
+            Code of{" "}
+            <span className="text-[#36e29b]">
+              Conduct
+            </span>
           </h1>
 
-          <p className="mt-7 max-w-3xl text-base leading-8 text-white/65 md:text-lg">
-            A delegate or delegation will be disqualified if they fail to refrain
-            from any of the following actions.
+          <p className="mt-4 max-w-3xl text-xs leading-5 text-white/65 sm:mt-7 sm:text-base sm:leading-8 md:text-lg">
+            A delegate or delegation will be disqualified if they fail to
+            refrain from any of the following actions.
           </p>
         </div>
       </section>
 
-      {/* all rules */}
-      <section className="px-6 pt-16">
+      <section className="px-4 pt-10 sm:px-6 sm:pt-16">
         <div className="mx-auto max-w-7xl">
-          <div className="relative overflow-hidden border border-[#36e29b]/30 bg-[#00633e]/20 p-6 md:flex md:items-center md:gap-6 md:p-8">
+          <div className="relative flex items-start gap-3 overflow-hidden border border-[#36e29b]/30 bg-[#00633e]/20 p-4 sm:block sm:p-6 md:flex md:items-center md:gap-6 md:p-8">
             <div className="absolute left-0 top-0 h-full w-1 bg-[#36e29b]" />
 
-            <span className="mb-5 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#36e29b] text-[#020d20] md:mb-0">
-              <AlertTriangle size={26} />
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#36e29b] text-[#020d20] sm:mb-5 sm:h-14 sm:w-14 md:mb-0">
+              <AlertTriangle className="h-4 w-4 sm:h-[26px] sm:w-[26px]" />
             </span>
 
-            <div>
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-[#36e29b]">
+            <div className="min-w-0">
+              <p className="text-[9px] font-black uppercase tracking-[0.15em] text-[#36e29b] sm:text-xs sm:tracking-[0.22em]">
                 Zero-tolerance policy
               </p>
 
-              <p className="mt-2 max-w-4xl text-base leading-7 text-white/75">
+              <p className="mt-1.5 max-w-4xl text-[10px] leading-4 text-white/75 sm:mt-2 sm:text-base sm:leading-7">
                 Serious misconduct may result in immediate disqualification,
                 removal from the venue and further disciplinary action by the
                 school administration.
@@ -157,43 +149,43 @@ export default function CodeOfConductPage() {
         </div>
       </section>
 
-      {/* Rules */}
-      <section className="px-6 py-20">
-        <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <section className="px-3 py-12 sm:px-6 sm:py-20">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-2.5 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
           {rules.map((rule) => {
             const Icon = rule.icon;
 
             return (
               <article
                 key={rule.number}
-                className="group relative overflow-hidden border border-white/10 bg-white/[0.035] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#36e29b]/50 hover:bg-[#00633e]/10"
+                className="group relative h-full min-w-0 overflow-hidden border border-white/10 bg-white/[0.035] p-3 transition-all duration-300 hover:-translate-y-1 hover:border-[#36e29b]/50 hover:bg-[#00633e]/10 sm:p-7"
               >
-                <div className="absolute left-0 top-0 h-full w-1 bg-[#36e29b]" />
+                <div className="absolute left-0 top-0 h-full w-0.5 bg-[#36e29b] sm:w-1" />
 
-                <div className="flex items-center justify-between">
-                  <span className="flex h-12 w-12 items-center justify-center border border-[#36e29b]/25 bg-[#36e29b]/10 text-[#36e29b] transition group-hover:bg-[#36e29b] group-hover:text-[#020d20]">
-                    <Icon size={22} />
+                <div className="flex items-center justify-between gap-2">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center border border-[#36e29b]/25 bg-[#36e29b]/10 text-[#36e29b] transition group-hover:bg-[#36e29b] group-hover:text-[#020d20] sm:h-12 sm:w-12">
+                    <Icon className="h-4 w-4 sm:h-[22px] sm:w-[22px]" />
                   </span>
 
-                  <span className="text-4xl font-black text-white/[0.06]">
+                  <span className="text-2xl font-black text-white/[0.06] sm:text-4xl">
                     {rule.number}
                   </span>
                 </div>
 
-                <h2 className="mt-6 text-xl font-black uppercase tracking-wide text-white">
+                <h2 className="mt-3 break-words text-[11px] font-black uppercase leading-[1.15] tracking-normal text-white sm:mt-6 sm:text-xl sm:leading-normal sm:tracking-wide">
                   {rule.title}
                 </h2>
 
-                <p className="mt-4 text-sm leading-7 text-white/60">
+                <p className="mt-2 break-words text-[9px] leading-[1.45] text-white/60 sm:mt-4 sm:text-sm sm:leading-7">
                   {rule.description}
                 </p>
 
-                <div className="absolute -bottom-16 -right-16 h-32 w-32 rounded-full bg-[#36e29b]/0 blur-3xl transition duration-300 group-hover:bg-[#36e29b]/15" />
+                <div className="absolute -bottom-10 -right-10 h-20 w-20 rounded-full bg-[#36e29b]/0 blur-2xl transition duration-300 group-hover:bg-[#36e29b]/15 sm:-bottom-16 sm:-right-16 sm:h-32 sm:w-32 sm:blur-3xl" />
               </article>
             );
           })}
         </div>
       </section>
+
       <Footer />
     </main>
   );
