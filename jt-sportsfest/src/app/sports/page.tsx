@@ -51,7 +51,7 @@ export default function SportsGrid() {
       <Header />
       <section
         id="sports"
-        className="relative overflow-hidden bg-[#f3f4ef] py-20 text-[#020d20] md:py-32"
+        className="relative overflow-hidden bg-[#f3f4ef] pb-20 pt-28 text-[#020d20] sm:pt-32 md:py-32"
       >
         <Image
           src="/images/hero3-sports.jpg"
@@ -74,50 +74,41 @@ export default function SportsGrid() {
 
         <div className="relative mx-auto max-w-7xl px-6">
           <Reveal>
-            {/* Make the header relative so we can position a small counter on mobile */}
-            <div className="relative flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-              <div>
-                <p className="font-bold uppercase tracking-[0.12em] text-[#00633e] text-xs sm:text-sm">
-                  Participate in upto 3 sports
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between lg:gap-6">
+              <div className="w-full">
+                <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#00633e] sm:text-sm">
+                  Participate in up to 3 sports
                 </p>
 
-                {/* Use clamp for responsive heading sizes so they scale with viewport */}
-                <h2 className="mt-3 max-w-5xl font-black uppercase leading-[1.0] text-[clamp(1.6rem,6.5vw,3.2rem)] sm:text-[clamp(1.8rem,6vw,3.8rem)] md:text-[clamp(2.6rem,4.5vw,4.8rem)] lg:text-[clamp(3.5rem,3.2vw,6rem)]">
-                  sports & categories
-                  <span className="block text-[#00633e] text-[clamp(1.05rem,3.5vw,1.4rem)]">
-                    JT Sportsfest XIII
+                <h2 className="mt-3 max-w-5xl text-[clamp(1.6rem,6.5vw,3.2rem)] font-black uppercase leading-[1] sm:text-[clamp(1.8rem,6vw,3.8rem)] md:text-[clamp(2.6rem,4.5vw,4.8rem)] lg:text-[clamp(3.5rem,3.2vw,6rem)]">
+                  Sports & categories
+
+                  <span className="block text-[clamp(1.05rem,3.5vw,1.4rem)] text-[#00633e]">
+                    JT SportsFest XIII
                   </span>
                 </h2>
               </div>
 
-              {/* On larger screens show the normal (bigger) counter on the header area */}
-              <div className="mt-1 hidden lg:block">
+              <div className="hidden shrink-0 lg:block lg:self-end lg:pb-1">
                 <TeamCounter initialCount={0} />
-              </div>
-
-              {/* Small counter shown at top-right on mobile/sm screens. We wrap and scale it so it stays small */}
-              <div className="absolute right-4 top-4 z-20 block lg:hidden">
-                <div className="pointer-events-auto transform scale-90 origin-top-right">
-                  <TeamCounter initialCount={0} />
-                </div>
               </div>
             </div>
           </Reveal>
 
-          <div className="mt-12 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid grid-cols-2 gap-2.5 sm:mt-10 sm:gap-3 lg:mt-12 lg:grid-cols-4 lg:gap-4">
             {sports.map((sport) => (
               <Reveal key={sport.slug}>
                 <button
                   type="button"
                   onClick={() => setSelectedSport(sport)}
-                  className="group relative flex min-h-[180px] sm:min-h-72 w-full cursor-pointer flex-col justify-between overflow-hidden rounded-2xl border border-white/15 bg-[#020d20] p-6 sm:p-7 text-left text-white shadow-lg"
+                  className="group relative flex min-h-[145px] w-full cursor-pointer flex-col justify-between overflow-hidden rounded-xl border border-white/15 bg-[#020d20] p-3 text-left text-white shadow-lg sm:min-h-[190px] sm:p-4 lg:min-h-72 lg:rounded-2xl lg:p-7"
                 >
                   {/* Sport image */}
                   <Image
                     src={sport.image || "/images/sports/placeholder.jpg"}
                     alt={sport.name}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    sizes="(max-width: 1023px) 50vw, 25vw"
                     className="object-cover opacity-80 transition duration-700 group-hover:scale-110 group-hover:opacity-35"
                   />
 
@@ -128,37 +119,37 @@ export default function SportsGrid() {
                   <div className="absolute inset-0 bg-[#00633e]/0 transition-colors duration-500 group-hover:bg-[#00633e]/15" />
 
                   {/*Card number*/}
-                  <span className="relative z-10 text-4xl font-black italic text-white/20 transition duration-500 group-hover:text-[#36e29b]/50">
+                  <span className="relative z-10 text-2xl font-black italic text-white/20 transition duration-500 group-hover:text-[#36e29b]/50 sm:text-3xl lg:text-4xl">
                     {sport.number}
                   </span>
 
-                  <div className="relative z-10">
-                    <p className="mb-2 text-xs font-black uppercase tracking-[0.18em] text-[#36e29b]">
+                  <div className="relative z-10 min-w-0">
+                    <p className="mb-1 text-[8px] font-black uppercase tracking-[0.1em] text-[#36e29b] sm:text-[10px] sm:tracking-[0.14em] lg:mb-2 lg:text-xs lg:tracking-[0.18em]">
                       {sport.category}
                     </p>
 
-                    <h3 className="text-2xl sm:text-3xl font-black uppercase leading-none">
+                    <h3 className="break-words text-base font-black uppercase leading-[0.95] sm:text-xl lg:text-3xl lg:leading-none">
                       {sport.name}
                     </h3>
 
-                    <p className="mt-2 text-xs font-bold uppercase tracking-wider text-white/45 transition group-hover:text-white/70">
+                    <p className="mt-1 text-[8px] font-bold uppercase tracking-wide text-white/45 transition group-hover:text-white/70 sm:text-[10px] lg:mt-2 lg:text-xs lg:tracking-wider">
                       View event details
                     </p>
                   </div>
 
                   {/* Glowing hover circle */}
-                  <div className="pointer-events-none absolute -bottom-16 -right-16 h-40 w-40 rounded-full bg-[#36e29b]/0 blur-3xl transition-all duration-500 group-hover:bg-[#36e29b]/30" />
+                  <div className="pointer-events-none absolute -bottom-10 -right-10 h-24 w-24 rounded-full bg-[#36e29b]/0 blur-2xl transition-all duration-500 group-hover:bg-[#36e29b]/30 lg:-bottom-16 lg:-right-16 lg:h-40 lg:w-40 lg:blur-3xl" />
                 </button>
               </Reveal>
             ))}
             {/* final panel */}
             <Reveal>
-              <div className="group relative flex min-h-[180px] sm:min-h-72 w-full cursor-default flex-col justify-end overflow-hidden rounded-2xl border border-white/15 bg-[#020d20] p-6 sm:p-7 text-left text-white shadow-lg">
+              <div className="group relative flex min-h-[145px] w-full cursor-default flex-col justify-end overflow-hidden rounded-xl border border-white/15 bg-[#020d20] p-3 text-left text-white shadow-lg sm:min-h-[190px] sm:p-4 lg:min-h-72 lg:rounded-2xl lg:p-7">
                 <Image
                   src="/images/hero-sports.jpg"
                   alt=""
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  sizes="(max-width: 1023px) 50vw, 25vw"
                   className="object-cover opacity-45 transition duration-700 group-hover:scale-105 group-hover:opacity-30"
                 />
 
@@ -166,17 +157,17 @@ export default function SportsGrid() {
 
                 <div className="absolute inset-0 bg-[#00633e]/0 transition-colors duration-500 group-hover:bg-[#00633e]/15" />
 
-                <div className="relative z-10">
-                  <p className="mb-2 text-xs font-black uppercase tracking-[0.18em] text-[#36e29b]">
+                <div className="relative z-10 min-w-0">
+                  <p className="mb-1 text-[8px] font-black uppercase tracking-[0.1em] text-[#36e29b] sm:text-[10px] lg:mb-2 lg:text-xs lg:tracking-[0.18em]">
                     LGS JT
                   </p>
 
-                  <h3 className="text-2xl sm:text-3xl font-black uppercase leading-none">
-                    SPOrtsfest XIII
+                  <h3 className="break-words text-base font-black uppercase leading-[0.95] sm:text-xl lg:text-3xl lg:leading-none">
+                    SportsFest XIII
                   </h3>
 
-                  <p className="mt-3 text-sm leading-6 text-white/60">
-                    25-27 Sep & 2-4 Oct
+                  <p className="mt-1.5 text-[9px] leading-4 text-white/60 sm:text-xs lg:mt-3 lg:text-sm lg:leading-6">
+                    25–27 Sep & 2–4 Oct
                   </p>
                 </div>
 
@@ -192,60 +183,59 @@ export default function SportsGrid() {
           role="dialog"
           aria-modal="true"
           aria-label={`${selectedSport.name} details`}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#020d20]/90 p-3 backdrop-blur-md md:p-6"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#020d20]/92 p-2 backdrop-blur-md sm:p-4 lg:p-6"
           onClick={() => setSelectedSport(null)}
         >
           <div
-            className="relative grid max-h-[94vh] w-full max-w-7xl overflow-hidden rounded-2xl border border-white/15 bg-[#020d20] shadow-[0_30px_100px_rgba(0,0,0,0.65)] lg:h-[88vh] lg:grid-cols-[minmax(380px,45%)_1fr]"
+            className="relative grid max-h-[94svh] w-full max-w-6xl overflow-y-auto rounded-xl border border-white/15 bg-[#020d20] shadow-[0_30px_100px_rgba(0,0,0,0.7)] lg:h-[86vh] lg:grid-cols-[30%_70%] lg:overflow-hidden lg:rounded-2xl"
             onClick={(event) => event.stopPropagation()}
           >
-            {/* Close button */}
             <button
               type="button"
               onClick={() => setSelectedSport(null)}
               aria-label="Close sport details"
-              className="absolute right-8 top-4 z-30 flex h-11 w-11 cursor-pointer items-center justify-center rounded-lg bg-[#36e29b] text-[#020d20] transition hover:scale-105 hover:bg-white"
+              className="absolute right-3 top-3 z-30 grid h-9 w-9 cursor-pointer place-items-center rounded-lg bg-[#36e29b] text-[#020d20] shadow-xl transition-all duration-300 hover:scale-105 hover:bg-white sm:right-4 sm:top-4 sm:h-10 sm:w-10 lg:right-8 lg:top-8 xl:right-10 xl:top-10"
             >
-              <X size={22} />
+              <X
+                size={20}
+                strokeWidth={2.5}
+                className="block"
+              />
             </button>
 
-            {/* Left-side PNG image */}
-            <div className="relative flex min-h-[240px] items-center justify-center overflow-hidden bg-black/30 lg:min-h-0">
+            <div className="relative h-[170px] overflow-hidden bg-black/30 sm:h-[220px] lg:h-full">
               <Image
                 src={
                   selectedSport.image ||
                   "/images/sports/placeholder.png"
                 }
                 alt={selectedSport.name}
-                width={1086}
-                height={1448}
-                sizes="(max-width: 1024px) 100vw, 45vw"
-                className="h-full max-h-[88vh] w-full object-contain"
+                fill
+                sizes="(max-width: 1023px) 100vw, 30vw"
+                className="object-contain"
                 priority
               />
 
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#020d20]/45 via-transparent to-[#020d20]/10" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#020d20]/70 via-transparent to-[#020d20]/10" />
 
-              <span className="absolute bottom-6 left-6 text-7xl font-black italic text-white/20">
+              <span className="absolute bottom-3 left-4 text-5xl font-black italic text-white/20 sm:text-6xl lg:bottom-6 lg:left-6 lg:text-7xl">
                 {selectedSport.number}
               </span>
             </div>
 
-            {/* Right-side details and rules */}
-            <div className="relative overflow-y-auto p-6 sm:p-7 lg:p-12 text-white">
-              <div className="pointer-events-none absolute -bottom-24 h-64 w-64 rounded-full bg-[#36e29b]/15 blur-[90px]" />
+            <div className="relative p-4 text-white sm:p-6 lg:overflow-y-auto lg:p-8 xl:p-10">
+              <div className="pointer-events-none absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-[#36e29b]/15 blur-[90px]" />
 
               <div className="relative z-10">
-                <p className="pr-14 text-xs font-black uppercase tracking-[0.22em] text-[#36e29b]">
+                <p className="pr-12 text-[10px] font-black uppercase tracking-[0.2em] text-[#36e29b] sm:text-xs sm:tracking-[0.22em]">
                   {selectedSport.category}
                 </p>
 
-                <h2 className="mt-4 pr-14 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase leading-none">
+                <h2 className="mt-3 pr-12 text-3xl font-black uppercase leading-none sm:text-4xl lg:text-5xl">
                   {selectedSport.name}
                 </h2>
 
-                {/* Quick details */}
-                <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="mt-5 grid grid-cols-2 gap-2.5 sm:gap-3 xl:grid-cols-4">
                   <DetailItem
                     icon={Users}
                     label="Team size"
@@ -260,30 +250,29 @@ export default function SportsGrid() {
 
                   <DetailItem
                     icon={Users}
-                    label="Age Groups"
+                    label="Age groups"
                     value={selectedSport.age}
                   />
 
                   <DetailItem
                     icon={Trophy}
-                    label="Competition Format"
+                    label="Competition format"
                     value={selectedSport.format}
                   />
                 </div>
 
-                {/* Rules */}
-                <div className="mt-8 border-t border-white/10 pt-6">
-                  <h3 className="text-sm font-black uppercase tracking-[0.2em] text-[#36e29b]">
+                <div className="mt-6 border-t border-white/10 pt-5 sm:mt-8 sm:pt-6">
+                  <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#36e29b] sm:text-sm">
                     Event rules
                   </h3>
 
-                  <ul className="mt-5 space-y-4">
+                  <ul className="mt-4 space-y-3 sm:mt-5 sm:space-y-4">
                     {selectedSport.rules.map((rule, index) => (
                       <li
                         key={`${selectedSport.slug}-rule-${index}`}
-                        className="flex gap-4 text-sm leading-7 text-white/65"
+                        className="flex gap-3 text-xs leading-6 text-white/65 sm:gap-4 sm:text-sm sm:leading-7"
                       >
-                        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-[#36e29b]/10 text-xs font-black text-[#36e29b]">
+                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-[#36e29b]/10 text-[10px] font-black text-[#36e29b] sm:h-7 sm:w-7 sm:text-xs">
                           {index + 1}
                         </span>
 
@@ -293,14 +282,13 @@ export default function SportsGrid() {
                   </ul>
                 </div>
 
-                {/* Important note */}
                 {selectedSport.note && (
-                  <div className="mt-8 border-l-2 border-[#36e29b] bg-[#36e29b]/10 p-5">
-                    <p className="text-xs font-black uppercase tracking-[0.18em] text-[#36e29b]">
+                  <div className="mt-6 border-l-2 border-[#36e29b] bg-[#36e29b]/10 p-4 sm:mt-8 sm:p-5">
+                    <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#36e29b] sm:text-xs">
                       Important note
                     </p>
 
-                    <p className="mt-2 text-sm leading-7 text-white/65">
+                    <p className="mt-2 text-xs leading-6 text-white/65 sm:text-sm sm:leading-7">
                       {selectedSport.note}
                     </p>
                   </div>
