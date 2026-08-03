@@ -85,7 +85,7 @@ export default function Hero() {
 
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_52%,rgba(0,99,62,.45),transparent_43%)] lg:bg-[radial-gradient(circle_at_79%_40%,rgba(0,99,62,.45),transparent_35%)]" />
 
-      <div className="relative mx-auto flex min-h-[calc(100svh-6rem)] max-w-7xl flex-col px-4 py-6 sm:px-6 sm:py-10 lg:grid lg:grid-cols-2 lg:items-center lg:gap-10 lg:py-0">
+      <div className="relative mx-auto flex min-h-[calc(100svh-6rem)] max-w-7xl flex-col px-4 py-4 sm:px-6 sm:py-8 lg:grid lg:grid-cols-2 lg:items-center lg:gap-10 lg:py-0">
         <div className="text-center lg:text-left">
           <motion.p
             initial={{ opacity: 0, y: 25 }}
@@ -99,10 +99,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15 }}
-            className="text-[clamp(2.5rem,12vw,3.75rem)] font-NexaXBold font-black uppercase leading-[0.92] sm:text-7xl sm:leading-[0.9] md:text-8xl lg:text-9xl"
+            className="text-[clamp(2.25rem,10vw,3.25rem)] font-NexaXBold font-black uppercase leading-[0.92] sm:text-6xl sm:leading-[0.9] md:text-7xl lg:text-[7.5rem]"
           >
             SPORTSFEST
-            <span className="block text-[#36e29b]">
+
+            <span className="mt-1 block text-[0.7em] leading-[0.95] text-[#36e29b] sm:text-[0.72em] lg:text-[0.9em]">
               Edition XIII
             </span>
           </motion.h1>
@@ -116,9 +117,9 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.85, rotate: 4 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative mt-5 flex flex-col items-center justify-center sm:mt-7 lg:left-30 lg:mt-0 lg:-top-10"
+          className="relative mt-0 flex flex-col items-center justify-center lg:mt-0 lg:-translate-y-8 lg:translate-x-10 xl:translate-x-14"
         >
-          <div className="relative flex items-center justify-center">
+          <div className="relative -my-5 flex items-center justify-center sm:-my-7 lg:my-0">
             <div className="absolute inset-8 rounded-full bg-[#36e29b]/10 blur-3xl" />
 
             <Image
@@ -127,23 +128,23 @@ export default function Hero() {
               width={500}
               height={500}
               priority
-              className="relative z-10 h-[clamp(190px,45svh,285px)] w-auto max-w-full object-contain drop-shadow-[0_30px_50px_rgba(0,0,0,0.45)] sm:h-[clamp(260px,38svh,380px)] lg:h-auto lg:w-full"
+              className="relative z-10 h-[clamp(230px,42svh,310px)] w-auto max-w-full object-contain drop-shadow-[0_30px_50px_rgba(0,0,0,0.45)] sm:h-[clamp(280px,38svh,370px)] lg:h-[400px] lg:w-auto xl:h-[430px]"
             />
           </div>
 
-          <div className="flex w-full justify-center lg:-mt-10 lg:pb-8">
+          <div className="relative z-20 -mt-1 flex w-full justify-center sm:-mt-2 lg:-mt-9">
             <Timer />
           </div>
 
           <Link
             href="/register"
-            className="mt-5 inline-flex min-h-12 items-center justify-center rounded-lg bg-[#36e29b] px-7 py-3 text-sm font-black uppercase tracking-wider text-[#020d20] shadow-lg shadow-[#36e29b]/15"
+            className="mt-3 inline-flex min-h-11 items-center justify-center rounded-lg bg-[#36e29b] px-6 py-2.5 text-xs font-black uppercase tracking-wider text-[#020d20] shadow-lg shadow-[#36e29b]/15 transition-all duration-300 hover:-translate-y-1 hover:bg-[#48f0aa] lg:hidden"
           >
             Register Now
           </Link>
         </motion.div>
 
-        <div className="mt-7 flex w-full justify-center pb-6 lg:hidden">
+        <div className="mt-5 flex w-full justify-center pb-5 lg:hidden">
           <EventDates />
         </div>
       </div>
