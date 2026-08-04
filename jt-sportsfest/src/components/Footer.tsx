@@ -7,9 +7,10 @@ import {
   MapPin,
   MessageCircle,
   Phone,
-  ShieldCheck,
+  SquareChartGantt,
   Volleyball,
   UserPen,
+  ChessKnight,
 } from "lucide-react";
 import { FaInstagram,
          FaFacebook,
@@ -22,9 +23,9 @@ const navigation = [
   {
     label: "Rules",
     href: "/rules",
-    icon: ShieldCheck,
+    icon: SquareChartGantt,
   },
-  { label: "Sports", href: "/sports", icon: Volleyball },
+  { label: "Sports", href: "/sports", icon: ChessKnight },
   {
     label: "Contact",
     href: "/#contact",
