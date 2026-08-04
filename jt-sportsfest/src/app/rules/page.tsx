@@ -81,10 +81,10 @@ const rules = [
 
 export default function CodeOfConductPage() {
   return (
-    <main className="min-h-screen bg-[#020d20] text-white">
+    <main className="min-h-screen overflow-x-hidden bg-[#020d20] text-white">
       <Header />
 
-      <section className="relative overflow-hidden border-b border-white/10 px-4 pb-14 pt-32 sm:px-6 sm:pb-20 sm:pt-36">
+      <section className="relative overflow-hidden border-b border-white/10 px-4 pb-12 pt-28 sm:px-6 sm:pb-20 sm:pt-36">
         <Image
           src="/images/hero4-sports.jpg"
           alt=""
@@ -101,17 +101,17 @@ export default function CodeOfConductPage() {
         <div className="relative z-10 mx-auto max-w-7xl">
           <Link
             href="/#home"
-            className="group mb-6 inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.12em] text-white/55 transition hover:text-[#36e29b] sm:mb-10 sm:gap-2 sm:text-sm sm:tracking-[0.15em]"
+            className="group mb-5 inline-flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-[0.12em] text-white/55 transition hover:text-[#36e29b] sm:mb-10 sm:gap-2 sm:text-sm sm:tracking-[0.15em]"
           >
-            <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1 sm:h-[18px] sm:w-[18px]" />
+            <ArrowLeft className="h-3.5 w-3.5 transition-transform group-hover:-translate-x-1 sm:h-[18px] sm:w-[18px]" />
             Back to SportsFest
           </Link>
 
-          <p className="mb-3 text-[9px] font-black uppercase tracking-[0.18em] text-[#36e29b] sm:mb-5 sm:text-sm sm:tracking-[0.25em]">
+          <p className="mb-3 text-[9px] font-black uppercase tracking-[0.16em] text-[#36e29b] sm:mb-5 sm:text-sm sm:tracking-[0.25em]">
             JT SportsFest Edition XIII
           </p>
 
-          <h1 className="max-w-5xl text-4xl font-black uppercase leading-[0.95] sm:text-5xl md:text-7xl lg:text-8xl">
+          <h1 className="max-w-5xl text-3xl font-black uppercase leading-[0.95] sm:text-5xl md:text-7xl lg:text-8xl">
             Code of{" "}
             <span className="text-[#36e29b]">
               Conduct
@@ -125,21 +125,21 @@ export default function CodeOfConductPage() {
         </div>
       </section>
 
-      <section className="px-4 pt-10 sm:px-6 sm:pt-16">
+      <section className="px-4 pt-8 sm:px-6 sm:pt-16">
         <div className="mx-auto max-w-7xl">
-          <div className="relative flex items-start gap-3 overflow-hidden border border-[#36e29b]/30 bg-[#00633e]/20 p-4 sm:block sm:p-6 md:flex md:items-center md:gap-6 md:p-8">
+          <div className="relative flex items-start gap-3 overflow-hidden border border-[#36e29b]/30 bg-[#00633e]/20 p-3.5 sm:block sm:p-6 md:flex md:items-center md:gap-6 md:p-8">
             <div className="absolute left-0 top-0 h-full w-1 bg-[#36e29b]" />
 
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#36e29b] text-[#020d20] sm:mb-5 sm:h-14 sm:w-14 md:mb-0">
-              <AlertTriangle className="h-4 w-4 sm:h-[26px] sm:w-[26px]" />
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#36e29b] text-[#020d20] sm:mb-5 sm:h-14 sm:w-14 md:mb-0">
+              <AlertTriangle className="h-3.5 w-3.5 sm:h-[26px] sm:w-[26px]" />
             </span>
 
             <div className="min-w-0">
-              <p className="text-[9px] font-black uppercase tracking-[0.15em] text-[#36e29b] sm:text-xs sm:tracking-[0.22em]">
+              <p className="text-[9px] font-black uppercase tracking-[0.14em] text-[#36e29b] sm:text-xs sm:tracking-[0.22em]">
                 Zero-tolerance policy
               </p>
 
-              <p className="mt-1.5 max-w-4xl text-[10px] leading-4 text-white/75 sm:mt-2 sm:text-base sm:leading-7">
+              <p className="mt-1.5 text-[11px] leading-[1.55] text-white/75 sm:mt-2 sm:text-base sm:leading-7">
                 Serious misconduct may result in immediate disqualification,
                 removal from the venue and further disciplinary action by the
                 school administration.
@@ -149,15 +149,15 @@ export default function CodeOfConductPage() {
         </div>
       </section>
 
-      <section className="px-3 py-12 sm:px-6 sm:py-20">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-2.5 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <section className="px-3 py-10 sm:px-6 sm:py-20">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 items-stretch gap-2.5 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
           {rules.map((rule) => {
             const Icon = rule.icon;
 
             return (
               <article
                 key={rule.number}
-                className="group relative h-full min-w-0 overflow-hidden border border-white/10 bg-white/[0.035] p-3 transition-all duration-300 hover:-translate-y-1 hover:border-[#36e29b]/50 hover:bg-[#00633e]/10 sm:p-7"
+                className="group relative flex h-full min-w-0 flex-col overflow-hidden rounded-lg border border-white/10 bg-white/[0.035] p-3 transition-all duration-300 hover:-translate-y-1 hover:border-[#36e29b]/50 hover:bg-[#00633e]/10 sm:rounded-none sm:p-7"
               >
                 <div className="absolute left-0 top-0 h-full w-0.5 bg-[#36e29b] sm:w-1" />
 
@@ -166,16 +166,16 @@ export default function CodeOfConductPage() {
                     <Icon className="h-4 w-4 sm:h-[22px] sm:w-[22px]" />
                   </span>
 
-                  <span className="text-2xl font-black text-white/[0.06] sm:text-4xl">
+                  <span className="text-xl font-black text-white/[0.07] sm:text-4xl">
                     {rule.number}
                   </span>
                 </div>
 
-                <h2 className="mt-3 break-words text-[11px] font-black uppercase leading-[1.15] tracking-normal text-white sm:mt-6 sm:text-xl sm:leading-normal sm:tracking-wide">
+                <h2 className="mt-3 min-w-0 break-words text-[11px] font-black uppercase leading-[1.25] tracking-normal text-white [overflow-wrap:anywhere] sm:mt-6 sm:text-xl sm:leading-normal sm:tracking-wide">
                   {rule.title}
                 </h2>
 
-                <p className="mt-2 break-words text-[9px] leading-[1.45] text-white/60 sm:mt-4 sm:text-sm sm:leading-7">
+                <p className="mt-2 min-w-0 break-words text-[10px] leading-[1.55] text-white/60 [overflow-wrap:anywhere] sm:mt-4 sm:text-sm sm:leading-7">
                   {rule.description}
                 </p>
 

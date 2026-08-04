@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function RegisterPage() {
   useEffect(() => {
@@ -54,6 +55,7 @@ export default function RegisterPage() {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 }
