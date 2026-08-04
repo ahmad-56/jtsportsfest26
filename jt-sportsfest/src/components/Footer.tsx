@@ -9,16 +9,18 @@ import {
   Phone,
   ShieldCheck,
   Volleyball,
-  UserPlus,
+  UserPen,
 } from "lucide-react";
-import { FaInstagram } from "react-icons/fa6";
-import { FaFutbol } from "react-icons/fa6";
+import { FaInstagram,
+         FaFacebook,
+         FaGithub
+} from "react-icons/fa6";
 
 const navigation = [
   { label: "Home", href: "/#home", icon: House },
   { label: "About", href: "/#about", icon: Info },
   {
-    label: "Conduct",
+    label: "Rules",
     href: "/rules",
     icon: ShieldCheck,
   },
@@ -31,7 +33,7 @@ const navigation = [
   {
     label: "Register",
     href: "/register",
-    icon: UserPlus,
+    icon: UserPen,
   },
 ];
 
@@ -58,6 +60,12 @@ const connectItems = [
     label: "Instagram",
     href: "https://www.instagram.com/jtsportsfest/",
     icon: FaInstagram,
+    external: true,
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/lgsjtsportsfest/",
+    icon: FaFacebook,
     external: true,
   },
 ];
@@ -221,9 +229,14 @@ export default function Footer() {
                     href={developer.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block font-semibold text-[#36e29b] transition-all duration-300 hover:-translate-y-0.5 hover:text-white hover:drop-shadow-[0_0_7px_rgba(54,226,155,0.6)]"
+                    className="group inline-flex items-center gap-1 font-semibold text-[#36e29b] transition-all duration-300 hover:-translate-y-0.5 hover:text-white hover:drop-shadow-[0_0_7px_rgba(54,226,155,0.6)]"
                   >
                     {developer.name}
+                    <FaGithub
+                      size={11}
+                      aria-hidden="true"
+                      className="text-[#36e29b]/70 transition-colors group-hover:text-white"
+                    />
                   </a>
 
                   {index < developers.length - 1 && (
@@ -248,9 +261,14 @@ export default function Footer() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block font-semibold text-[#36e29b] transition-all duration-300 hover:-translate-y-0.5 hover:text-white hover:drop-shadow-[0_0_7px_rgba(54,226,155,0.6)]"
+                  className="group inline-flex items-center gap-1 font-semibold text-[#36e29b] transition-all duration-300 hover:-translate-y-0.5 hover:text-white hover:drop-shadow-[0_0_7px_rgba(54,226,155,0.6)]"
                 >
                   {item.name}
+                  <FaInstagram
+                    size={11}
+                    aria-hidden="true"
+                    className="text-[#36e29b]/70 transition-colors group-hover:text-white"
+                  />
                 </a>
               ))}
             </span>
