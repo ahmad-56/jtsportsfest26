@@ -183,6 +183,40 @@ export default function CodeOfConductPage() {
               </article>
             );
           })}
+          {/*final panel*/}
+          <div className="group relative flex h-full min-w-0 flex-col justify-end overflow-hidden rounded-lg border border-white/10 bg-white/[0.035] p-3 text-left text-white transition-all duration-300 hover:-translate-y-1 hover:border-[#36e29b]/50 hover:bg-[#00633e]/10 sm:hidden">
+            <Image
+              src="/images/hero-sports.jpg"
+              alt=""
+              fill
+              sizes="50vw"
+              className="object-cover opacity-20 transition duration-500 group-hover:scale-105 group-hover:opacity-10"
+            />
+
+            <div className="absolute inset-0 bg-gradient-to-t from-[#020d20] via-[#020d20]/80 to-[#020d20]/45" />
+
+            <div className="absolute left-0 top-0 z-10 h-full w-0.5 bg-[#36e29b]" />
+
+            <span className="absolute right-3 top-3 z-10 text-xl font-black text-white/[0.07]">
+              XIII
+            </span>
+
+            <div className="relative z-10 min-w-0">
+              <p className="mb-1 text-[8px] font-black uppercase tracking-[0.12em] text-[#36e29b]">
+                LGS JT
+              </p>
+
+              <h2 className="break-words text-[11px] font-black uppercase leading-[1.25] text-white">
+                SportsFest XIII
+              </h2>
+
+              <p className="mt-2 text-[10px] leading-[1.55] text-white/60">
+                25–27 Sep & 2–4 Oct
+              </p>
+            </div>
+
+            <div className="pointer-events-none absolute -bottom-10 -right-10 h-20 w-20 rounded-full bg-[#36e29b]/0 blur-2xl transition duration-300 group-hover:bg-[#36e29b]/15" />
+          </div>
         </div>
       </section>
 
