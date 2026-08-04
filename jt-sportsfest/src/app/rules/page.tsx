@@ -193,8 +193,6 @@ export default function CodeOfConductPage() {
               className="object-cover opacity-20 transition duration-500 group-hover:scale-105 group-hover:opacity-10"
             />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-[#020d20] via-[#020d20]/80 to-[#020d20]/45" />
-
             <div className="absolute left-0 top-0 z-10 h-full w-0.5 bg-[#36e29b]" />
 
             <span className="absolute right-3 top-3 z-10 text-xl font-black text-white/[0.07]">
