@@ -3,10 +3,7 @@
 import Image from "next/image";
 import {
   CalendarDays,
-  MapPin,
-  User2Icon,
   Users,
-  Users2,
   Trophy,
   X,
   type LucideIcon,
@@ -101,7 +98,7 @@ export default function SportsGrid() {
                 <button
                   type="button"
                   onClick={() => setSelectedSport(sport)}
-                  className="group relative flex min-h-[145px] w-full cursor-pointer flex-col justify-between overflow-hidden rounded-xl border border-white/15 bg-[#020d20] p-3 text-left text-white shadow-lg sm:min-h-[190px] sm:p-4 lg:min-h-72 lg:rounded-2xl lg:p-7"
+                  className="group relative flex min-h-[145px] w-full transform-gpu cursor-pointer flex-col justify-between overflow-hidden rounded-xl border border-white/15 bg-[#020d20] p-3 text-left text-white shadow-lg transition-all duration-300 ease-out hover:-translate-y-0.25 hover:border-[#36e29b]/60 hover:shadow-[0_18px_40px_rgba(0,99,62,0.25)] active:translate-y-0 sm:min-h-[190px] sm:p-4 lg:min-h-72 lg:rounded-2xl lg:p-7 lg:hover:-translate-y-2"
                 >
                   {/* Sport image */}
                   <Image
@@ -109,9 +106,8 @@ export default function SportsGrid() {
                     alt={sport.name}
                     fill
                     sizes="(max-width: 1023px) 50vw, 25vw"
-                    className="object-cover opacity-80 transition duration-700 group-hover:scale-110 group-hover:opacity-35"
+                    className="scale-90 object-cover opacity-80 transition duration-700 group-hover:scale-95 group-hover:opacity-35"
                   />
-
                   {/*black overlay*/}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#020d20] via-[#020d20]/25 to-[#020d20]/15" />
 

@@ -16,10 +16,10 @@ export type Sport = {
 export const sports: Sport[] = [
   {
     number: "01",
-    name: "HardBall Cricket",
+    name: "Cricket",
     slug: "cricket",
     category: "Team Sport",
-    image: "/images/sports/cricket.png",
+    image: "/images/sports/cricket.jpg",
     description:
       "Compete in an exciting cricket tournament that tests teamwork, strategy, discipline and individual performance.",
     teamSize: "11 playing + 2 subs",
@@ -38,10 +38,10 @@ export const sports: Sport[] = [
   },
   {
     number: "02",
-    name: "Futsal",
+    name: "Football",
     slug: "football",
     category: "Team Sport",
-    image: "/images/sports/futsal.png",
+    image: "/images/sports/football.png",
     description:
       "A fast-paced football competition focused on teamwork, skill, coordination and sportsmanship.",
     teamSize: "6 playing + 2 subs",
@@ -62,7 +62,7 @@ export const sports: Sport[] = [
     name: "Archery",
     slug: "archery",
     category: "Individual Sport",
-    image: "/images/sports/archery.jpg",
+    image: "/images/sports/archery.png",
     description:
       "A precision archery competition testing focus, accuracy, consistency, and composure under pressure.",
     teamSize: "Individual",
@@ -84,7 +84,7 @@ export const sports: Sport[] = [
     name: "Arm Wrestling",
     slug: "arm-wrestling",
     category: "Individual Sport",
-    image: "/images/sports/arm-wrestling.jpg",
+    image: "/images/sports/arm-wrestling.png",
     description:
       "A strength-based contest emphasizing power, technique, endurance, and fair competition.",
     teamSize: "Individual",
@@ -106,7 +106,7 @@ export const sports: Sport[] = [
     name: "Badminton",
     slug: "badminton",
     category: "Racquet Sport",
-    image: "/images/sports/badminton.jpg",
+    image: "/images/sports/badminton.png",
     description:
       "A fast-paced badminton tournament showcasing agility, precision, strategy, and quick reflexes.",
     teamSize: "Singles / Doubles",
@@ -128,7 +128,7 @@ export const sports: Sport[] = [
     name: "Athletics",
     slug: "athletics",
     category: "Track & Field",
-    image: "/images/sports/athletics.jpg",
+    image: "/images/sports/athletics.png",
     description:
       "A competitive athletics event featuring speed, endurance, strength, and determination across multiple disciplines.",
     teamSize: "Individual",
@@ -150,7 +150,7 @@ export const sports: Sport[] = [
     name: "Basketball",
     slug: "basketball",
     category: "Team Sport",
-    image: "/images/sports/basketball.jpg",
+    image: "/images/sports/basketball.png",
     description:
       "An exciting basketball tournament highlighting teamwork, skill, speed, and competitive spirit.",
     teamSize: "6 playing + 2 subs",
@@ -172,7 +172,7 @@ export const sports: Sport[] = [
     name: "Chess",
     slug: "chess",
     category: "Mind Sport",
-    image: "/images/sports/chess.jpg",
+    image: "/images/sports/chess.png",
     description:
       "A strategic chess competition testing critical thinking, planning, patience, and decision-making skills.",
     teamSize: "Individual",
@@ -194,7 +194,7 @@ export const sports: Sport[] = [
     name: "Darts",
     slug: "darts",
     category: "Precision Sport",
-    image: "/images/sports/darts.jpg",
+    image: "/images/sports/darts.png",
     description:
       "A precision darts competition rewarding accuracy, consistency, concentration, and steady nerves.",
     teamSize: "Individual",
@@ -216,7 +216,7 @@ export const sports: Sport[] = [
     name: "Gaming",
     slug: "gaming",
     category: "Esports",
-    image: "/images/sports/gaming.jpg",
+    image: "/images/sports/gaming.png",
     description:
       "A competitive esports tournament showcasing teamwork, strategy, quick decision-making, and gaming excellence.",
     teamSize: "Depends on game",
@@ -238,7 +238,7 @@ export const sports: Sport[] = [
     name: "Hockey",
     slug: "hockey",
     category: "Team Sport",
-    image: "/images/sports/hockey.jpg",
+    image: "/images/sports/hockey.png",
     description:
       "A dynamic hockey competition emphasizing teamwork, speed, coordination, and tactical gameplay.",
     teamSize: "11 playing + 2 subs",
@@ -260,7 +260,7 @@ export const sports: Sport[] = [
     name: "Scavenger Hunt",
     slug: "scavenger-hunt",
     category: "Adventure Event",
-    image: "/images/sports/scavenger-hunt.jpg",
+    image: "/images/sports/scavenger-hunt.png",
     description:
       "An engaging scavenger hunt challenging teamwork, creativity, problem-solving, and time management skills.",
     teamSize: "4 playing + 2 subs",
@@ -282,7 +282,7 @@ export const sports: Sport[] = [
     name: "Snooker",
     slug: "snooker",
     category: "Cue Sport",
-    image: "/images/sports/snooker.jpg",
+    image: "/images/sports/snooker.png",
     description:
       "A snooker tournament testing precision, strategy, patience, and tactical shot-making abilities.",
     teamSize: "Individual",
@@ -304,7 +304,7 @@ export const sports: Sport[] = [
     name: "Strongmen",
     slug: "strongman",
     category: "Strength Sport",
-    image: "/images/sports/strongman.jpg",
+    image: "/images/sports/strongman.png",
     description:
       "A challenging strongman competition measuring strength, endurance, determination, and resilience.",
     teamSize: "Individual",
@@ -326,7 +326,7 @@ export const sports: Sport[] = [
     name: "Swimming",
     slug: "swimming",
     category: "Aquatic Sport",
-    image: "/images/sports/swimming.jpg",
+    image: "/images/sports/swimming.png",
     description:
       "A competitive swimming event highlighting speed, endurance, technique, and determination in the pool.",
     teamSize: "Individual",
@@ -348,7 +348,7 @@ export const sports: Sport[] = [
     name: "Tennis",
     slug: "tennis",
     category: "Racquet Sport",
-    image: "/images/sports/tennis.jpg",
+    image: "/images/sports/tennis.png",
     description:
       "A competitive tennis tournament showcasing agility, precision, endurance, and strategic gameplay.",
     teamSize: "Singles / Doubles",
@@ -370,7 +370,7 @@ export const sports: Sport[] = [
     name: "Tug of War",
     slug: "tug-of-war",
     category: "Team Sport",
-    image: "/images/sports/tug-of-war.jpg",
+    image: "/images/sports/tug-of-war.png",
     description:
       "A thrilling tug of war contest emphasizing teamwork, coordination, strength, and determination.",
     teamSize: "8 playing",
@@ -392,7 +392,7 @@ export const sports: Sport[] = [
     name: "Throwball",
     slug: "throwball",
     category: "Team Sport",
-    image: "/images/sports/throwball.jpg",
+    image: "/images/sports/throwball.png",
     description:
       "A fast-moving throwball tournament focused on teamwork, coordination, communication, and quick reflexes.",
     teamSize: "7 playing + 2 subs",
@@ -414,7 +414,7 @@ export const sports: Sport[] = [
     name: "Table Tennis",
     slug: "table-tennis",
     category: "Racquet Sport",
-    image: "/images/sports/table-tennis.jpg",
+    image: "/images/sports/table-tennis.png",
     description:
       "A competitive table tennis tournament testing speed, precision, reflexes, and tactical play.",
     teamSize: "Singles / Doubles",
@@ -436,7 +436,7 @@ export const sports: Sport[] = [
     name: "Volleyball",
     slug: "volleyball",
     category: "Team Sport",
-    image: "/images/sports/volleyball.jpg",
+    image: "/images/sports/volleyball.png",
     description:
       "An energetic volleyball tournament celebrating teamwork, coordination, athleticism, and competitive excellence.",
     teamSize: "6 playing + 2 subs",
@@ -454,25 +454,25 @@ export const sports: Sport[] = [
   },
 
   {
-    number: "21",
-    name: "Tapeball Cricket",
-    slug: "tapeball-cricket",
-    category: "Team Sport",
-    image: "/images/sports/tapeball-cricket.jpg",
-    description:
-      "A thrilling tapeball cricket tournament emphasizing teamwork, strategy, batting skills, and sportsmanship.",
-    teamSize: "8 playing + 2 subs",
-    date: "October 4–6",
-    age: "U17, U19",
-    format: "Knockout",
-    rules: [
-      "Teams must arrive 30 minutes before their match.",
-      "Only registered players may participate.",
-      "Tournament-specific tapeball rules will apply.",
-      "The umpire’s decision will be final.",
-    ],
-    note:
-      "Players are encouraged to bring appropriate cricket shoes and protective gear.",
+  number: "21",
+  name: "Ludo",
+  slug: "ludo",
+  category: "Board Game",
+  image: "/images/sports/ludo.png",
+  description:
+    "A thrilling Ludo tournament emphasizing strategy, classic board tactics, precise dice rolls, and good sportsmanship.",
+  teamSize: "1 player (or 2 for doubles)",
+  date: "October 4–6",
+  age: "U17, U19",
+  format: "Knockout",
+  rules: [
+    "Players must arrive 15 minutes before their scheduled match.",
+    "Only registered participants may play.",
+    "Standard Ludo tournament rules will apply regarding dice rolls and token movement.",
+    "The referee/arbiter's decision will be final.",
+  ],
+  note:
+    "Game boards and official dice will be provided at the venue.",
   },
 
   {
@@ -480,7 +480,7 @@ export const sports: Sport[] = [
     name: "Water Polo",
     slug: "water-polo",
     category: "Team Sport",
-    image: "/images/sports/water-polo.jpg",
+    image: "/images/sports/water-polo.png",
     description:
       "A fast-paced water polo competition showcasing teamwork, endurance, tactical play, and swimming ability.",
     teamSize: "7 playing + 2 subs",
@@ -502,7 +502,7 @@ export const sports: Sport[] = [
     name: "Padel",
     slug: "padel",
     category: "Racquet Sport",
-    image: "/images/sports/padel.jpg",
+    image: "/images/sports/padel.png",
     description:
       "A dynamic padel tournament combining teamwork, quick reflexes, precision, and strategic shot-making.",
     teamSize: "2 playing",
