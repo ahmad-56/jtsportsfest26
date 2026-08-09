@@ -91,8 +91,18 @@ export default function SportsGrid() {
               </div>
             </div>
           </Reveal>
+          
+          {/* Mobile counter */}
+          <div className="mt-6 w-full lg:hidden">
+            <Reveal>
+              <div className="w-full">
+                <TeamCounter />
+              </div>
+            </Reveal>
+          </div>
 
-          <div className="mt-8 grid grid-cols-2 gap-2.5 sm:mt-10 sm:gap-3 lg:mt-12 lg:grid-cols-4 lg:gap-4">
+          <div className="mt-3 grid grid-cols-2 gap-2.5 sm:mt-4 sm:gap-3 lg:mt-12 lg:grid-cols-4 lg:gap-4">
+      
             {sports.map((sport) => (
               <Reveal key={sport.slug}>
                 <button
