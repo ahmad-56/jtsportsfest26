@@ -14,40 +14,39 @@ export default function TeamCounter({
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function getTeamCount() {
-      try {
-        const response = await fetch(
-          "/api/registrations/count",
-          {
-            cache: "no-store",
-          },
-        );
+  const getTeamCount = async () => {
+    try {
+      const response = await fetch(
+        "/api/registration-count",
+        {
+          cache: "no-store",
+        }
+      );
 
-        if (!response.ok) return;
+      if (!response.ok) return;
 
-        const data: { count: number } =
-          await response.json();
+      const data: { total: number } =
+        await response.json();
 
-        setTeamCount(data.count);
-      } catch (error) {
-        console.error(
-          "Unable to retrieve team count:",
-          error,
-        );
-      } finally {
-        setLoading(false);
-      }
-    }
+      setTeamCount(data.total);
+    } catch (error) {
+      console.error(
+        "Unable to retrieve delegate count:",
+        error
+          );
+        } finally {
+          setLoading(false);
+        }
+      };
 
-    getTeamCount();
+      void getTeamCount();
 
-    const interval = window.setInterval(
-      getTeamCount,
-      15000,
-    );
+      const interval = window.setInterval(() => {
+        void getTeamCount();
+      }, 60000);
 
-    return () => window.clearInterval(interval);
-  }, []);
+      return () => window.clearInterval(interval);
+    }, []);
 
   return (
   <div className="relative -translate-y-16">
