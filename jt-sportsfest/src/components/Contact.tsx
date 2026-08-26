@@ -1,11 +1,11 @@
 import {
   FaEnvelope,
-  FaInstagram,
   FaLocationDot,
   FaPhone,
 } from "react-icons/fa6";
 import Reveal from "@/components/Reveal";
 import Image from "next/image";
+import TextButton from "@/components/TextButton";
 
 const teamMembers = [
   {
@@ -56,9 +56,9 @@ export default function Contact() {
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#071b16]/25 via-transparent to-[#071b16]/55" />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-10 left-0 whitespace-nowrap text-[80px] font-black uppercase leading-none text-white/[0.035] sm:text-[140px] md:text-[220px]"
+        className="pointer-events-none absolute -bottom-10 left-0 whitespace-nowrap text-[80px] font-black uppercase leading-none text-white/[0.035] sm:text-[140px] md:text-[152px]"
       >
-        SportsFest
+        JT SportsFest XIII
       </div>
 
       <div
@@ -180,16 +180,16 @@ export default function Contact() {
                 />
               </div>
 
-              <a
+              <TextButton
                 href="https://www.google.com/maps/search/?api=1&query=LGS+Johar+Town+Senior+Boys+Lahore"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-3 flex items-center justify-center gap-2 border border-white/15 bg-white/5 px-3 py-2 text-[10px] font-black uppercase tracking-wider transition hover:bg-[#a9c4b4] hover:text-black hover:translate-y-1 sm:mt-5 sm:gap-3 sm:px-6 sm:py-4 sm:text-sm"
+                className="mt-3 min-h-0 w-full !px-3 !py-2 text-[10px] sm:mt-5 sm:!px-6 sm:!py-4 sm:text-sm"
               >
                 <FaLocationDot size={13} className="sm:hidden" />
                 <FaLocationDot size={17} className="hidden sm:block" />
                 Open in Google Maps
-              </a>
+              </TextButton>
             </div>
           </Reveal>
         </div>
