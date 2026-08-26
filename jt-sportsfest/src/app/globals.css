@@ -216,7 +216,7 @@ h6 {
   height: 50%;
   overflow: hidden;
   backface-visibility: hidden;
-  color: #000000;
+  color: #ffffff;
 }
 
 .timer-number {
@@ -239,7 +239,7 @@ h6 {
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-bottom: 0;
   border-radius: 8px 8px 2px 2px;
-  background: #97AFA1;
+  background: #0b2a21;
   transform-origin: bottom;
 }
 
@@ -254,7 +254,7 @@ h6 {
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-top: 0;
   border-radius: 2px 2px 8px 8px;
-  background: #A9C4B4;
+  background: #10382b;
   transform-origin: top;
 }
 
