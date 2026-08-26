@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
+import TextButton from "@/components/TextButton";
 
 export default function IntegritySection() {
   return (
-    <section className="relative overflow-hidden border-t border-white/10 bg-[#00633e] px-4 py-10 text-white sm:px-6 sm:py-12">
+    <section className="relative overflow-hidden border-t border-white/10 bg-[#075c3f] px-4 py-10 text-white sm:px-6 sm:py-12">
       <Image
         src="/images/hero6-sports.jpg"
         alt=""
@@ -12,12 +12,12 @@ export default function IntegritySection() {
         className="absolute inset-0 z-0 object-cover opacity-35"
       />
 
-      <div className="absolute inset-0 z-0 bg-[#00633e]/60" />
+      <div className="absolute inset-0 z-0 bg-[#075c3f]/60" />
 
-      <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#020d20]/70 via-[#00633e]/25 to-[#020d20]/70" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#071b16]/70 via-[#075c3f]/25 to-[#071b16]/70" />
 
       <div className="relative z-10 mx-auto max-w-4xl text-center">
-        <p className="text-[9px] font-black uppercase tracking-[0.18em] text-[#36e29b] sm:text-xs sm:tracking-[0.25em]">
+        <p className="text-[9px] font-black uppercase tracking-[0.18em] text-[#a9c4b4] sm:text-xs sm:tracking-[0.25em]">
           Respect the game
         </p>
 
@@ -30,19 +30,19 @@ export default function IntegritySection() {
           officials and fellow competitors throughout JT SportsFest XIII.
         </p>
         <div className="mt-5 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
-          <Link
+          <TextButton
             href="/sports"
-            className="inline-flex min-h-9 w-fit items-center justify-center rounded-lg bg-[#36e29b] px-3.5 py-2 text-center text-[9px] font-black uppercase tracking-wider text-[#020d20] shadow-lg shadow-[#36e29b]/10 transition-all duration-300 hover:-translate-y-1 hover:bg-[#48f0aa] hover:shadow-xl hover:shadow-[#36e29b]/30 active:translate-y-0 sm:min-h-12 sm:px-5 sm:py-3 sm:text-sm"
+            className="min-h-9 !px-3.5 !py-2 text-[9px] sm:min-h-12 sm:!px-5 sm:!py-3 sm:text-sm"
           >
             Explore Sports
-          </Link>
+          </TextButton>
 
-          <Link
+          <TextButton
             href="/rules"
-            className="inline-flex min-h-9 w-fit items-center justify-center rounded-lg bg-[#36e29b] px-3.5 py-2 text-center text-[9px] font-black uppercase tracking-wider text-[#020d20] shadow-lg shadow-[#36e29b]/10 transition-all duration-300 hover:-translate-y-1 hover:bg-[#48f0aa] hover:shadow-xl hover:shadow-[#36e29b]/30 active:translate-y-0 sm:min-h-12 sm:px-5 sm:py-3 sm:text-sm"
+            className="min-h-9 !px-3.5 !py-2 text-[9px] sm:min-h-12 sm:!px-5 sm:!py-3 sm:text-sm"
           >
             Read Code of Conduct
-          </Link>
+          </TextButton>
         </div>
       </div>
     </section>
