@@ -23,13 +23,15 @@ function calculateTimeRemaining(): TimeRemaining {
     };
   }
 
-  const totalSeconds = Math.ceil(difference / 1000);
-
   return {
-    days: Math.floor(totalSeconds / (60 * 60 * 24)),
-    hours: Math.floor((totalSeconds / (60 * 60)) % 24),
-    minutes: Math.floor((totalSeconds / 60) % 60),
-    seconds: totalSeconds % 60,
+    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+    hours: Math.floor(
+      (difference / (1000 * 60 * 60)) % 24,
+    ),
+    minutes: Math.floor(
+      (difference / (1000 * 60)) % 60,
+    ),
+    seconds: Math.floor((difference / 1000) % 60),
   };
 }
 
@@ -117,23 +119,15 @@ export default function Timer() {
     useState<TimeRemaining | null>(null);
 
   useEffect(() => {
-    let timeout: number;
-
     const updateTimer = () => {
       setTimeRemaining(calculateTimeRemaining());
-
-      const millisecondsToNextSecond =
-        1000 - (Date.now() % 1000) + 20;
-
-      timeout = window.setTimeout(
-        updateTimer,
-        millisecondsToNextSecond,
-      );
     };
 
     updateTimer();
 
-    return () => window.clearTimeout(timeout);
+    const interval = window.setInterval(updateTimer, 1000);
+
+    return () => window.clearInterval(interval);
   }, []);
 
   if (!timeRemaining) {
@@ -164,6 +158,10 @@ export default function Timer() {
 
   return (
     <div>
+      <p className="mb-4 text-center text-[10px] font-black uppercase tracking-[0.3em] text-white/45">
+        Countdown:
+      </p>
+
       <div
         className="flex justify-center gap-2 sm:gap-4"
         aria-label={`${timeRemaining.days} days, ${timeRemaining.hours} hours, ${timeRemaining.minutes} minutes and ${timeRemaining.seconds} seconds until SportsFest`}
