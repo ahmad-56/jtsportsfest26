@@ -23,15 +23,13 @@ function calculateTimeRemaining(): TimeRemaining {
     };
   }
 
+  const totalSeconds = Math.ceil(difference / 1000);
+
   return {
-    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-    hours: Math.floor(
-      (difference / (1000 * 60 * 60)) % 24,
-    ),
-    minutes: Math.floor(
-      (difference / (1000 * 60)) % 60,
-    ),
-    seconds: Math.floor((difference / 1000) % 60),
+    days: Math.floor(totalSeconds / (60 * 60 * 24)),
+    hours: Math.floor((totalSeconds / (60 * 60)) % 24),
+    minutes: Math.floor((totalSeconds / 60) % 60),
+    seconds: totalSeconds % 60,
   };
 }
 
@@ -64,23 +62,20 @@ function TimerCard({
   value: number;
   label: string;
 }) {
-  const [previousValue, setPreviousValue] = useState(value);
-  const [isFlipping, setIsFlipping] = useState(false);
+  const [displayedValue, setDisplayedValue] = useState(value);
 
   useEffect(() => {
-    if (value === previousValue) return;
-
-    setIsFlipping(true);
+    if (value === displayedValue) return;
 
     const timeout = window.setTimeout(() => {
-      setPreviousValue(value);
-      setIsFlipping(false);
+      setDisplayedValue(value);
     }, 600);
 
     return () => window.clearTimeout(timeout);
-  }, [value, previousValue]);
+  }, [value, displayedValue]);
 
-  const oldValue = formatValue(previousValue);
+  const isFlipping = value !== displayedValue;
+  const oldValue = formatValue(displayedValue);
   const newValue = formatValue(value);
 
   return (
@@ -122,21 +117,29 @@ export default function Timer() {
     useState<TimeRemaining | null>(null);
 
   useEffect(() => {
+    let timeout: number;
+
     const updateTimer = () => {
       setTimeRemaining(calculateTimeRemaining());
+
+      const millisecondsToNextSecond =
+        1000 - (Date.now() % 1000) + 20;
+
+      timeout = window.setTimeout(
+        updateTimer,
+        millisecondsToNextSecond,
+      );
     };
 
     updateTimer();
 
-    const interval = window.setInterval(updateTimer, 1000);
-
-    return () => window.clearInterval(interval);
+    return () => window.clearTimeout(timeout);
   }, []);
 
   if (!timeRemaining) {
     return (
       <div
-        className="mt-7 h-28"
+        className="h-28"
         aria-label="Loading countdown"
       />
     );
@@ -151,7 +154,7 @@ export default function Timer() {
   if (timeFinished) {
     return (
       <div
-        className="mt-7 flex min-h-28 items-center justify-center text-center text-2xl font-black uppercase text-[#36e29b]"
+        className="flex min-h-28 items-center justify-center text-center text-2xl font-black uppercase text-[#a9c4b4]"
         aria-live="polite"
       >
         JT SportsFest XIII is live!
@@ -160,11 +163,7 @@ export default function Timer() {
   }
 
   return (
-    <div className="mt-7">
-      <p className="mb-5 text-center text-[10px] font-black uppercase tracking-[0.3em] text-white/45">
-        Countdown:
-      </p>
-
+    <div>
       <div
         className="flex justify-center gap-2 sm:gap-4"
         aria-label={`${timeRemaining.days} days, ${timeRemaining.hours} hours, ${timeRemaining.minutes} minutes and ${timeRemaining.seconds} seconds until SportsFest`}

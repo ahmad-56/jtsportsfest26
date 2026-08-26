@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --navy: #020d20;
-  --navy-light: #061a31;
-  --green: #00633e;
-  --mint: #36e29b;
-  --white: #f7f8f5;
-  --muted: #9caabd;
+  /* Palette sampled from the badge artwork itself, not its navy backdrop. */
+  --navy: #071b16;
+  --navy-light: #0d3025;
+  --green: #075c3f;
+  --mint: #a9c4b4;
+  --white: #f7f6f1;
+  --muted: #9eaaa4;
 }
 
 html {
@@ -58,7 +59,7 @@ h6 {
   left: 0;
   background: linear-gradient(
     to right,
-    #020d20,
+    #071b16,
     transparent
   );
 }
@@ -67,7 +68,7 @@ h6 {
   right: 0;
   background: linear-gradient(
     to left,
-    #020d20,
+    #071b16,
     transparent
   );
 }
@@ -90,9 +91,9 @@ h6 {
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(54, 226, 155, 0.18);
+  border: 1px solid rgba(169, 196, 180, 0.18);
   border-radius: 14px;
-  background: rgba(54, 226, 155, 0.05);
+  background: rgba(169, 196, 180, 0.05);
   transition:
     border-color 300ms,
     background-color 300ms,
@@ -101,8 +102,8 @@ h6 {
 
 .sponsor-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(54, 226, 155, 0.7);
-  background: rgba(54, 226, 155, 0.12);
+  border-color: rgba(169, 196, 180, 0.7);
+  background: rgba(169, 196, 180, 0.12);
 }
 
 @keyframes sponsorSlide {
@@ -189,7 +190,7 @@ h6 {
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-bottom: 0;
   border-radius: 8px 8px 2px 2px;
-  background: #061326;
+  background: #0b2a21;
   transform-origin: bottom;
 }
 
@@ -204,7 +205,7 @@ h6 {
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-top: 0;
   border-radius: 2px 2px 8px 8px;
-  background: #091a30;
+  background: #10382b;
   transform-origin: top;
 }
 
@@ -233,7 +234,7 @@ h6 {
   width: 7px;
   height: 7px;
   border-radius: 999px;
-  background: #020d20;
+  background: #071b16;
   transform: translateY(-50%);
 }
 
@@ -260,7 +261,7 @@ h6 {
 
 .timer-label {
   margin-top: 12px;
-  color: #36e29b;
+  color: #a9c4b4;
   font-size: 9px;
   font-weight: 900;
   letter-spacing: 0.18em;
@@ -311,5 +312,106 @@ h6 {
   .timer-top-animation,
   .timer-bottom-animation {
     animation: none;
+  }
+}
+
+/* Footer actions remain still on hover and respond only when pressed. */
+@keyframes footerButtonClick {
+  0% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(0.82);
+    background: rgba(169, 196, 180, 0.24);
+    border-color: rgba(169, 196, 180, 0.8);
+  }
+
+  75% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.footer-action:active .footer-action-icon {
+  animation: footerButtonClick 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.footer-text-action:active {
+  animation: footerButtonClick 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-action:active .footer-action-icon,
+  .footer-text-action:active {
+    animation: none;
+  }
+}
+
+/* Sports preview conveyor: retain two cards and move only one edge card. */
+.sports-preview-track {
+  --sports-preview-gap: 0.75rem;
+  --sports-preview-card-width: 100%;
+  --sports-preview-step: calc(-100% - var(--sports-preview-gap));
+
+  display: flex;
+  gap: var(--sports-preview-gap);
+  width: 100%;
+  will-change: transform;
+}
+
+.sports-preview-card {
+  flex: 0 0 var(--sports-preview-card-width);
+}
+
+.sports-preview-track-next {
+  animation: sportsPreviewNext 550ms cubic-bezier(0.4, 0, 0.2, 1)
+    both;
+}
+
+.sports-preview-track-previous {
+  animation: sportsPreviewPrevious 550ms
+    cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes sportsPreviewNext {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(var(--sports-preview-step));
+  }
+}
+
+@keyframes sportsPreviewPrevious {
+  from {
+    transform: translateX(var(--sports-preview-step));
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: 640px) {
+  .sports-preview-track {
+    --sports-preview-gap: 2.5rem;
+    --sports-preview-card-width: calc(
+      (100% - (2 * var(--sports-preview-gap))) / 3
+    );
+    --sports-preview-step: calc(
+      (-100% - var(--sports-preview-gap)) / 3
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sports-preview-track-next,
+  .sports-preview-track-previous {
+    animation-duration: 1ms;
   }
 }

@@ -100,7 +100,7 @@ export default function SportsPreview() {
                         src={sport.image}
                         alt={sport.name}
                         fill
-                        sizes="(max-width: 639px) 30vw, 340px"
+                        sizes="(max-width: 639px) calc(100vw - 7rem), 340px"
                         className="object-cover opacity-70 transition duration-500 group-hover:scale-105 group-hover:opacity-45"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#071b16]/80 via-[#071b16]/10 to-transparent" />
