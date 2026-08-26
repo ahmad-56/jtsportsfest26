@@ -222,14 +222,14 @@ export default function Footer() {
 
           <div className="flex flex-col items-center gap-1 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-2.5 lg:justify-end">
             <span>
-              Made by{" "}
+              Made by:{" "}
               {developers.map((developer, index) => (
                 <span key={developer.href}>
                   <a
                     href={developer.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="footer-text-action inline-flex items-center gap-1 font-semibold text-[#ffffff]"
+                    className="footer-text-action inline-flex items-center gap-1 font-semibold text-[#ffffff] transition-[color,transform] duration-600 hover:-translate-y-0.25 hover:text-[#a9c4b4]"
                   >
                     {developer.name}
                     <FaGithub
@@ -238,11 +238,10 @@ export default function Footer() {
                       className="text-[#ffffff]/70"
                     />
                   </a>
-
                   {index < developers.length - 1 && (
                     <span className="text-white/30">
-                      {" "}
-                      &{" "}
+                      {" "}{" "}
+                      Registrations By:{" "}
                     </span>
                   )}
                 </span>
@@ -261,7 +260,7 @@ export default function Footer() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="footer-text-action inline-flex items-center gap-1 font-semibold text-[#ffffff]"
+                  className="footer-text-action inline-flex items-center gap-1 font-semibold text-[#ffffff] transition-[color,transform] duration-600 hover:-translate-y-0.25 hover:text-[#a9c4b4]"
                 >
                   {item.name}
                   <FaInstagram
