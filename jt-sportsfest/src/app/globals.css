@@ -262,18 +262,6 @@ h6 {
   top: calc(var(--timer-height) / -2);
 }
 
-.timer-middle-line {
-  pointer-events: none;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  z-index: 20;
-  width: 100%;
-  height: 1px;
-  background: rgba(0, 0, 0, 0.7);
-  transform: translateY(-50%);
-}
-
 .timer-display::before,
 .timer-display::after {
   content: "";
