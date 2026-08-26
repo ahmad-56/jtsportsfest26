@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import TextButton from "@/components/TextButton";
 
 const links = [
   { label: "Home", href: "/#home" },
@@ -15,14 +16,36 @@ const links = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const updateHeader = () => setIsScrolled(window.scrollY > 48);
+
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
+
+    return () => window.removeEventListener("scroll", updateHeader);
+  }, []);
 
   return (
     <>
-      <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#020d20]/80 backdrop-blur-xl">
-        <nav className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6">
-          <a
+      <header
+        className={`fixed left-0 top-0 z-50 w-full border-b backdrop-blur-xl transition-[background-color,border-color,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          isScrolled
+            ? "border-white/15 bg-[#071b16]/95 shadow-[0_10px_30px_rgba(0,0,0,0.28)]"
+            : "border-white/10 bg-[#071b16]/80"
+        }`}
+      >
+        <nav
+          className={`mx-auto flex max-w-7xl items-center justify-between px-6 transition-[height] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+            isScrolled ? "h-[72px]" : "h-24"
+          }`}
+        >
+          <Link
             href="/#home"
-            className="logo-wrapper flex items-center gap-3"
+            className={`logo-wrapper flex items-center transition-[gap] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+              isScrolled ? "gap-2.5" : "gap-3"
+            }`}
           >
             <Image
               src="/images/nobglogo.png"
@@ -30,38 +53,50 @@ export default function Header() {
               width={75}
               height={75}
               priority
-              className="logo-img"
+              className={`logo-img object-contain ${
+                isScrolled ? "h-14 w-14" : "h-[75px] w-[75px]"
+              }`}
             />
 
-            <span className="text-xl font-bold uppercase">
+            <span
+              className={`whitespace-nowrap font-bold uppercase transition-[font-size] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                isScrolled ? "text-lg" : "text-xl"
+              }`}
+            >
               JT SportsFest{" "}
-              <span className="text-[#36e29b]">
+              <span className="text-[#a9c4b4]">
                 &apos;26
               </span>
             </span>
-          </a>
+          </Link>
 
           <div className="hidden items-center gap-2 lg:flex">
             {links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="group relative rounded-lg px-4 py-2 text-sm font-bold uppercase tracking-wider text-white/70 transition-colors duration-300 hover:text-[#36e29b]"
+                className={`group relative rounded-lg py-2 font-bold uppercase tracking-wider text-white/70 transition-[color,padding,font-size] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:text-[#a9c4b4] ${
+                  isScrolled ? "px-3 text-xs" : "px-4 text-sm"
+                }`}
               >
                 <span className="relative z-10">
                   {link.label}
                 </span>
 
-                <span className="absolute bottom-0 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-[#36e29b] transition-all duration-300 group-hover:w-2/3" />
+                <span className="absolute bottom-0 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-[#a9c4b4] transition-all duration-300 group-hover:w-2/3" />
               </a>
             ))}
 
-            <Link
+            <TextButton
               href="/register"
-              className="ml-3 rounded-lg bg-[#36e29b] px-5 py-3 font-bold uppercase text-[#020d20] shadow-lg shadow-[#36e29b]/10 transition-all duration-300 hover:-translate-y-1 hover:bg-[#48f0aa] hover:shadow-xl hover:shadow-[#36e29b]/30 active:translate-y-0"
+              className={`ml-3 !min-h-0 font-bold !transition-[transform,padding,font-size,min-height] !duration-500 !ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                isScrolled
+                  ? "!px-4 !py-2 !text-xs"
+                  : "!px-5 !py-3 !text-sm"
+              }`}
             >
               Register now
-            </Link>
+            </TextButton>
           </div>
 
           <button
@@ -92,7 +127,7 @@ export default function Header() {
         </nav>
 
         <div
-          className={`grid overflow-hidden bg-[#020d20] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] lg:hidden ${
+          className={`grid overflow-hidden bg-[#071b16] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] lg:hidden ${
             menuOpen
               ? "grid-rows-[1fr] border-t border-white/10 opacity-100"
               : "pointer-events-none grid-rows-[0fr] border-t border-transparent opacity-0"
@@ -110,7 +145,7 @@ export default function Header() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className={`block border-b border-white/10 py-4 font-bold uppercase tracking-wider text-white/75 transition-all duration-300 hover:pl-2 hover:text-[#36e29b] ${
+                  className={`block border-b border-white/10 py-4 font-bold uppercase tracking-wider text-white/75 transition-all duration-300 hover:pl-2 hover:text-[#a9c4b4] ${
                     menuOpen
                       ? "translate-y-0 opacity-100"
                       : "-translate-y-3 opacity-0"
@@ -126,9 +161,9 @@ export default function Header() {
                 </a>
               ))}
 
-              <Link
+              <TextButton
                 href="/register"
-                className={`mt-5 block rounded-lg bg-[#36e29b] px-5 py-4 text-center font-bold uppercase text-[#020d20] transition-all duration-300 ${
+                className={`mt-5 w-full !py-4 font-bold transition-all duration-300 ${
                   menuOpen
                     ? "translate-y-0 opacity-100"
                     : "-translate-y-3 opacity-0"
@@ -141,7 +176,7 @@ export default function Header() {
                 onClick={() => setMenuOpen(false)}
               >
                 Register now
-              </Link>
+              </TextButton>
             </div>
           </div>
         </div>
@@ -193,7 +228,9 @@ export default function Header() {
               cubic-bezier(0.22, 1, 0.36, 1) both;
             transition:
               transform 420ms ease,
-              filter 300ms ease;
+              filter 300ms ease,
+              width 500ms cubic-bezier(0.22, 1, 0.36, 1),
+              height 500ms cubic-bezier(0.22, 1, 0.36, 1);
             will-change: transform;
           }
 
@@ -201,7 +238,7 @@ export default function Header() {
           .logo-wrapper:active .logo-img {
             animation: mobileRollHover 480ms ease;
             filter: drop-shadow(
-              0 0 10px rgba(54, 226, 155, 0.35)
+              0 0 10px rgba(169, 196, 180, 0.35)
             );
           }
         }
