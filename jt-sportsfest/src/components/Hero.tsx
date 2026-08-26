@@ -7,32 +7,55 @@ import TextButton from "@/components/TextButton";
 
 function EventDates() {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.35 }}
-      className="w-full max-w-xl"
-    >
-      <div className="group relative flex flex-col items-center overflow-hidden border border-white/15 bg-[#071b16]/75 px-5 py-4 text-center backdrop-blur-md transition duration-300 hover:border-[#a9c4b4]/60 sm:px-8 sm:py-5 lg:hover:-translate-y-1">
-        <div className="absolute left-0 top-0 h-full w-1 bg-[#a9c4b4]" />
-
-        <p className="text-[10px] font-black uppercase leading-none tracking-[0.2em] text-[#a9c4b4] sm:text-xs sm:tracking-[0.25em]">
-          September | October
+ <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.35 }}
+  className="w-full max-w-md"
+>
+  <div className="relative px-4 py-3 text-center sm:px-5 sm:py-4">
+    {/* Date columns */}
+    <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2 sm:gap-4">
+      {/* September */}
+      <div className="min-w-0">
+        <p className="text-[9px] font-black uppercase tracking-[0.2em] text-[#97afa1] sm:text-xs">
+          September
         </p>
 
-        <div className="mt-2 flex flex-wrap items-baseline justify-center gap-x-3 gap-y-2 text-center sm:flex-nowrap sm:gap-x-4">
-          <span className="text-2xl font-black leading-none text-white sm:text-4xl">
-            25 – 27 | 2–4
+        <div className="mt-1 flex flex-nowrap items-baseline justify-center gap-1.5 sm:gap-2">
+          <span className="whitespace-nowrap text-2xl font-black leading-none text-white sm:text-4xl">
+            25–27
           </span>
 
-          <span className="text-xs font-bold uppercase leading-none tracking-[0.16em] text-white/50 sm:text-sm">
+          <span className="shrink-0 text-[9px] font-bold leading-none tracking-[0.1em] text-white/45 sm:text-xs">
             2026
           </span>
         </div>
-
-        <div className="absolute -bottom-12 -right-12 h-28 w-28 rounded-full bg-[#a9c4b4]/0 blur-2xl transition group-hover:bg-[#a9c4b4]/20" />
       </div>
-    </motion.div>
+
+      {/* Divider line */}
+      <div className="h-10 w-px sm:h-12" />
+
+      {/* October */}
+      <div className="min-w-0">
+        <p className="text-[9px] font-black uppercase tracking-[0.2em] text-[#97afa1] sm:text-xs">
+          October
+        </p>
+
+        <div className="mt-1 flex flex-nowrap items-baseline justify-center gap-1.5 sm:gap-2">
+          <span className="whitespace-nowrap text-2xl font-black leading-none text-white sm:text-4xl">
+            02–04
+          </span>
+
+          <span className="shrink-0 text-[9px] font-bold leading-none tracking-[0.1em] text-white/45 sm:text-xs">
+            2026
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</motion.div>
   );
 }
 
@@ -113,7 +136,7 @@ export default function Hero() {
               once: true,
               amount: 0.2,
             }}
-            className="order-2 mt-3 flex w-full flex-col-reverse items-center gap-4 lg:order-none lg:mt-4 lg:flex-col"
+            className="order-2 mt-3 flex w-full flex-col-reverse items-center gap-8 lg:order-none lg:mt-4 lg:flex-col"
           >
             <TextButton href="/register">
               Register Now

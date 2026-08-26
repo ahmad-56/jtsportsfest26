@@ -149,9 +149,21 @@ h6 {
   align-items: center;
 }
 
+.timer-countdown {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3px;
+}
+
+.timer-digits {
+  display: flex;
+  gap: 4px;
+}
+
 .timer-display {
   --timer-width: 64px;
-  --timer-height: 74px;
+  --timer-height: 54px;
 
   position: relative;
   width: var(--timer-width);
@@ -177,7 +189,7 @@ h6 {
   width: 100%;
   height: 220%;
   place-items: center;
-  font-size: 2rem;
+  font-size: 1.65rem;
   font-weight: 900;
   line-height: 1;
   font-variant-numeric: tabular-nums;
@@ -268,6 +280,17 @@ h6 {
   text-transform: uppercase;
 }
 
+.timer-separator {
+  display: grid;
+  width: 8px;
+  height: 54px;
+  place-items: center;
+  color: #a9c4b4;
+  font-size: 1.4rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
 @keyframes timerTop {
   from {
     transform: rotateX(0deg);
@@ -293,18 +316,32 @@ h6 {
 }
 
 @media (min-width: 640px) {
+  .timer-countdown {
+    gap: 6px;
+  }
+
+  .timer-digits {
+    gap: 6px;
+  }
+
   .timer-display {
     --timer-width: 78px;
-    --timer-height: 88px;
+    --timer-height: 68px;
   }
 
   .timer-number {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .timer-label {
     font-size: 10px;
     letter-spacing: 0.22em;
+  }
+
+  .timer-separator {
+    width: 10px;
+    height: 68px;
+    font-size: 1.8rem;
   }
 }
 

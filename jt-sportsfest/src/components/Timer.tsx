@@ -57,12 +57,10 @@ function NumberHalf({
   );
 }
 
-function TimerCard({
+function DigitFlipper({
   value,
-  label,
 }: {
-  value: number;
-  label: string;
+  value: string;
 }) {
   const [displayedValue, setDisplayedValue] = useState(value);
 
@@ -77,36 +75,53 @@ function TimerCard({
   }, [value, displayedValue]);
 
   const isFlipping = value !== displayedValue;
-  const oldValue = formatValue(displayedValue);
-  const newValue = formatValue(value);
+  const oldValue = displayedValue;
+  const newValue = value;
+
+  return (
+    <div className="timer-display">
+      <NumberHalf value={newValue} position="top" />
+
+      <NumberHalf
+        value={isFlipping ? oldValue : newValue}
+        position="bottom"
+      />
+
+      {isFlipping && (
+        <>
+          <NumberHalf
+            value={oldValue}
+            position="top"
+            className="timer-top-animation"
+          />
+
+          <NumberHalf
+            value={newValue}
+            position="bottom"
+            className="timer-bottom-animation"
+          />
+        </>
+      )}
+
+      <div className="timer-middle-line" />
+    </div>
+  );
+}
+
+function TimerUnit({
+  value,
+  label,
+}: {
+  value: number;
+  label: string;
+}) {
+  const digits = formatValue(value);
 
   return (
     <div className="timer-unit">
-      <div className="timer-display">
-        <NumberHalf value={newValue} position="top" />
-
-        <NumberHalf
-          value={isFlipping ? oldValue : newValue}
-          position="bottom"
-        />
-
-        {isFlipping && (
-          <>
-            <NumberHalf
-              value={oldValue}
-              position="top"
-              className="timer-top-animation"
-            />
-
-            <NumberHalf
-              value={newValue}
-              position="bottom"
-              className="timer-bottom-animation"
-            />
-          </>
-        )}
-
-        <div className="timer-middle-line" />
+      <div className="timer-digits">
+        <DigitFlipper value={digits[0]} />
+        <DigitFlipper value={digits[1]} />
       </div>
 
       <span className="timer-label">{label}</span>
@@ -158,30 +173,39 @@ export default function Timer() {
 
   return (
     <div>
-      <p className="mb-4 text-center text-[10px] font-black uppercase tracking-[0.3em] text-white/45">
-        Countdown:
-      </p>
 
       <div
-        className="flex justify-center gap-2 sm:gap-4"
+        className="timer-countdown"
         aria-label={`${timeRemaining.days} days, ${timeRemaining.hours} hours, ${timeRemaining.minutes} minutes and ${timeRemaining.seconds} seconds until SportsFest`}
       >
-        <TimerCard
+        <TimerUnit
           value={timeRemaining.days}
           label="Days"
         />
 
-        <TimerCard
+        <span className="timer-separator" aria-hidden="true">
+          :
+        </span>
+
+        <TimerUnit
           value={timeRemaining.hours}
           label="Hours"
         />
 
-        <TimerCard
+        <span className="timer-separator" aria-hidden="true">
+          :
+        </span>
+
+        <TimerUnit
           value={timeRemaining.minutes}
           label="Minutes"
         />
 
-        <TimerCard
+        <span className="timer-separator" aria-hidden="true">
+          :
+        </span>
+
+        <TimerUnit
           value={timeRemaining.seconds}
           label="Seconds"
         />
