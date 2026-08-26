@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
-import SportDetailsModal from "@/components/SportDetailsModal";
+import SportDetails from "@/components/SportDetails";
 import TextButton from "@/components/TextButton";
 import { sports, type Sport } from "@/data/sports";
 
@@ -137,7 +137,7 @@ export default function SportsPreview() {
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#a9c4b4] to-transparent" />
       </section>
 
-      <SportDetailsModal
+      <SportDetails
         sport={selectedSport}
         onClose={() => setSelectedSport(null)}
       />

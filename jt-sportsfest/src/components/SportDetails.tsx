@@ -11,15 +11,15 @@ import {
 import { useEffect } from "react";
 import type { Sport } from "@/data/sports";
 
-type SportDetailsModalProps = {
+type SportDetailsProps = {
   sport: Sport | null;
   onClose: () => void;
 };
 
-export default function SportDetailsModal({
+export default function SportDetails({
   sport,
   onClose,
-}: SportDetailsModalProps) {
+}: SportDetailsProps) {
   useEffect(() => {
     if (!sport) return;
 
