@@ -76,7 +76,7 @@ export default function Hero() {
 
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(7,92,63,.45),transparent_43%)]" />
 
-      <div className="relative mx-auto flex min-h-[calc(100svh-6rem)] max-w-7xl items-center justify-center px-4 py-4 sm:px-6 sm:py-8 lg:py-12">
+      <div className="relative mx-auto flex min-h-[calc(100svh-5rem)] max-w-7xl items-center justify-center px-4 py-4 sm:px-6 sm:py-8 lg:py-12">
         <div className="flex w-full flex-col items-center text-center">
           <motion.p
             initial={{ opacity: 0, y: 25 }}
@@ -90,7 +90,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15 }}
-            className="mt-2 text-[clamp(2.4rem,10vw,3.5rem)] font-NexaXBold font-black uppercase leading-[0.95] sm:mt-3 sm:text-6xl md:text-7xl lg:mt-4 lg:text-[6.5rem]"
+            className="mt-2 text-[clamp(2rem,10vw,3.5rem)] font-NexaXBold font-black uppercase leading-[0.95] sm:mt-3 sm:text-6xl md:text-7xl lg:mt-4 lg:text-[6.5rem]"
           >
             JT SPORTSFEST
 
@@ -125,7 +125,7 @@ export default function Hero() {
             />
           </motion.div>
 
-          <div className="order-3 mt-4 flex w-full justify-center sm:mt-5 lg:order-none lg:mt-4">
+          <div className="order-2 mt-3 flex w-full justify-center sm:mt-5 lg:order-none lg:mt-4">
             <EventDates />
           </div>
 
@@ -136,7 +136,7 @@ export default function Hero() {
               once: true,
               amount: 0.2,
             }}
-            className="order-2 mt-3 flex w-full flex-col-reverse items-center gap-8 lg:order-none lg:mt-4 lg:flex-col"
+            className="order-3 mt-6 flex w-full flex-col items-center gap-8 sm:mt-7 lg:order-none lg:mt-4"
           >
             <TextButton href="/register">
               Register Now

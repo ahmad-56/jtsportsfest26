@@ -57,7 +57,7 @@ function NumberHalf({
   );
 }
 
-function DigitFlipper({
+function FlipDisplay({
   value,
 }: {
   value: string;
@@ -120,10 +120,25 @@ function TimerUnit({
   return (
     <div className="timer-unit">
       <div className="timer-digits">
-        <DigitFlipper value={digits[0]} />
-        <DigitFlipper value={digits[1]} />
+        <FlipDisplay value={digits[0]} />
+        <FlipDisplay value={digits[1]} />
       </div>
 
+      <span className="timer-label">{label}</span>
+    </div>
+  );
+}
+
+function MobileTimerUnit({
+  value,
+  label,
+}: {
+  value: number;
+  label: string;
+}) {
+  return (
+    <div className="timer-unit">
+      <FlipDisplay value={formatValue(value)} />
       <span className="timer-label">{label}</span>
     </div>
   );
@@ -173,12 +188,11 @@ export default function Timer() {
 
   return (
     <div>
-
       <div
-        className="timer-countdown"
+        className="timer-countdown-mobile"
         aria-label={`${timeRemaining.days} days, ${timeRemaining.hours} hours, ${timeRemaining.minutes} minutes and ${timeRemaining.seconds} seconds until SportsFest`}
       >
-        <TimerUnit
+        <MobileTimerUnit
           value={timeRemaining.days}
           label="Days"
         />
@@ -187,7 +201,7 @@ export default function Timer() {
           :
         </span>
 
-        <TimerUnit
+        <MobileTimerUnit
           value={timeRemaining.hours}
           label="Hours"
         />
@@ -196,7 +210,7 @@ export default function Timer() {
           :
         </span>
 
-        <TimerUnit
+        <MobileTimerUnit
           value={timeRemaining.minutes}
           label="Minutes"
         />
@@ -205,10 +219,54 @@ export default function Timer() {
           :
         </span>
 
-        <TimerUnit
+        <MobileTimerUnit
           value={timeRemaining.seconds}
           label="Seconds"
         />
+      </div>
+
+      <div
+        className="timer-countdown timer-countdown-desktop"
+        aria-label={`${timeRemaining.days} days, ${timeRemaining.hours} hours, ${timeRemaining.minutes} minutes and ${timeRemaining.seconds} seconds until SportsFest`}
+      >
+        <div className="timer-pair">
+          <TimerUnit
+            value={timeRemaining.days}
+            label="Days"
+          />
+
+          <span className="timer-separator" aria-hidden="true">
+            :
+          </span>
+
+          <TimerUnit
+            value={timeRemaining.hours}
+            label="Hours"
+          />
+        </div>
+
+        <span
+          className="timer-separator timer-separator-major"
+          aria-hidden="true"
+        >
+          :
+        </span>
+
+        <div className="timer-pair">
+          <TimerUnit
+            value={timeRemaining.minutes}
+            label="Minutes"
+          />
+
+          <span className="timer-separator" aria-hidden="true">
+            :
+          </span>
+
+          <TimerUnit
+            value={timeRemaining.seconds}
+            label="Seconds"
+          />
+        </div>
       </div>
     </div>
   );
