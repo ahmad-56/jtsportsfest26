@@ -12,16 +12,8 @@ import { useEffect, useState } from "react";
 import { sports, type Sport } from "@/data/sports";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import TeamCounter from "@/components/Counter";
 import RegisterNowSection from "@/components/RegisterNowSection";
 import Reveal from "@/components/Reveal";
-
-const links = [
-  { label: "Home", href: "/#home" },
-  { label: "About", href: "/#about" },
-  { label: "Sports", href: "/sports" },
-  { label: "Contact", href: "/#contact" },
-];
 
 export default function SportsGrid() {
   const [selectedSport, setSelectedSport] = useState<Sport | null>(null);
@@ -48,7 +40,7 @@ export default function SportsGrid() {
       <Header />
       <section
         id="sports"
-        className="relative overflow-hidden bg-[#f3f4ef] pb-20 pt-28 text-[#020d20] sm:pt-32 md:py-32"
+        className="relative overflow-hidden bg-[#f4f2eb] pb-20 pt-28 text-[#071b16] sm:pt-32 md:py-32"
       >
         <Image
           src="/images/hero3-sports.jpg"
@@ -58,13 +50,13 @@ export default function SportsGrid() {
           className="absolute inset-0 z-0 object-cover opacity-50"
         />
 
-        <div className="absolute inset-0 z-0 bg-[#f3f4ef]/40" />
+        <div className="absolute inset-0 z-0 bg-[#f4f2eb]/40" />
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 opacity-[0.07]"
           style={{
             backgroundImage:
-              "linear-gradient(#020d20 1px, transparent 1px), linear-gradient(90deg, #020d20 1px, transparent 1px)",
+              "linear-gradient(#071b16 1px, transparent 1px), linear-gradient(90deg, #071b16 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
         />
@@ -73,34 +65,21 @@ export default function SportsGrid() {
           <Reveal>
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between lg:gap-6">
               <div className="w-full">
-                <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#00633e] sm:text-sm">
+                <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#075c3f] sm:text-sm">
                   Participate in up to 3 sports
                 </p>
 
                 <h2 className="mt-3 max-w-5xl text-[clamp(1.6rem,6.5vw,3.2rem)] font-black uppercase leading-[1] sm:text-[clamp(1.8rem,6vw,3.8rem)] md:text-[clamp(2.6rem,4.5vw,4.8rem)] lg:text-[clamp(3.5rem,3.2vw,6rem)]">
                   Sports & categories
 
-                  <span className="block text-[clamp(1.05rem,3.5vw,1.4rem)] text-[#00633e]">
+                  <span className="block text-[clamp(1.05rem,3.5vw,1.4rem)] text-[#075c3f]">
                     JT SportsFest XIII
                   </span>
                 </h2>
               </div>
-
-              <div className="hidden shrink-0 lg:block lg:self-end lg:pb-1">
-                <TeamCounter initialCount={0} />
-              </div>
             </div>
           </Reveal>
           
-          {/* Mobile counter */}
-          <div className="mt-6 w-full lg:hidden">
-            <Reveal>
-              <div className="w-full">
-                <TeamCounter />
-              </div>
-            </Reveal>
-          </div>
-
           <div className="mt-3 grid grid-cols-2 gap-2.5 sm:mt-4 sm:gap-3 lg:mt-12 lg:grid-cols-4 lg:gap-4">
       
             {sports.map((sport) => (
@@ -108,76 +87,54 @@ export default function SportsGrid() {
                 <button
                   type="button"
                   onClick={() => setSelectedSport(sport)}
-                  className="group relative flex min-h-[145px] w-full transform-gpu cursor-pointer flex-col justify-between overflow-hidden rounded-xl border border-white/15 bg-[#020d20] p-3 text-left text-white shadow-lg transition-all duration-300 ease-out hover:-translate-y-0.25 hover:border-[#36e29b]/60 hover:shadow-[0_18px_40px_rgba(0,99,62,0.25)] active:translate-y-0 sm:min-h-[190px] sm:p-4 lg:min-h-72 lg:rounded-2xl lg:p-7 lg:hover:-translate-y-2"
+                  aria-label={`View ${sport.name} event details`}
+                  className="sports-preview-card group relative aspect-square w-full cursor-pointer overflow-hidden border-[3px] border-[#a9c4b4] bg-[#071b16] text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a9c4b4] sm:border-4"
                 >
-                  {/* Sport image */}
                   <Image
-                    src={sport.image || "/images/sports/placeholder.jpg"}
+                    src={sport.image}
                     alt={sport.name}
                     fill
-                    sizes="(max-width: 1023px) 50vw, 25vw"
-                    className="scale-90 object-cover opacity-80 transition duration-700 group-hover:scale-95 group-hover:opacity-35"
+                    sizes="(max-width: 639px) calc(100vw - 7rem), 340px"
+                    className="object-cover opacity-70 transition duration-500 group-hover:scale-105 group-hover:opacity-45"
                   />
-                  {/*black overlay*/}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#020d20] via-[#020d20]/25 to-[#020d20]/15" />
-
-                  {/*hover*/}
-                  <div className="absolute inset-0 bg-[#00633e]/0 transition-colors duration-500 group-hover:bg-[#00633e]/15" />
-
-                  {/*Card number*/}
-                  <span className="relative z-10 text-2xl font-black italic text-white/20 transition duration-500 group-hover:text-[#36e29b]/50 sm:text-3xl lg:text-4xl">
-                    {sport.number}
-                  </span>
-
-                  <div className="relative z-10 min-w-0">
-                    <p className="mb-1 text-[8px] font-black uppercase tracking-[0.1em] text-[#36e29b] sm:text-[10px] sm:tracking-[0.14em] lg:mb-2 lg:text-xs lg:tracking-[0.18em]">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#071b16]/80 via-[#071b16]/10 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 p-2 sm:p-4">
+                    <p className="truncate text-[8px] font-black uppercase tracking-wide text-[#a9c4b4] sm:text-xs">
                       {sport.category}
                     </p>
-
-                    <h3 className="break-words text-base font-black uppercase leading-[0.95] sm:text-xl lg:text-3xl lg:leading-none">
+                    <h3 className="mt-0.5 truncate text-[10px] font-black uppercase text-white sm:mt-1 sm:text-lg">
                       {sport.name}
                     </h3>
-
-                    <p className="mt-1 text-[8px] font-bold uppercase tracking-wide text-white/45 transition group-hover:text-white/70 sm:text-[10px] lg:mt-2 lg:text-xs lg:tracking-wider">
+                    <p className="mt-1 text-[8px] font-bold uppercase tracking-wide text-white/60 sm:text-[10px] lg:text-xs">
                       View event details
                     </p>
                   </div>
-
-                  {/* Glowing hover circle */}
-                  <div className="pointer-events-none absolute -bottom-10 -right-10 h-24 w-24 rounded-full bg-[#36e29b]/0 blur-2xl transition-all duration-500 group-hover:bg-[#36e29b]/30 lg:-bottom-16 lg:-right-16 lg:h-40 lg:w-40 lg:blur-3xl" />
                 </button>
               </Reveal>
             ))}
             {/* final panel */}
             <Reveal>
-              <div className="group relative flex min-h-[145px] w-full cursor-default flex-col justify-end overflow-hidden rounded-xl border border-white/15 bg-[#020d20] p-3 text-left text-white shadow-lg sm:min-h-[190px] sm:p-4 lg:min-h-72 lg:rounded-2xl lg:p-7">
+              <div className="sports-preview-card group relative aspect-square w-full cursor-default overflow-hidden border-[3px] border-[#a9c4b4] bg-[#071b16] text-left sm:border-4">
                 <Image
                   src="/images/hero-sports.jpg"
                   alt=""
                   fill
-                  sizes="(max-width: 1023px) 50vw, 25vw"
-                  className="object-cover opacity-45 transition duration-700 group-hover:scale-105 group-hover:opacity-30"
+                  sizes="(max-width: 639px) calc(100vw - 7rem), 340px"
+                  className="object-cover opacity-70 transition duration-500 group-hover:scale-105 group-hover:opacity-45"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#020d20] via-[#020d20]/65 to-[#020d20]/20" />
-
-                <div className="absolute inset-0 bg-[#00633e]/0 transition-colors duration-500 group-hover:bg-[#00633e]/15" />
-
-                <div className="relative z-10 min-w-0">
-                  <p className="mb-1 text-[8px] font-black uppercase tracking-[0.1em] text-[#36e29b] sm:text-[10px] lg:mb-2 lg:text-xs lg:tracking-[0.18em]">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071b16]/80 via-[#071b16]/10 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-2 sm:p-4">
+                  <p className="truncate text-[8px] font-black uppercase tracking-wide text-[#a9c4b4] sm:text-xs">
                     LGS JT
                   </p>
-
-                  <h3 className="break-words text-base font-black uppercase leading-[0.95] sm:text-xl lg:text-3xl lg:leading-none">
+                  <h3 className="mt-0.5 truncate text-[10px] font-black uppercase text-white sm:mt-1 sm:text-lg">
                     SportsFest XIII
                   </h3>
-
-                  <p className="mt-1.5 text-[9px] leading-4 text-white/60 sm:text-xs lg:mt-3 lg:text-sm lg:leading-6">
+                  <p className="mt-1 text-[8px] font-bold uppercase tracking-wide text-white/60 sm:text-[10px] lg:text-xs">
                     25–27 Sep & 2–4 Oct
                   </p>
                 </div>
-
-                <div className="pointer-events-none absolute -bottom-16 -right-16 h-40 w-40 rounded-full bg-[#36e29b]/0 blur-3xl transition-all duration-500 group-hover:bg-[#36e29b]/30" />
               </div>
             </Reveal>
           </div>
@@ -189,18 +146,18 @@ export default function SportsGrid() {
           role="dialog"
           aria-modal="true"
           aria-label={`${selectedSport.name} details`}
-          className="fixed inset-0 z-[100] flex items-center justify-center overflow-x-hidden bg-[#020d20]/92 p-2 backdrop-blur-md sm:p-4 lg:p-6"
+          className="fixed inset-0 z-[100] flex items-center justify-center overflow-x-hidden bg-[#071b16]/92 p-2 backdrop-blur-md sm:p-4 lg:p-6"
           onClick={() => setSelectedSport(null)}
         >
           <div
-            className="relative grid max-h-[94svh] min-w-0 w-full max-w-6xl overflow-x-hidden overflow-y-auto rounded-xl border border-white/15 bg-[#020d20] shadow-[0_30px_100px_rgba(0,0,0,0.7)] lg:h-[86vh] lg:grid-cols-[minmax(0,3fr)_minmax(0,7fr)] lg:overflow-hidden lg:rounded-2xl"
+            className="relative grid max-h-[94svh] min-w-0 w-full max-w-6xl overflow-x-hidden overflow-y-auto rounded-xl border border-white/15 bg-[#071b16] shadow-[0_30px_100px_rgba(0,0,0,0.7)] lg:h-[86vh] lg:grid-cols-[minmax(0,3fr)_minmax(0,7fr)] lg:overflow-hidden lg:rounded-2xl"
             onClick={(event) => event.stopPropagation()}
           >
             <button
               type="button"
               onClick={() => setSelectedSport(null)}
               aria-label="Close sport details"
-              className="absolute right-3 top-3 z-30 grid h-9 w-9 cursor-pointer place-items-center rounded-lg bg-[#36e29b] text-[#020d20] shadow-xl transition-all duration-300 hover:scale-105 hover:bg-white sm:right-4 sm:top-4 sm:h-10 sm:w-10 lg:right-8 lg:top-8 xl:right-10 xl:top-10"
+              className="absolute right-3 top-3 z-30 grid h-9 w-9 cursor-pointer place-items-center rounded-lg bg-[#a9c4b4] text-[#071b16] shadow-xl transition-all duration-300 hover:scale-105 hover:bg-white sm:right-4 sm:top-4 sm:h-10 sm:w-10 lg:right-8 lg:top-8 xl:right-10 xl:top-10"
             >
               <X
                 size={20}
@@ -222,7 +179,7 @@ export default function SportsGrid() {
                 priority
               />
 
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#020d20]/70 via-transparent to-[#020d20]/10" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#071b16]/70 via-transparent to-[#071b16]/10" />
 
               <span className="absolute bottom-3 left-4 text-5xl font-black italic text-white/20 sm:text-6xl lg:bottom-6 lg:left-6 lg:text-7xl">
                 {selectedSport.number}
@@ -230,10 +187,10 @@ export default function SportsGrid() {
             </div>
 
             <div className="relative min-w-0 overflow-x-hidden p-4 text-white sm:p-6 lg:overflow-y-auto lg:p-8 xl:p-10">
-              <div className="pointer-events-none absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-[#36e29b]/15 blur-[90px]" />
+              <div className="pointer-events-none absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-[#a9c4b4]/15 blur-[90px]" />
 
               <div className="relative z-10 min-w-0">
-                <p className="min-w-0 break-words pr-12 text-[10px] font-black uppercase tracking-[0.2em] text-[#36e29b] sm:text-xs sm:tracking-[0.22em]">
+                <p className="min-w-0 break-words pr-12 text-[10px] font-black uppercase tracking-[0.2em] text-[#a9c4b4] sm:text-xs sm:tracking-[0.22em]">
                   {selectedSport.category}
                 </p>
 
@@ -268,7 +225,7 @@ export default function SportsGrid() {
                 </div>
 
                 <div className="mt-6 min-w-0 border-t border-white/10 pt-5 sm:mt-8 sm:pt-6">
-                  <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#36e29b] sm:text-sm">
+                  <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#a9c4b4] sm:text-sm">
                     Event rules
                   </h3>
 
@@ -278,7 +235,7 @@ export default function SportsGrid() {
                         key={`${selectedSport.slug}-rule-${index}`}
                         className="flex min-w-0 gap-3 text-xs leading-6 text-white/65 sm:gap-4 sm:text-sm sm:leading-7"
                       >
-                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-[#36e29b]/10 text-[10px] font-black text-[#36e29b] sm:h-7 sm:w-7 sm:text-xs">
+                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-[#a9c4b4]/10 text-[10px] font-black text-[#a9c4b4] sm:h-7 sm:w-7 sm:text-xs">
                           {index + 1}
                         </span>
 
@@ -291,8 +248,8 @@ export default function SportsGrid() {
                 </div>
 
                 {selectedSport.note && (
-                  <div className="mt-6 min-w-0 overflow-hidden border-l-2 border-[#36e29b] bg-[#36e29b]/10 p-4 sm:mt-8 sm:p-5">
-                    <p className="break-words text-[10px] font-black uppercase tracking-[0.18em] text-[#36e29b] sm:text-xs">
+                  <div className="mt-6 min-w-0 overflow-hidden border-l-2 border-[#a9c4b4] bg-[#a9c4b4]/10 p-4 sm:mt-8 sm:p-5">
+                    <p className="break-words text-[10px] font-black uppercase tracking-[0.18em] text-[#a9c4b4] sm:text-xs">
                       Important note
                     </p>
 
@@ -327,7 +284,7 @@ function DetailItem({
     <div className="min-w-0 overflow-hidden border border-white/10 bg-white/[0.035] p-3 sm:p-4">
       <Icon
         size={18}
-        className="text-[#36e29b]"
+        className="text-[#a9c4b4]"
       />
 
       <p className="mt-3 min-w-0 break-words text-[9px] font-black uppercase tracking-[0.12em] text-white/35 sm:mt-4 sm:text-[10px] sm:tracking-[0.18em]">
