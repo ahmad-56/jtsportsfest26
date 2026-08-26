@@ -42,7 +42,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-[#020d20] py-16 text-white md:py-24 lg:py-32"
+      className="relative overflow-hidden bg-[#071b16] py-16 text-white md:py-24 lg:py-32"
     >
       <Image
         src="/images/hero2-sports.jpg"
@@ -52,8 +52,8 @@ export default function Contact() {
         className="absolute inset-0 z-0 object-cover opacity-30"
       />
 
-      <div className="absolute inset-0 z-0 bg-[#00633e]/70" />
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#020d20]/25 via-transparent to-[#020d20]/55" />
+      <div className="absolute inset-0 z-0 bg-[#075c3f]/70" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#071b16]/25 via-transparent to-[#071b16]/55" />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -bottom-10 left-0 whitespace-nowrap text-[80px] font-black uppercase leading-none text-white/[0.035] sm:text-[140px] md:text-[220px]"
@@ -63,7 +63,7 @@ export default function Contact() {
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#36e29b]/15 blur-[120px]"
+        className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#a9c4b4]/15 blur-[120px]"
       />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
@@ -71,7 +71,7 @@ export default function Contact() {
           <div className="mb-10 sm:mb-14">
             <h2 className="text-3xl font-black uppercase leading-[0.9] sm:text-5xl md:text-6xl lg:text-8xl">
               Contact the
-              <span className="block text-[#36e29b]">
+              <span className="block text-[#a9c4b4]">
                 SportsFest team
               </span>
             </h2>
@@ -94,13 +94,13 @@ export default function Contact() {
                     }`}
                   />
 
-                  <div className="relative flex h-full min-h-[220px] flex-col border border-[#36e29b]/40 bg-[#020d20]/80 p-4 shadow-2xl backdrop-blur-xl transition duration-300 group-hover:-translate-y-2 sm:min-h-[315px] sm:p-7">
+                  <div className="relative flex h-full min-h-[220px] flex-col border border-[#a9c4b4]/40 bg-[#071b16]/80 p-4 shadow-2xl backdrop-blur-xl sm:min-h-[315px] sm:p-7">
                     <div className="absolute right-3 top-3 h-3 w-3 sm:right-5 sm:top-5">
-                      <span className="absolute inset-0 animate-ping rounded-full bg-[#36e29b] opacity-60" />
-                      <span className="absolute inset-0 rounded-full bg-[#36e29b]" />
+                      <span className="absolute inset-0 animate-ping rounded-full bg-[#a9c4b4] opacity-60" />
+                      <span className="absolute inset-0 rounded-full bg-[#a9c4b4]" />
                     </div>
 
-                    <div className="mb-3 flex h-9 w-9 items-center justify-center border border-[#36e29b]/30 bg-[#36e29b]/10 text-xs font-black text-[#36e29b] sm:mb-7 sm:h-14 sm:w-14 sm:text-xl">
+                    <div className="mb-3 flex h-9 w-9 items-center justify-center border border-[#a9c4b4]/30 bg-[#a9c4b4]/10 text-xs font-black text-[#a9c4b4] sm:mb-7 sm:h-14 sm:w-14 sm:text-xl">
                       {person.name
                         .split(" ")
                         .map((word) => word.charAt(0))
@@ -112,7 +112,7 @@ export default function Contact() {
                       {person.name}
                     </h3>
 
-                    <p className="mt-1 text-[10px] font-black uppercase tracking-[0.15em] text-[#36e29b] sm:mt-2 sm:text-xs sm:tracking-[0.18em]">
+                    <p className="mt-1 text-[10px] font-black uppercase tracking-[0.15em] text-[#a9c4b4] sm:mt-2 sm:text-xs sm:tracking-[0.18em]">
                       {person.role}
                     </p>
 
@@ -121,7 +121,7 @@ export default function Contact() {
                         href={person.phoneHref}
                         className="flex items-center gap-2 text-[10px] text-white/65 transition hover:text-white sm:gap-3 sm:text-sm"
                       >
-                        <span className="flex h-6 w-6 shrink-0 items-center justify-center bg-white/5 text-[#36e29b] sm:h-9 sm:w-9">
+                        <span className="flex h-6 w-6 shrink-0 items-center justify-center bg-white/5 text-[#a9c4b4] sm:h-9 sm:w-9">
                           <FaPhone size={10} className="sm:hidden" />
                           <FaPhone size={15} className="hidden sm:block" />
                         </span>
@@ -133,7 +133,7 @@ export default function Contact() {
                         href={`mailto:${person.email}`}
                         className="flex items-center gap-2 text-[10px] text-white/65 transition hover:text-white sm:gap-3 sm:text-sm"
                       >
-                        <span className="flex h-6 w-6 shrink-0 items-center justify-center bg-white/5 text-[#36e29b] sm:h-9 sm:w-9">
+                        <span className="flex h-6 w-6 shrink-0 items-center justify-center bg-white/5 text-[#a9c4b4] sm:h-9 sm:w-9">
                           <FaEnvelope size={10} className="sm:hidden" />
                           <FaEnvelope size={15} className="hidden sm:block" />
                         </span>
@@ -148,16 +148,16 @@ export default function Contact() {
           </Reveal>
 
           <Reveal>
-            <div className="flex h-full flex-col border border-[#36e29b]/40 bg-[#020d20]/80 p-4 shadow-2xl backdrop-blur-xl sm:p-6 lg:p-8">
+            <div className="flex h-full flex-col border border-[#a9c4b4]/40 bg-[#071b16]/80 p-4 shadow-2xl backdrop-blur-xl sm:p-6 lg:p-8">
               <div className="mb-4 flex items-start gap-3 sm:mb-6 sm:gap-4">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center border border-white/10 bg-white/5 text-[#36e29b] sm:h-12 sm:w-12">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center border border-white/10 bg-white/5 text-[#a9c4b4] sm:h-12 sm:w-12">
                   <FaLocationDot size={16} className="sm:hidden" />
                   <FaLocationDot size={20} className="hidden sm:block" />
                 </span>
 
                 <div className="min-w-0 flex-1">
-                  <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#36e29b] sm:text-xs sm:tracking-[0.22em]">
-                    Location
+                  <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#a9c4b4] sm:text-xs sm:tracking-[0.22em]">
+                    Location:
                   </p>
 
                   <h3 className="mt-0.5 line-clamp-2 text-xs font-black uppercase text-white sm:mt-2 sm:text-xl">
@@ -184,7 +184,7 @@ export default function Contact() {
                 href="https://www.google.com/maps/search/?api=1&query=LGS+Johar+Town+Senior+Boys+Lahore"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-3 flex items-center justify-center gap-2 border border-white/15 bg-white/5 px-3 py-2 text-[10px] font-black uppercase tracking-wider transition hover:bg-[#36e29b] hover:text-black hover:translate-y-1 sm:mt-5 sm:gap-3 sm:px-6 sm:py-4 sm:text-sm"
+                className="mt-3 flex items-center justify-center gap-2 border border-white/15 bg-white/5 px-3 py-2 text-[10px] font-black uppercase tracking-wider transition hover:bg-[#a9c4b4] hover:text-black hover:translate-y-1 sm:mt-5 sm:gap-3 sm:px-6 sm:py-4 sm:text-sm"
               >
                 <FaLocationDot size={13} className="sm:hidden" />
                 <FaLocationDot size={17} className="hidden sm:block" />
