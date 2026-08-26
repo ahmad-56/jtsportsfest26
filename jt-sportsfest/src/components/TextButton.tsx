@@ -28,7 +28,7 @@ export default function TextButton({
     <Link
       {...props}
       onMouseMove={updateGlowPosition}
-      className={`group relative inline-flex min-h-12 items-center justify-center overflow-hidden rounded-lg border-[0.5px] border-black bg-[#06432f] px-8 py-3 text-center text-sm font-black uppercase tracking-wider text-white transition-transform duration-150 ease-out active:translate-y-px active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a9c4b4] ${className}`}
+      className={`group relative inline-flex min-h-12 items-center justify-center overflow-hidden rounded-lg bg-[#06432f] px-8 py-3 text-center text-sm font-black uppercase tracking-wider text-white transition-transform duration-150 ease-out active:translate-y-px active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a9c4b4] ${className}`}
     >
       <span
         aria-hidden="true"
