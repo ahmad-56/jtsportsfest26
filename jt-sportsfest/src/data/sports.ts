@@ -13,7 +13,7 @@ export type Sport = {
   note?: string;
 };
 
-export const sports: Sport[] = [
+const sportsCatalog: Sport[] = [
   {
     number: "01",
     name: "Cricket",
@@ -128,7 +128,7 @@ export const sports: Sport[] = [
     name: "Athletics",
     slug: "athletics",
     category: "Track & Field",
-    image: "/images/sports/athletics.png",
+    image: "/images/sports/atheletics.png",
     description:
       "A competitive athletics event featuring speed, endurance, strength, and determination across multiple disciplines.",
     teamSize: "Individual",
@@ -150,7 +150,7 @@ export const sports: Sport[] = [
     name: "Basketball",
     slug: "basketball",
     category: "Team Sport",
-    image: "/images/sports/basketball.png",
+    image: "/images/sports/basket-ball.jpg",
     description:
       "An exciting basketball tournament highlighting teamwork, skill, speed, and competitive spirit.",
     teamSize: "6 playing + 2 subs",
@@ -238,7 +238,7 @@ export const sports: Sport[] = [
     name: "Hockey",
     slug: "hockey",
     category: "Team Sport",
-    image: "/images/sports/hockey.png",
+    image: "/images/hero-sports.jpg",
     description:
       "A dynamic hockey competition emphasizing teamwork, speed, coordination, and tactical gameplay.",
     teamSize: "11 playing + 2 subs",
@@ -260,7 +260,7 @@ export const sports: Sport[] = [
     name: "Scavenger Hunt",
     slug: "scavenger-hunt",
     category: "Adventure Event",
-    image: "/images/sports/scavenger-hunt.png",
+    image: "/images/hero-sports.jpg",
     description:
       "An engaging scavenger hunt challenging teamwork, creativity, problem-solving, and time management skills.",
     teamSize: "4 playing + 2 subs",
@@ -282,7 +282,7 @@ export const sports: Sport[] = [
     name: "Snooker",
     slug: "snooker",
     category: "Cue Sport",
-    image: "/images/sports/snooker.png",
+    image: "/images/hero-sports.jpg",
     description:
       "A snooker tournament testing precision, strategy, patience, and tactical shot-making abilities.",
     teamSize: "Individual",
@@ -326,7 +326,7 @@ export const sports: Sport[] = [
     name: "Swimming",
     slug: "swimming",
     category: "Aquatic Sport",
-    image: "/images/sports/swimming.png",
+    image: "/images/hero-sports.jpg",
     description:
       "A competitive swimming event highlighting speed, endurance, technique, and determination in the pool.",
     teamSize: "Individual",
@@ -370,7 +370,7 @@ export const sports: Sport[] = [
     name: "Tug of War",
     slug: "tug-of-war",
     category: "Team Sport",
-    image: "/images/sports/tug-of-war.png",
+    image: "/images/sports/tug-of-war.jpg",
     description:
       "A thrilling tug of war contest emphasizing teamwork, coordination, strength, and determination.",
     teamSize: "8 playing",
@@ -414,7 +414,7 @@ export const sports: Sport[] = [
     name: "Table Tennis",
     slug: "table-tennis",
     category: "Racquet Sport",
-    image: "/images/sports/table-tennis.png",
+    image: "/images/sports/table-tennis.jpg",
     description:
       "A competitive table tennis tournament testing speed, precision, reflexes, and tactical play.",
     teamSize: "Singles / Doubles",
@@ -502,7 +502,7 @@ export const sports: Sport[] = [
     name: "Padel",
     slug: "padel",
     category: "Racquet Sport",
-    image: "/images/sports/padel.png",
+    image: "/images/hero-sports.jpg",
     description:
       "A dynamic padel tournament combining teamwork, quick reflexes, precision, and strategic shot-making.",
     teamSize: "2 playing",
@@ -519,3 +519,59 @@ export const sports: Sport[] = [
       "Participants are encouraged to bring their own padel racquets if available.",
   },
 ];
+
+const pdfSports: Array<{
+  slug: string;
+  name?: string;
+  age: string;
+}> = [
+  { slug: "football", name: "Futsal", age: "Boys U17, U19; Girls U17, U19" },
+  { slug: "basketball", age: "Boys U17, U19; Girls U17, U19" },
+  { slug: "cricket", age: "Boys Open; Girls Open" },
+  { slug: "table-tennis", age: "U17, U19, Open" },
+  { slug: "badminton", age: "U17, U19, Open" },
+  { slug: "volleyball", age: "Boys U17, U19; Girls U17, U19" },
+  { slug: "throwball", age: "Boys Open; Girls U17, U19" },
+  { slug: "tug-of-war", age: "Boys U17, U19; Girls U17, U19" },
+  { slug: "padel", age: "Boys U17, U19; Girls Open" },
+  { slug: "chess", age: "Open" },
+  { slug: "arm-wrestling", age: "Open" },
+  { slug: "darts", age: "Open" },
+  { slug: "athletics", age: "Boys U17, U19; Girls U17, U19" },
+  { slug: "strongman", age: "Open" },
+  { slug: "snooker", age: "Open" },
+  { slug: "gaming", age: "Open" },
+  { slug: "swimming", age: "Boys U17, U19" },
+  { slug: "water-polo", age: "Boys Open" },
+  { slug: "archery", age: "Open" },
+  { slug: "hockey", age: "Boys Open" },
+  { slug: "scavenger-hunt", age: "Open" },
+];
+
+const pdfSportBySlug = new Map(
+  pdfSports.map((sport, index) => [
+    sport.slug,
+    { ...sport, order: index },
+  ]),
+);
+
+export const sports: Sport[] = sportsCatalog
+  .map((sport, originalIndex) => {
+    const pdfSport = pdfSportBySlug.get(sport.slug);
+
+    return {
+      ...sport,
+      name: pdfSport?.name ?? sport.name,
+      age: pdfSport?.age ?? sport.age,
+      pdfOrder: pdfSport?.order ?? pdfSports.length + originalIndex,
+    };
+  })
+  .sort((a, b) => a.pdfOrder - b.pdfOrder)
+  .map(({ pdfOrder, ...sport }, index) => {
+    void pdfOrder;
+
+    return {
+      ...sport,
+      number: String(index + 1).padStart(2, "0"),
+    };
+  });

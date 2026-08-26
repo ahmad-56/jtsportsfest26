@@ -33,13 +33,13 @@ export default function Sponsors() {
   return (
     <section
       id="sponsors"
-      className="relative overflow-hidden border-y border-[#36e29b]/30 bg-[#020d20] py-10 text-white shadow-[inset_0_1px_18px_rgba(54,226,155,0.08)]"
+      className="relative overflow-hidden border-y border-[#a9c4b4]/30 bg-[#071b16] py-10 text-white shadow-[inset_0_1px_18px_rgba(169,196,180,0.08)]"
     >
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#36e29b] to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#a9c4b4] to-transparent" />
 
       <div className="mx-auto max-w-7xl px-6">
         <h2 className="text-center text-3xl font-black uppercase md:text-5xl">
-          Our <span className="text-[#36e29b]">Sponsors</span>
+          Our <span className="text-[#a9c4b4]">Sponsors</span>
         </h2>
       </div>
 
@@ -58,7 +58,7 @@ export default function Sponsors() {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#36e29b] to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#a9c4b4] to-transparent" />
     </section>
   );
 }

@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import Sponsors from "@/components/Sponsors";
+import SportsPreview from "@/components/SportsPreview";
 import IntegritySection from "@/components/IntegritySection";
 
 export default function HomePage() {
@@ -13,8 +13,8 @@ export default function HomePage() {
 
       <main>
         <Hero />
+        <SportsPreview />
         <About />
-        <Sponsors />
         <Contact />
         <IntegritySection />
       </main>
