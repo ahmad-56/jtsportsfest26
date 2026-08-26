@@ -3,18 +3,19 @@ import TextButton from "@/components/TextButton";
 
 export default function RegisterNowSection() {
   return (
-    <section className="relative overflow-hidden border-t border-white/10 bg-[#075c3f] px-4 py-10 text-white sm:px-6 sm:py-12">
+    <section className="relative overflow-hidden border-y border-[#a9c4b4]/30 bg-[#071b16] px-4 py-10 text-white shadow-[inset_0_1px_18px_rgba(169,196,180,0.08)] sm:px-6 sm:py-12">
       <Image
         src="/images/hero6-sports.jpg"
         alt=""
         fill
         sizes="100vw"
-        className="absolute inset-0 z-0 object-cover opacity-35"
+        className="absolute inset-0 z-0 object-cover opacity-20"
       />
 
-      <div className="absolute inset-0 z-0 bg-[#075c3f]/60" />
+      <div className="absolute inset-0 z-0 bg-black/50" />
+      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_50%_45%,rgba(7,92,63,0.32),transparent_58%)]" />
 
-      <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#071b16]/70 via-[#075c3f]/25 to-[#071b16]/70" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-gradient-to-r from-transparent via-[#a9c4b4] to-transparent" />
 
       <div className="relative z-10 mx-auto max-w-4xl text-center">
         <p className="text-[9px] font-black uppercase tracking-[0.18em] text-[#a9c4b4] sm:text-xs sm:tracking-[0.25em]">
