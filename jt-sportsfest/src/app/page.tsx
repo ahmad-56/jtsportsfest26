@@ -5,6 +5,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import SportsPreview from "@/components/SportsPreview";
 import IntegritySection from "@/components/IntegritySection";
+/* import RegisterNowSection from "@/components/RegisterNowSection"; */
 
 export default function HomePage() {
   return (
