@@ -103,7 +103,6 @@ function FlipDisplay({
         </>
       )}
 
-      <div className="timer-middle-line" />
     </div>
   );
 }
