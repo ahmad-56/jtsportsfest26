@@ -8,7 +8,6 @@ import {
   MessageCircle,
   Phone,
   SquareChartGantt,
-  Volleyball,
   UserPen,
   ChessKnight,
 } from "lucide-react";
@@ -91,7 +90,7 @@ const society = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-white/10 bg-[#010916] text-white">
+    <footer className="relative overflow-hidden border-t border-white/10 bg-[#04120f] text-white">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-[0.04]"
@@ -104,10 +103,10 @@ export default function Footer() {
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-32 -top-32 h-72 w-72 rounded-full bg-[#00633e]/30 blur-[100px] sm:h-80 sm:w-80"
+        className="pointer-events-none absolute -right-32 -top-32 h-72 w-72 rounded-full bg-[#075c3f]/30 blur-[100px] sm:h-80 sm:w-80"
       />
 
-      <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-[#36e29b]/70 to-transparent" />
+      <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-[#a9c4b4]/70 to-transparent" />
 
       <div className="relative mx-auto max-w-7xl px-4 pb-5 pt-9 sm:px-6 sm:pb-7 sm:pt-11 lg:pt-12">
         <div className="grid gap-8 border-b border-white/10 pb-8 lg:grid-cols-[0.9fr_1.5fr_0.85fr] lg:items-start lg:gap-10 lg:pb-10">
@@ -126,7 +125,7 @@ export default function Footer() {
               />
 
               <div className="min-w-0">
-                <p className="text-[8px] font-bold uppercase tracking-[0.17em] text-[#36e29b] sm:text-[10px] sm:tracking-[0.2em]">
+                <p className="text-[8px] font-bold uppercase tracking-[0.17em] text-[#a9c4b4] sm:text-[10px] sm:tracking-[0.2em]">
                   LGS Johar Town
                 </p>
 
@@ -142,7 +141,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="mb-4 text-[10px] font-black uppercase tracking-[0.22em] text-[#36e29b] sm:text-xs sm:tracking-[0.25em]">
+            <p className="mb-4 text-[10px] font-black uppercase tracking-[0.22em] text-[#a9c4b4] sm:text-xs sm:tracking-[0.25em]">
               Navigate
             </p>
 
@@ -156,9 +155,9 @@ export default function Footer() {
                       <Link
                         href={item.href}
                         aria-label={item.label}
-                        className="group flex min-w-9 flex-col items-center sm:min-w-12"
+                        className="footer-action flex min-w-9 flex-col items-center sm:min-w-12"
                       >
-                        <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-[#36e29b] transition-all duration-300 group-hover:-translate-y-1 group-hover:scale-105 group-hover:border-[#36e29b]/60 group-hover:bg-[#36e29b]/10 group-hover:shadow-[0_10px_25px_rgba(54,226,155,0.15)] sm:h-11 sm:w-11">
+                        <span className="footer-action-icon flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-[#ffffff] sm:h-11 sm:w-11">
                           <Icon
                             size={18}
                             className="sm:h-5 sm:w-5"
@@ -177,7 +176,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="mb-4 text-[10px] font-black uppercase tracking-[0.22em] text-[#36e29b] sm:text-xs sm:tracking-[0.25em]">
+            <p className="mb-4 text-[10px] font-black uppercase tracking-[0.22em] text-[#a9c4b4] sm:text-xs sm:tracking-[0.25em]">
               Connect
             </p>
 
@@ -196,9 +195,9 @@ export default function Footer() {
                         : undefined
                     }
                     aria-label={item.label}
-                    className="group flex min-w-9 flex-col items-center sm:min-w-12"
+                    className="footer-action flex min-w-9 flex-col items-center sm:min-w-12"
                   >
-                    <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-[#36e29b] transition-all duration-300 group-hover:-translate-y-1 group-hover:scale-105 group-hover:border-[#36e29b]/60 group-hover:bg-[#36e29b]/10 group-hover:shadow-[0_10px_25px_rgba(54,226,155,0.15)] sm:h-11 sm:w-11">
+                    <span className="footer-action-icon flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-[#ffffff] sm:h-11 sm:w-11">
                       <Icon
                         size={18}
                         className="sm:h-5 sm:w-5"
@@ -230,13 +229,13 @@ export default function Footer() {
                     href={developer.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-1 font-semibold text-[#36e29b] transition-all duration-300 hover:-translate-y-0.5 hover:text-white hover:drop-shadow-[0_0_7px_rgba(54,226,155,0.6)]"
+                    className="footer-text-action inline-flex items-center gap-1 font-semibold text-[#ffffff]"
                   >
                     {developer.name}
                     <FaGithub
                       size={11}
                       aria-hidden="true"
-                      className="text-[#36e29b]/70 transition-colors group-hover:text-white"
+                      className="text-[#ffffff]/70"
                     />
                   </a>
 
@@ -250,7 +249,7 @@ export default function Footer() {
               ))}
             </span>
 
-            <span className="hidden text-[#36e29b]/40 sm:inline">
+            <span className="hidden text-[#ffffff]/40 sm:inline">
               •
             </span>
 
@@ -262,13 +261,13 @@ export default function Footer() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-1 font-semibold text-[#36e29b] transition-all duration-300 hover:-translate-y-0.5 hover:text-white hover:drop-shadow-[0_0_7px_rgba(54,226,155,0.6)]"
+                  className="footer-text-action inline-flex items-center gap-1 font-semibold text-[#ffffff]"
                 >
                   {item.name}
                   <FaInstagram
                     size={11}
                     aria-hidden="true"
-                    className="text-[#36e29b]/70 transition-colors group-hover:text-white"
+                    className="text-[#ffffff]/70"
                   />
                 </a>
               ))}
