@@ -55,7 +55,7 @@ export default function SportsPreview() {
           sizes="100vw"
           className="absolute inset-0 object-cover object-center opacity-20"
         />
-        <div className="absolute inset-0 bg-[#000000]/70" />
+        <div className="absolute inset-0 bg-[#000000]/60" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(7,92,63,0.32),transparent_58%)]" />
 
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#a9c4b4] to-transparent" />
