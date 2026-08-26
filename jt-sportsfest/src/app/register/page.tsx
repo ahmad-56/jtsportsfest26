@@ -24,11 +24,11 @@ export default function RegisterPage() {
     <>
       <Header />
 
-      <main className="min-h-screen overflow-x-hidden bg-[#081324] px-3 pb-12 pt-28 sm:px-5 sm:pb-16 sm:pt-32 md:px-6 md:pb-20 md:pt-36">
+      <main className="min-h-screen overflow-x-hidden bg-[#0a211a] px-3 pb-12 pt-28 sm:px-5 sm:pb-16 sm:pt-32 md:px-6 md:pb-20 md:pt-36">
         <div className="mx-auto w-full max-w-5xl">
           {/* Page heading */}
           <div className="mb-7 text-center sm:mb-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#36E6A5] sm:text-sm sm:tracking-[0.3em]">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#a9c4b4] sm:text-sm sm:tracking-[0.3em]">
               LGS Johar Town Presents
             </p>
 
