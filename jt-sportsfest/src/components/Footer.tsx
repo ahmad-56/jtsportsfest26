@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import type { MouseEvent } from "react";
 import {
   House,
   Info,
@@ -89,6 +92,14 @@ const society = [
 ];
 
 export default function Footer() {
+  function updateFooterGlow(event: MouseEvent<HTMLAnchorElement>) {
+    const button = event.currentTarget;
+    const rect = button.getBoundingClientRect();
+
+    button.style.setProperty("--mouse-x", `${event.clientX - rect.left}px`);
+    button.style.setProperty("--mouse-y", `${event.clientY - rect.top}px`);
+  }
+
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-[#04120f] text-white">
       <div
@@ -155,12 +166,26 @@ export default function Footer() {
                       <Link
                         href={item.href}
                         aria-label={item.label}
-                        className="footer-action flex min-w-9 flex-col items-center sm:min-w-12"
+                        className="footer-action group flex min-w-9 flex-col items-center sm:min-w-12"
+                        onMouseMove={updateFooterGlow}
                       >
-                        <span className="footer-action-icon flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-[#ffffff] sm:h-11 sm:w-11">
+                        <span className="footer-action-icon relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-lg border border-transparent bg-white/5 text-[#ffffff] sm:h-11 sm:w-11">
+                          <span
+                            aria-hidden="true"
+                            className="pointer-events-none absolute inset-0 rounded-lg p-[1.5px] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                            style={{
+                              background:
+                                "radial-gradient(54px circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,1), rgba(169,196,180,0.65) 40%, rgba(169,196,180,0.2) 70%, transparent 100%)",
+                              WebkitMask:
+                                "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                              WebkitMaskComposite: "xor",
+                              maskComposite: "exclude",
+                            }}
+                          />
+
                           <Icon
                             size={18}
-                            className="sm:h-5 sm:w-5"
+                            className="relative z-10 sm:h-5 sm:w-5"
                           />
                         </span>
 
@@ -195,12 +220,26 @@ export default function Footer() {
                         : undefined
                     }
                     aria-label={item.label}
-                    className="footer-action flex min-w-9 flex-col items-center sm:min-w-12"
+                    className="footer-action group flex min-w-9 flex-col items-center sm:min-w-12"
+                    onMouseMove={updateFooterGlow}
                   >
-                    <span className="footer-action-icon flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-[#ffffff] sm:h-11 sm:w-11">
+                    <span className="footer-action-icon relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-lg border border-transparent bg-white/5 text-[#ffffff] sm:h-11 sm:w-11">
+                      <span
+                        aria-hidden="true"
+                        className="pointer-events-none absolute inset-0 rounded-lg p-[1.5px] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                        style={{
+                          background:
+                            "radial-gradient(54px circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,1), rgba(169,196,180,0.65) 40%, rgba(169,196,180,0.2) 70%, transparent 100%)",
+                          WebkitMask:
+                            "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                          WebkitMaskComposite: "xor",
+                          maskComposite: "exclude",
+                        }}
+                      />
+
                       <Icon
                         size={18}
-                        className="sm:h-5 sm:w-5"
+                        className="relative z-10 sm:h-5 sm:w-5"
                       />
                     </span>
 
