@@ -278,10 +278,14 @@ export default function Footer() {
                     />
                   </a>
                   {index < developers.length - 1 && (
-                    <span className="text-white/30">
-                      {" "}{" "}
-                      Registrations By:{" "}
-                    </span>
+                    <>
+                      <span className="hidden text-[#ffffff]/40 sm:inline">
+                        {" "}•{" "}
+                      </span>
+                      <span className="text-white/30">
+                        Registrations By:{" "}
+                      </span>
+                    </>
                   )}
                 </span>
               ))}
