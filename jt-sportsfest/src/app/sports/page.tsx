@@ -40,39 +40,45 @@ export default function SportsGrid() {
       <Header />
       <section
         id="sports"
-        className="relative overflow-hidden bg-[#f4f2eb] pb-20 pt-28 text-[#071b16] sm:pt-32 md:py-32"
+        className="relative overflow-hidden bg-[#071b16] pb-20 pt-28 text-white sm:pt-32 md:py-32"
       >
         <Image
           src="/images/hero3-sports.jpg"
           alt=""
           fill
           sizes="100vw"
-          className="absolute inset-0 z-0 object-cover opacity-50"
+          className="absolute inset-0 z-0 object-cover opacity-25"
         />
 
-        <div className="absolute inset-0 z-0 bg-[#f4f2eb]/40" />
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#071b16]/65 via-[#071b16]/75 to-[#071b16]" />
+
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-[0.07]"
+          className="pointer-events-none absolute inset-0 z-0 opacity-[0.06]"
           style={{
             backgroundImage:
-              "linear-gradient(#071b16 1px, transparent 1px), linear-gradient(90deg, #071b16 1px, transparent 1px)",
+              "linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
+        />
+
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute left-1/2 top-1/3 z-0 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#075c3f]/35 blur-[110px] sm:h-[30rem] sm:w-[30rem]"
         />
 
         <div className="relative mx-auto max-w-7xl px-6">
           <Reveal>
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between lg:gap-6">
               <div className="w-full">
-                <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#075c3f] sm:text-sm">
+                <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#a9c4b4] sm:text-sm">
                   Participate in up to 3 sports
                 </p>
 
                 <h2 className="mt-3 max-w-5xl text-[clamp(1.6rem,6.5vw,3.2rem)] font-black uppercase leading-[1] sm:text-[clamp(1.8rem,6vw,3.8rem)] md:text-[clamp(2.6rem,4.5vw,4.8rem)] lg:text-[clamp(3.5rem,3.2vw,6rem)]">
                   Sports & categories
 
-                  <span className="block text-[clamp(1.05rem,3.5vw,1.4rem)] text-[#075c3f]">
+                  <span className="block text-[clamp(1.05rem,3.5vw,1.4rem)] text-[#a9c4b4]">
                     JT SportsFest XIII
                   </span>
                 </h2>
