@@ -27,7 +27,7 @@ const navigation = [
     href: "/rules",
     icon: SquareChartGantt,
   },
-  { label: "Sports", href: "/sports", icon: ChessKnight },
+  { label: "Sports", href: "/coming-soon", icon: ChessKnight },
   {
     label: "Contact",
     href: "/#contact",

@@ -130,7 +130,7 @@ export default function SportsPreview() {
           </div>
 
           <div className="mt-8 flex justify-center">
-            <TextButton href="/sports">View All Sports</TextButton>
+            <TextButton href="/coming-soon">View All Sports</TextButton>
           </div>
         </div>
 

@@ -57,7 +57,7 @@ export default function About() {
               </TextButton>
 
               <TextButton
-                href="/sports"
+                href="/coming-soon"
                 className="w-full !px-4 text-xs sm:min-h-14 sm:!px-5 sm:!py-4 sm:text-sm"
               >
                 View Categories
