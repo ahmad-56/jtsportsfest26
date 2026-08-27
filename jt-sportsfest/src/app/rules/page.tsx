@@ -2,80 +2,52 @@ import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import {
-  AlertTriangle,
-  ArrowLeft,
-  Ban,
-  Cigarette,
-  CircleOff,
-  Gavel,
-  ShieldAlert,
-  VolumeX,
-} from "lucide-react";
 
 const rules = [
   {
-    number: "01",
     title: "Physical Violence",
     description:
       "The use of physical force, violence, threats, abusive language or misbehavior toward SportsFest management, officials, volunteers or other participants is strictly prohibited.",
-    icon: ShieldAlert,
   },
   {
-    number: "02",
     title: "School Property & Restricted Areas",
     description:
       "Damaging school property, attempting to damage any facility or entering areas marked as restricted is strictly prohibited.",
-    icon: Ban,
   },
   {
-    number: "03",
     title: "Weapons",
     description:
       "Bringing any weapon, dangerous object or item that may cause harm onto the venue or school campus is strictly prohibited.",
-    icon: CircleOff,
   },
   {
-    number: "04",
     title: "Unfair Means & Cheating",
     description:
       "Using unfair means, cheating or attempting to gain an unauthorized advantage over other participants in order to win a competition is prohibited.",
-    icon: Gavel,
   },
   {
-    number: "05",
     title: "Smoking, Vaping & Alcohol",
     description:
       "Cigarettes, vapes, e-cigarettes, alcohol and all other intoxicating substances are prohibited on campus. Any vape or e-cigarette discovered will be confiscated and will not be returned.",
-    icon: Cigarette,
   },
   {
-    number: "06",
     title: "Noise & Disturbance",
     description:
       "Producing excessive noise, creating unnecessary disturbance or disrupting events, classes, officials or other participants on campus is prohibited.",
-    icon: VolumeX,
   },
   {
-    number: "07",
     title: "Offensive Material",
     description:
       "Displaying, carrying or distributing content that promotes violence, profanity, drug abuse, discrimination or any other offensive material is prohibited.",
-    icon: AlertTriangle,
   },
   {
-    number: "08",
     title: "Misuse of Equipment",
     description:
       "Misusing, removing or damaging any sports equipment, furniture, technology or other property provided by the SportsFest management is prohibited.",
-    icon: Ban,
   },
   {
-    number: "09",
     title: "Harassment",
     description:
       "Any attempt to harass, threaten, intimidate or offend another delegate, participant, official or member of the management—physically, verbally or otherwise—is strictly prohibited.",
-    icon: ShieldAlert,
   },
 ];
 
@@ -101,9 +73,8 @@ export default function CodeOfConductPage() {
         <div className="relative z-10 mx-auto max-w-7xl">
           <Link
             href="/#home"
-            className="group mb-5 inline-flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-[0.12em] text-white/55 transition hover:text-[#a9c4b4] sm:mb-10 sm:gap-2 sm:text-sm sm:tracking-[0.15em]"
+            className="mb-5 inline-flex text-[9px] font-bold uppercase tracking-[0.12em] text-white/55 transition hover:text-[#a9c4b4] sm:mb-10 sm:text-sm sm:tracking-[0.15em]"
           >
-            <ArrowLeft className="h-3.5 w-3.5 transition-transform group-hover:-translate-x-1 sm:h-[18px] sm:w-[18px]" />
             Back to SportsFest
           </Link>
 
@@ -125,97 +96,20 @@ export default function CodeOfConductPage() {
         </div>
       </section>
 
-      <section className="px-4 pt-8 sm:px-6 sm:pt-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="relative flex items-start gap-3 overflow-hidden border border-[#a9c4b4]/30 bg-[#075c3f]/20 p-3.5 sm:block sm:p-6 md:flex md:items-center md:gap-6 md:p-8">
-            <div className="absolute left-0 top-0 h-full w-1 bg-[#a9c4b4]" />
-
-            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#a9c4b4] text-[#071b16] sm:mb-5 sm:h-14 sm:w-14 md:mb-0">
-              <AlertTriangle className="h-3.5 w-3.5 sm:h-[26px] sm:w-[26px]" />
-            </span>
-
-            <div className="min-w-0">
-              <p className="text-[9px] font-black uppercase tracking-[0.14em] text-[#a9c4b4] sm:text-xs sm:tracking-[0.22em]">
-                Zero-tolerance policy
-              </p>
-
-              <p className="mt-1.5 text-[11px] leading-[1.55] text-white/75 sm:mt-2 sm:text-base sm:leading-7">
-                Serious misconduct may result in immediate disqualification,
-                removal from the venue and further disciplinary action by the
-                school administration.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="px-3 py-10 sm:px-6 sm:py-20">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 items-stretch gap-2.5 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {rules.map((rule) => {
-            const Icon = rule.icon;
-
-            return (
-              <article
-                key={rule.number}
-                className="group relative flex h-full min-w-0 flex-col overflow-hidden rounded-lg border border-white/10 bg-white/[0.035] p-3 hover:border-[#a9c4b4]/50 hover:bg-[#075c3f]/10 sm:rounded-none sm:p-7"
-              >
-                <div className="absolute left-0 top-0 h-full w-0.5 bg-[#a9c4b4] sm:w-1" />
-
-                <div className="flex items-center justify-between gap-2">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center border border-[#a9c4b4]/25 bg-[#a9c4b4]/10 text-[#a9c4b4] transition group-hover:bg-[#a9c4b4] group-hover:text-[#071b16] sm:h-12 sm:w-12">
-                    <Icon className="h-4 w-4 sm:h-[22px] sm:w-[22px]" />
-                  </span>
-
-                  <span className="text-xl font-black text-white/[0.07] sm:text-4xl">
-                    {rule.number}
-                  </span>
-                </div>
-
-                <h2 className="mt-3 min-w-0 break-words text-[11px] font-black uppercase leading-[1.25] tracking-normal text-white [overflow-wrap:anywhere] sm:mt-6 sm:text-xl sm:leading-normal sm:tracking-wide">
-                  {rule.title}
-                </h2>
-
-                <p className="mt-2 min-w-0 break-words text-[10px] leading-[1.55] text-white/60 [overflow-wrap:anywhere] sm:mt-4 sm:text-sm sm:leading-7">
-                  {rule.description}
-                </p>
-
-                <div className="absolute -bottom-10 -right-10 h-20 w-20 rounded-full bg-[#a9c4b4]/0 blur-2xl transition duration-300 group-hover:bg-[#a9c4b4]/15 sm:-bottom-16 sm:-right-16 sm:h-32 sm:w-32 sm:blur-3xl" />
-              </article>
-            );
-          })}
-          {/*final panel*/}
-          <div className="group relative flex h-full min-w-0 flex-col justify-end overflow-hidden rounded-lg border border-white/10 bg-white/[0.035] p-3 text-left text-white transition-all duration-300 hover:-translate-y-1 hover:border-[#a9c4b4]/50 hover:bg-[#075c3f]/10 sm:hidden">
-            <Image
-              src="/images/hero-sports.jpg"
-              alt=""
-              fill
-              sizes="50vw"
-              className="object-cover opacity-20 transition duration-500 group-hover:scale-105 group-hover:opacity-10"
-            />
-
-            <div className="absolute left-0 top-0 z-10 h-full w-0.5 bg-[#a9c4b4]" />
-
-            <span className="absolute right-3 top-3 z-10 text-xl font-black text-white/[0.07]">
-              XIII
-            </span>
-
-            <div className="relative z-10 min-w-0">
-              <p className="mb-1 text-[8px] font-black uppercase tracking-[0.12em] text-[#a9c4b4]">
-                LGS JT
-              </p>
-
-              <h2 className="break-words text-[11px] font-black uppercase leading-[1.25] text-white">
-                SportsFest XIII
+      <section className="px-4 py-10 sm:px-6 sm:py-20">
+        <ul className="mx-auto max-w-5xl list-disc space-y-6 pl-5 marker:text-[#a9c4b4] sm:space-y-8 sm:pl-7">
+          {rules.map((rule) => (
+            <li key={rule.title} className="pl-2 sm:pl-3">
+              <h2 className="text-sm font-black uppercase leading-snug tracking-wide text-white sm:text-xl">
+                {rule.title}
               </h2>
 
-              <p className="mt-2 text-[10px] leading-[1.55] text-white/60">
-                25–27 Sep & 2–4 Oct
+              <p className="mt-2 text-xs leading-6 text-white/65 sm:text-base sm:leading-8">
+                {rule.description}
               </p>
-            </div>
-
-            <div className="pointer-events-none absolute -bottom-10 -right-10 h-20 w-20 rounded-full bg-[#a9c4b4]/0 blur-2xl transition duration-300 group-hover:bg-[#a9c4b4]/15" />
-          </div>
-        </div>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <Footer />
