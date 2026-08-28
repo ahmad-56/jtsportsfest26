@@ -836,28 +836,6 @@ const sportsCatalog: Sport[] = [
   },
 
   {
-    number: "16",
-    name: "Tennis",
-    slug: "tennis",
-    category: "Racquet Sport",
-    image: "/images/sports/tennis.png",
-    description: "A competitive tennis tournament showcasing agility, precision, endurance, and strategic gameplay.",
-    teamSize: "Singles / Doubles",
-    date: "October 4–6",
-    age: "U17, U19",
-    format: "Singles / Doubles",
-    rules: [
-      "Players must arrive before scheduled matches.",
-      "Standard tennis rules apply.",
-      "Only registered participants may compete.",
-      "Officials' decisions are final.",
-    ],
-    note: [
-      "Participants are encouraged to bring their own racquets.",
-    ],
-  },
-
-  {
     number: "17",
     name: "Tug of War",
     slug: "tug-of-war",
@@ -1060,28 +1038,6 @@ const sportsCatalog: Sport[] = [
     ],
     note: [
       "Players should wear appropriate sports shoes and attire.",
-    ],
-  },
-
-  {
-    number: "21",
-    name: "Ludo",
-    slug: "ludo",
-    category: "Board Game",
-    image: "/images/sports/ludo.png",
-    description: "A thrilling Ludo tournament emphasizing strategy, classic board tactics, precise dice rolls, and good sportsmanship.",
-    teamSize: "1 player (or 2 for doubles)",
-    date: "October 4–6",
-    age: "U17, U19",
-    format: "Knockout",
-    rules: [
-      "Players must arrive 15 minutes before their scheduled match.",
-      "Only registered participants may play.",
-      "Standard Ludo tournament rules will apply regarding dice rolls and token movement.",
-      "The referee/arbiter's decision will be final.",
-    ],
-    note: [
-      "Game boards and official dice will be provided at the venue.",
     ],
   },
 
