@@ -13,5 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${siteUrl}/register`,
     },
+    {
+      url: `${siteUrl}/rules`,
+    },
   ];
 }
