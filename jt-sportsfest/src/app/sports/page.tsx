@@ -119,29 +119,31 @@ export default function SportsGrid() {
               </Reveal>
             ))}
             {/* final panel */}
-            <Reveal>
-              <div className="sports-preview-card group relative aspect-square w-full cursor-default overflow-hidden border-[3px] border-[#a9c4b4] bg-[#071b16] text-left sm:border-4">
-                <Image
-                  src="/images/hero-sports.jpg"
-                  alt=""
-                  fill
-                  sizes="(max-width: 639px) calc(100vw - 7rem), 340px"
-                  className="object-cover opacity-70 transition duration-500 group-hover:scale-105 group-hover:opacity-45"
-                />
+            <Reveal className="lg:col-span-3 lg:[container-type:inline-size]">
+                <div className="sports-preview-card group relative aspect-square w-full cursor-default overflow-hidden border-[3px] border-[#a9c4b4] bg-[#071b16] text-left sm:border-4 lg:h-[calc((100cqw_-_2rem)/3)] lg:aspect-auto">
+                  <Image
+                    src="/images/hero9-sports.jpg"
+                    alt=""
+                    fill
+                    sizes="(max-width: 639px) calc(100vw - 7rem), 310px"
+                    className="object-cover opacity-70 transition duration-500 group-hover:scale-105 group-hover:opacity-45"
+                  />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#071b16]/80 via-[#071b16]/10 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-2 sm:p-4">
-                  <p className="truncate text-[8px] font-black uppercase tracking-wide text-[#a9c4b4] sm:text-xs">
-                    LGS JT
-                  </p>
-                  <h3 className="mt-0.5 truncate text-[10px] font-black uppercase text-white sm:mt-1 sm:text-lg">
-                    SportsFest XIII
-                  </h3>
-                  <p className="mt-1 text-[8px] font-bold uppercase tracking-wide text-white/60 sm:text-[10px] lg:text-xs">
-                    25–27 Sep & 2–4 Oct
-                  </p>
+                  <div className="absolute inset-0 bg-black/60" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(7,92,63,0.32),transparent_58%)]" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#071b16]/80 via-[#071b16]/10 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 p-2 sm:p-4 lg:inset-0 lg:flex lg:flex-col lg:items-center lg:justify-center lg:p-6 lg:text-center">
+                    <p className="truncate text-[8px] font-black uppercase tracking-wide text-[#a9c4b4] sm:text-xs lg:text-lg lg:tracking-[0.2em]">
+                      LGS JT
+                    </p>
+                    <h3 className="mt-0.5 truncate text-[10px] font-black uppercase text-white sm:mt-1 sm:text-lg lg:mt-3 lg:text-5xl lg:leading-none">
+                      SportsFest XIII
+                    </h3>
+                    <p className="mt-1 text-[8px] font-bold uppercase tracking-wide text-white/60 sm:text-[10px] lg:mt-4 lg:text-xl lg:text-white/70">
+                      25–27 Sep & 2–4 Oct
+                    </p>
+                  </div>
                 </div>
-              </div>
             </Reveal>
           </div>
         </div>
@@ -256,7 +258,7 @@ export default function SportsGrid() {
                 {selectedSport.note && (
                   <div className="mt-6 min-w-0 overflow-hidden border-l-2 border-[#a9c4b4] bg-[#a9c4b4]/10 p-4 sm:mt-8 sm:p-5">
                     <p className="break-words text-[10px] font-black uppercase tracking-[0.18em] text-[#a9c4b4] sm:text-xs">
-                      Important note
+                      Allowed Kits and Footwear
                     </p>
 
                     <p className="mt-2 break-words text-xs leading-6 text-white/65 sm:text-sm sm:leading-7">

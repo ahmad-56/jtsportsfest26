@@ -301,7 +301,7 @@ const sportsCatalog: Sport[] = [
     image: "/images/sports/atheletics.png",
     description: "A competitive athletics event featuring speed, endurance, strength, and determination across multiple disciplines.",
     teamSize: "Individual",
-    date: "October 4–6",
+    date: "September 25–27",
     age: "BOYS U-17, BOYS U-19; GIRLS U-17, GIRLS U-19",
     format: "Individual Events",
     rules: [
@@ -843,7 +843,7 @@ const sportsCatalog: Sport[] = [
     image: "/images/sports/tug-of-war.jpg",
     description: "A thrilling tug of war contest emphasizing teamwork, coordination, strength, and determination.",
     teamSize: "Team size: 8 pullers",
-    date: "October 4–6",
+    date: "September 25–27",
     age: "BOYS U-17, BOYS U-19; GIRLS U-17, GIRLS U-19",
     format: "Tug of War matches are completed in a best of three format",
     rules: [
