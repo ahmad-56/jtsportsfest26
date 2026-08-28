@@ -261,9 +261,16 @@ export default function SportsGrid() {
                       Allowed Kits and Footwear
                     </p>
 
-                    <p className="mt-2 break-words text-xs leading-6 text-white/65 sm:text-sm sm:leading-7">
-                      {selectedSport.note}
-                    </p>
+                    <ul className="mt-2 list-disc space-y-1 pl-5 text-xs leading-6 text-white/65 marker:text-[#a9c4b4] sm:text-sm sm:leading-7">
+                      {selectedSport.note.map((item, index) => (
+                        <li
+                          key={`${selectedSport.slug}-note-${index}`}
+                          className="break-words pl-1"
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 )}
               </div>
