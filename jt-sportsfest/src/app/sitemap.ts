@@ -16,5 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${siteUrl}/rules`,
     },
+    {
+      url: `${siteUrl}/coming-soon`,
+    },
   ];
 }
