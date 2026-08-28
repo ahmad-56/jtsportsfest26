@@ -14,7 +14,6 @@ function EventDates() {
   className="w-full max-w-md"
 >
   <div className="relative px-4 py-3 text-center sm:px-5 sm:py-4">
-    {/* Date columns */}
     <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2 sm:gap-4">
       <div className="min-w-0">
         <p className="text-[9px] font-black uppercase tracking-[0.2em] text-[#97afa1] sm:text-xs">
@@ -30,6 +29,10 @@ function EventDates() {
             2026
           </span>
         </div>
+
+        <p className="mt-2 text-[9px] uppercase font-semibold leading-snug text-white/70 sm:text-[10px]">
+          Cricket, athletics & tug of war
+        </p>
       </div>
 
       {/* Divider line */}
@@ -49,6 +52,10 @@ function EventDates() {
             2026
           </span>
         </div>
+
+        <p className="mt-2 text-[9px] uppercase font-semibold leading-snug text-white/70 sm:text-[10px]">
+          All sports
+        </p>
       </div>
     </div>
 

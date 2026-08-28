@@ -4,6 +4,7 @@ import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import SportsComingSoon from "@/components/SportsComingSoon";
+import SportsPreview from "@/components/SportsPreview";
 import IntegritySection from "@/components/IntegritySection";
 /* import RegisterNowSection from "@/components/RegisterNowSection"; */
 
@@ -14,7 +15,7 @@ export default function HomePage() {
 
       <main>
         <Hero />
-        <SportsComingSoon />
+        <SportsPreview />
         <About />
         <Contact />
         <IntegritySection />

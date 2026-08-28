@@ -4,6 +4,17 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const rules = [
+
+  {
+    title: "Identification",
+    description:
+    "All participants must bring valid official identification documents (ID Card/Smart Card/CNIC) to ensure entry in the Event.",
+  },
+  {
+    title: "Protest Policy",
+    description:
+    "Teams/Delegations would be charged over Rs 4000 if they protest against refrees or indulge in serious fights.",
+  },
   {
     title: "Physical Violence",
     description:

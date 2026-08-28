@@ -120,7 +120,7 @@ export default function SportDetails({
             {sport.note && (
               <div className="mt-6 min-w-0 overflow-hidden border-l-2 border-[#a9c4b4] bg-[#a9c4b4]/10 p-4 sm:mt-8 sm:p-5">
                 <p className="break-words text-[10px] font-black uppercase tracking-[0.18em] text-[#a9c4b4] sm:text-xs">
-                  Important note
+                  Allowed Kits and Footwear
                 </p>
                 <p className="mt-2 break-words text-xs leading-6 text-white/65 sm:text-sm sm:leading-7">
                   {sport.note}
