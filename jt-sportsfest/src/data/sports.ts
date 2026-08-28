@@ -1,7 +1,7 @@
 export type SportEventDetail = {
   events: string[];
   rules: string[];
-  allowedKitsAndFootwear?: string[];
+  note?: string[];
 };
 
 export type Sport = {
@@ -18,7 +18,7 @@ export type Sport = {
   rules: string[];
   events?: string[];
   eventDetails?: SportEventDetail[];
-  allowedKitsAndFootwear?: string[];
+  note?: string[];
 };
 
 const sportsCatalog: Sport[] = [
@@ -60,7 +60,7 @@ const sportsCatalog: Sport[] = [
           "One bowler can bowl maximum 2 overs in an innings",
           "2 Golden balls will be bowled per innings, for which score will be doubled (e.g. if 2 scored, that will be counted as 4)",
         ],
-        allowedKitsAndFootwear: [
+        note: [
           "Proper Sports Kit with White Shirt & white trouser",
         ],
       },
@@ -76,16 +76,17 @@ const sportsCatalog: Sport[] = [
           "One bowler can bowl maximum 2 overs in an innings",
           "2 Golden balls will be bowled per innings, for which score will be doubled (e.g. if 2 scored, that will be counted as 4)",
         ],
-        allowedKitsAndFootwear: [
+        note: [
           "Colored Kit",
           "Proper Sports Kit (Shirt & trouser) with Joggers",
         ],
       },
     ],
-    allowedKitsAndFootwear: [
+    note: [
       "Proper Sports Kit with White Shirt & white trouser",
       "Colored Kit",
       "Proper Sports Kit (Shirt & trouser) with Joggers",
+      "Teams must bring their own approved cricket equipment unless informed otherwise. The umpire’s decision will be considered final.",
     ],
   },
 
@@ -132,15 +133,16 @@ const sportsCatalog: Sport[] = [
           "The team taking the restart has only 4 seconds to play the ball once ready, or possession passes to the opponent",
           "2 halves of 10 minutes duration with 5 minutes break",
         ],
-        allowedKitsAndFootwear: [
+        note: [
           "Footwear: Only Grippers allowed for Artificial Grass Field",
           "KIT: Proper Sports Shirt with Shorts, Trouser allowed for Goal Keeper",
         ],
       },
     ],
-    allowedKitsAndFootwear: [
+    note: [
       "Footwear: Only Grippers allowed for Artificial Grass Field",
       "KIT: Proper Sports Shirt with Shorts, Trouser allowed for Goal Keeper",
+      "Players should bring appropriate footwear and protective equipment.",
     ],
   },
 
@@ -174,6 +176,9 @@ const sportsCatalog: Sport[] = [
         rules: [
         ],
       },
+    ],
+    note: [
+      "Participants should handle equipment responsibly and follow all safety guidelines.",
     ],
   },
 
@@ -235,6 +240,9 @@ const sportsCatalog: Sport[] = [
         ],
       },
     ],
+    note: [
+      "Participants should warm up properly before competing.",
+    ],
   },
 
   {
@@ -274,13 +282,14 @@ const sportsCatalog: Sport[] = [
           "For Round 1, One game of 15 points will be played",
           "Standard Serving , General Faults & Play Rules to be followed",
         ],
-        allowedKitsAndFootwear: [
+        note: [
           "Proper Sports Kit with Sports Shirt & Shorts (trousers for Girls), Only Non-marking shoes allowed to have sufficient grip on floor surface",
         ],
       },
     ],
-    allowedKitsAndFootwear: [
+    note: [
       "Proper Sports Kit with Sports Shirt & Shorts (trousers for Girls), Only Non-marking shoes allowed to have sufficient grip on floor surface",
+      "Participants should bring their own racquets if possible.",
     ],
   },
 
@@ -379,6 +388,9 @@ const sportsCatalog: Sport[] = [
         ],
       },
     ],
+    note: [
+      "Arrive early for event check-in and warm-up.",
+    ],
   },
 
   {
@@ -432,6 +444,9 @@ const sportsCatalog: Sport[] = [
         ],
       },
     ],
+    note: [
+      "Players should wear appropriate non-marking sports shoes.",
+    ],
   },
 
   {
@@ -464,6 +479,9 @@ const sportsCatalog: Sport[] = [
         rules: [
         ],
       },
+    ],
+    note: [
+      "Maintain silence throughout all matches.",
     ],
   },
 
@@ -498,6 +516,9 @@ const sportsCatalog: Sport[] = [
         ],
       },
     ],
+    note: [
+      "Handle darts safely at all times.",
+    ],
   },
 
   {
@@ -530,6 +551,9 @@ const sportsCatalog: Sport[] = [
         rules: [
         ],
       },
+    ],
+    note: [
+      "Bring personal peripherals if permitted by organizers.",
     ],
   },
 
@@ -576,6 +600,9 @@ const sportsCatalog: Sport[] = [
         ],
       },
     ],
+    note: [
+      "Players should wear appropriate protective equipment.",
+    ],
   },
 
   {
@@ -607,6 +634,9 @@ const sportsCatalog: Sport[] = [
         ],
       },
     ],
+    note: [
+      "Comfortable footwear is recommended.",
+    ],
   },
 
   {
@@ -637,6 +667,9 @@ const sportsCatalog: Sport[] = [
         rules: [
         ],
       },
+    ],
+    note: [
+      "Handle cues and tables with care.",
     ],
   },
 
@@ -725,6 +758,9 @@ const sportsCatalog: Sport[] = [
         ],
       },
     ],
+    note: [
+      "Warm up thoroughly before participating.",
+    ],
   },
 
   {
@@ -794,6 +830,9 @@ const sportsCatalog: Sport[] = [
         ],
       },
     ],
+    note: [
+      "Bring your own swim cap and goggles.",
+    ],
   },
 
   {
@@ -812,6 +851,9 @@ const sportsCatalog: Sport[] = [
       "Standard tennis rules apply.",
       "Only registered participants may compete.",
       "Officials' decisions are final.",
+    ],
+    note: [
+      "Participants are encouraged to bring their own racquets.",
     ],
   },
 
@@ -861,6 +903,9 @@ const sportsCatalog: Sport[] = [
           "Commands: Pulls start only after the referee gives the final \"Pull\" command following preliminary ready signals.",
         ],
       },
+    ],
+    note: [
+      "Wear shoes with good grip for safety.",
     ],
   },
 
@@ -913,6 +958,9 @@ const sportsCatalog: Sport[] = [
         ],
       },
     ],
+    note: [
+      "Players should wear appropriate sports attire.",
+    ],
   },
 
   {
@@ -952,15 +1000,16 @@ const sportsCatalog: Sport[] = [
           "For Round 1, One game of 15 points will be played",
           "Standard Serving , General Faults & Play Rules to be followed",
         ],
-        allowedKitsAndFootwear: [
+        note: [
           "Proper Sports Kit with Sports Shirt & Shorts (trousers for Girls),",
           "Only Non-marking shoes allowed to have sufficient grip on floor surface",
         ],
       },
     ],
-    allowedKitsAndFootwear: [
+    note: [
       "Proper Sports Kit with Sports Shirt & Shorts (trousers for Girls),",
       "Only Non-marking shoes allowed to have sufficient grip on floor surface",
+      "Participants are encouraged to bring their own paddles.",
     ],
   },
 
@@ -1009,6 +1058,9 @@ const sportsCatalog: Sport[] = [
         ],
       },
     ],
+    note: [
+      "Players should wear appropriate sports shoes and attire.",
+    ],
   },
 
   {
@@ -1027,6 +1079,9 @@ const sportsCatalog: Sport[] = [
       "Only registered participants may play.",
       "Standard Ludo tournament rules will apply regarding dice rolls and token movement.",
       "The referee/arbiter's decision will be final.",
+    ],
+    note: [
+      "Game boards and official dice will be provided at the venue.",
     ],
   },
 
@@ -1070,6 +1125,9 @@ const sportsCatalog: Sport[] = [
           "Penalty Fouls: Committed by the defense inside the 5-meter zone to stop a probable goal, granting the opponent a direct penalty shot.",
         ],
       },
+    ],
+    note: [
+      "Participants should wear appropriate swimwear and water polo caps.",
     ],
   },
 
@@ -1117,6 +1175,9 @@ const sportsCatalog: Sport[] = [
           "Direct Wall Hits (Out): If a player hits the ball directly into the walls or fence without it bouncing on the floor first, it is out.",
         ],
       },
+    ],
+    note: [
+      "Participants are encouraged to bring their own padel racquets if available.",
     ],
   }
 ];
@@ -1176,3 +1237,4 @@ export const sports: Sport[] = sportsCatalog
       number: String(index + 1).padStart(2, "0"),
     };
   });
+  
