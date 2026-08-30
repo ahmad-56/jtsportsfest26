@@ -21,8 +21,16 @@ const nexa = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "JT SportsFest XIII",
-  description: "JT SportsFest Edition XIII",
+  metadataBase: new URL("https://www.lgsjtsportsfest.com"),
+
+  title: "JT SportsFest XIII | LGS Johar Town",
+
+  description:
+    "Join JT SportsFest XIII at Lahore Grammar School Johar Town Senior Boys Campus, from September 25–27 and October 2–4, 2026, featuring 20+ sports for boys and girls.",
+
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({
