@@ -37,8 +37,8 @@ export default function Header() {
         }`}
       >
         <nav
-          className={`mx-auto flex max-w-7xl items-center justify-between px-6 transition-[height] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-            isScrolled ? "h-[72px]" : "h-24"
+          className={`mx-auto flex max-w-7xl items-center justify-between px-4 transition-[height] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] sm:px-6 ${
+            isScrolled ? "h-16 lg:h-[72px]" : "h-20 lg:h-24"
           }`}
         >
           <Link
@@ -54,13 +54,17 @@ export default function Header() {
               height={75}
               priority
               className={`logo-img object-contain ${
-                isScrolled ? "h-14 w-14" : "h-[75px] w-[75px]"
+                isScrolled
+                  ? "h-12 w-12 lg:h-14 lg:w-14"
+                  : "h-16 w-16 lg:h-[75px] lg:w-[75px]"
               }`}
             />
 
             <span
               className={`whitespace-nowrap font-bold uppercase transition-[font-size] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-                isScrolled ? "text-lg" : "text-xl"
+                isScrolled
+                  ? "text-base lg:text-lg"
+                  : "text-lg lg:text-xl"
               }`}
             >
               JT SportsFest{" "}
