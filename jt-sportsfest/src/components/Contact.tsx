@@ -23,18 +23,18 @@ const teamMembers = [
     email: "ayaanaquib31@gmail.com",
   },
   {
-    name: "Mr Someone 1",
-    role: "Director Registrations",
-    phone: "Insert Phone Number Here",
-    phoneHref: "tel:+924235165647",
-    email: "Insert Email Here",
+    name: "Ahmad Hassan",
+    role: "Director IT",
+    phone: "+92 310 4762482",
+    phoneHref: "tel:+923104762482",
+    email: "ahmad392.hassan@gmail.com",
   },
   {
-    name: "Mr Someone 2",
-    role: "Co-Director Registrations",
-    phone: "Insert Phone Number Here",
-    phoneHref: "tel:+924235165647",
-    email: "Insert Email Here",
+    name: "Hannan Aqil",
+    role: "Director IT",
+    phone: "+92 331 0400982",
+    phoneHref: "tel:+923310400982",
+    email: "hannanaqil786@gmail.com",
   },
 ];
 
