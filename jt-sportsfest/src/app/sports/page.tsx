@@ -132,14 +132,14 @@ export default function SportsGrid() {
                   <div className="absolute inset-0 bg-black/60" />
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(7,92,63,0.32),transparent_58%)]" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#071b16]/80 via-[#071b16]/10 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-2 sm:p-4 lg:inset-0 lg:flex lg:flex-col lg:items-center lg:justify-center lg:p-6 lg:text-center">
-                    <p className="truncate text-[8px] font-black uppercase tracking-wide text-[#a9c4b4] sm:text-xs lg:text-lg lg:tracking-[0.2em]">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-3 text-center sm:p-4 lg:p-6">
+                    <p className="truncate text-[10px] font-black uppercase tracking-wide text-[#a9c4b4] lg:text-lg lg:tracking-[0.2em]">
                       LGS JT
                     </p>
-                    <h3 className="mt-0.5 truncate text-[10px] font-black uppercase text-white sm:mt-1 sm:text-lg lg:mt-3 lg:text-5xl lg:leading-none">
+                    <h3 className="mt-1 truncate text-base font-black uppercase text-white sm:text-xl lg:mt-3 lg:text-5xl lg:leading-none">
                       SportsFest XIII
                     </h3>
-                    <p className="mt-1 text-[8px] font-bold uppercase tracking-wide text-white/60 sm:text-[10px] lg:mt-4 lg:text-xl lg:text-white/70">
+                    <p className="mt-2 text-[9px] font-bold uppercase tracking-wide text-white/70 sm:text-xs lg:mt-4 lg:text-xl">
                       25–27 Sep & 2–4 Oct
                     </p>
                   </div>
