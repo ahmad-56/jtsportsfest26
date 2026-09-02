@@ -22,19 +22,19 @@ const teamMembers = [
     phoneHref: "tel:+923164846440",
     email: "ayaanaquib31@gmail.com",
   },
-    {
+  {
+    name: "Dostain Ahmed",
+    role: "Director Registrations",
+    phone: "+92 330 8611720",
+    phoneHref: "tel:+923308611720",
+    email: "dostainahmed123@gmail.com",
+  },
+  {
     name: "Musa Moghal",
-    role: "Director Registration",
+    role: "Director Registrations",
     phone: "+92 321 4188144",
     phoneHref: "tel:+923214188144",
     email: "mmusamoghal@gmail.com",
-  },
-  {
-    name: "Ahmad Hassan",
-    role: "Director IT",
-    phone: "+92 310 4762482",
-    phoneHref: "tel:+923104762482",
-    email: "ahmad392.hassan@gmail.com",
   },
 ];
 
