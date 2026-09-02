@@ -98,7 +98,7 @@ const sportsCatalog: Sport[] = [
     image: "/images/sports/football.png",
     description: "A fast-paced football competition focused on teamwork, skill, coordination and sportsmanship.",
     teamSize: "5 A Side, 3 Rolling Subs",
-    date: "October 4–6",
+    date: "October 2–4",
     age: "BOYS U-17, BOYS U-19; GIRLS U-17, GIRLS U-19",
     format: "2 halves of 10 minutes duration with 5 minutes break",
     rules: [
@@ -154,7 +154,7 @@ const sportsCatalog: Sport[] = [
     image: "/images/sports/archery.png",
     description: "A precision archery competition testing focus, accuracy, consistency, and composure under pressure.",
     teamSize: "Individual",
-    date: "October 4–6",
+    date: "October 2–4",
     age: "BOYS; GIRLS",
     format: "Individual",
     rules: [
@@ -190,7 +190,7 @@ const sportsCatalog: Sport[] = [
     image: "/images/sports/arm-wrestling.png",
     description: "A strength-based contest emphasizing power, technique, endurance, and fair competition.",
     teamSize: "Individual",
-    date: "October 4–6",
+    date: "October 2–4",
     age: "Open",
     format: "Individual",
     rules: [
@@ -253,7 +253,7 @@ const sportsCatalog: Sport[] = [
     image: "/images/sports/badminton.png",
     description: "A fast-paced badminton tournament showcasing agility, precision, strategy, and quick reflexes.",
     teamSize: "Singles / Doubles",
-    date: "October 4–6",
+    date: "October 2–4",
     age: "BOYS U-17 Singles, BOYS U-19 Singles, BOYS Open Doubles; GIRLS U-17 Singles, GIRLS U-19 Singles, Girls Open Doubles",
     format: "For Round 1, One game of 15 points will be played",
     rules: [
@@ -401,7 +401,7 @@ const sportsCatalog: Sport[] = [
     image: "/images/sports/basket-ball.jpg",
     description: "An exciting basketball tournament highlighting teamwork, skill, speed, and competitive spirit.",
     teamSize: "5 A Side with maximum 5 Substitutions allowed",
-    date: "October 4–6",
+    date: "October 2–4",
     age: "BOYS U-17, BOYS U-19; GIRLS U-17, GIRLS U-19",
     format: "Games use four 8-minute quarters.",
     rules: [
@@ -457,7 +457,7 @@ const sportsCatalog: Sport[] = [
     image: "/images/sports/chess.png",
     description: "A strategic chess competition testing critical thinking, planning, patience, and decision-making skills.",
     teamSize: "Individual",
-    date: "October 4–6",
+    date: "October 2–4",
     age: "BOYS open; GIRLS",
     format: "Individual",
     rules: [
@@ -493,7 +493,7 @@ const sportsCatalog: Sport[] = [
     image: "/images/sports/darts.png",
     description: "A precision darts competition rewarding accuracy, consistency, concentration, and steady nerves.",
     teamSize: "Individual",
-    date: "October 4–6",
+    date: "October 2–4",
     age: "BOYS Open; GIRLS",
     format: "Individual",
     rules: [
@@ -529,7 +529,7 @@ const sportsCatalog: Sport[] = [
     image: "/images/sports/gaming.png",
     description: "A competitive esports tournament showcasing teamwork, strategy, quick decision-making, and gaming excellence.",
     teamSize: "Depends on game",
-    date: "October 4–6",
+    date: "October 2–4",
     age: "BOYS Open; GIRLS (FIFA)",
     format: "FIFA",
     rules: [
@@ -565,7 +565,7 @@ const sportsCatalog: Sport[] = [
     image: "/images/hero-sports.jpg",
     description: "A dynamic hockey competition emphasizing teamwork, speed, coordination, and tactical gameplay.",
     teamSize: "Team size: 6 players per side with maximum 2 rolling substitutions made from the sideline.",
-    date: "October 4–6",
+    date: "October 2–4",
     age: "BOYS",
     format: "Knockout",
     rules: [
@@ -613,7 +613,7 @@ const sportsCatalog: Sport[] = [
     image: "/images/hero-sports.jpg",
     description: "An engaging scavenger hunt challenging teamwork, creativity, problem-solving, and time management skills.",
     teamSize: "4 playing + 2 subs",
-    date: "October 4–6",
+    date: "October 2–4",
     age: "Open",
     format: "Team Challenge",
     rules: [
@@ -647,7 +647,7 @@ const sportsCatalog: Sport[] = [
     image: "/images/hero-sports.jpg",
     description: "A snooker tournament testing precision, strategy, patience, and tactical shot-making abilities.",
     teamSize: "Individual",
-    date: "October 4–6",
+    date: "October 2–4",
     age: "BOYS Open",
     format: "Individual",
     rules: [
@@ -681,7 +681,7 @@ const sportsCatalog: Sport[] = [
     image: "/images/sports/strongman.png",
     description: "A challenging strongman competition measuring strength, endurance, determination, and resilience.",
     teamSize: "Individual",
-    date: "October 4–6",
+    date: "October 2–4",
     age: "BOYS",
     format: "Individual",
     rules: [
@@ -771,7 +771,7 @@ const sportsCatalog: Sport[] = [
     image: "/images/hero-sports.jpg",
     description: "A competitive swimming event highlighting speed, endurance, technique, and determination in the pool.",
     teamSize: "Individual",
-    date: "October 4–6",
+    date: "October 2–4",
     age: "BOYS UNDER-17, BOYS UNDER-19",
     format: "Individual Events",
     rules: [
@@ -895,7 +895,7 @@ const sportsCatalog: Sport[] = [
     image: "/images/sports/throwball.png",
     description: "A fast-moving throwball tournament focused on teamwork, coordination, communication, and quick reflexes.",
     teamSize: "7 players per team on the court, with up to 2 substitutes",
-    date: "October 4–6",
+    date: "October 2–4",
     age: "BOYS Open; GIRLS U-17, GIRLS U-19",
     format: "Played in best-of-three sets. One set goes up to 15 points",
     rules: [
@@ -949,7 +949,7 @@ const sportsCatalog: Sport[] = [
     image: "/images/sports/table-tennis.jpg",
     description: "A competitive table tennis tournament testing speed, precision, reflexes, and tactical play.",
     teamSize: "Singles / Doubles",
-    date: "October 4–6",
+    date: "October 2–4",
     age: "BOYS U-17 Singles, BOYS U-19 Singles, BOYS Open Doubles; GIRLS U-17 Singles, GIRLS U-19 Singles, Girls Open Doubles",
     format: "For Round 1, One game of 15 points will be played",
     rules: [
@@ -999,7 +999,7 @@ const sportsCatalog: Sport[] = [
     image: "/images/sports/volleyball.png",
     description: "An energetic volleyball tournament celebrating teamwork, coordination, athleticism, and competitive excellence.",
     teamSize: "Each team has 6 players on the court, with a total squad of 8 players.",
-    date: "October 4–6",
+    date: "October 2–4",
     age: "BOYS U-17, BOYS U-19; GIRLS U-17, GIRLS U-19",
     format: "Best of Three Sets, with 15 points each.",
     rules: [
@@ -1049,7 +1049,7 @@ const sportsCatalog: Sport[] = [
     image: "/images/sports/water-polo.png",
     description: "A fast-paced water polo competition showcasing teamwork, endurance, tactical play, and swimming ability.",
     teamSize: "Team Size: 13 players total per roster, with 7 players in the water per team at a time (6 field players, 1 goalkeeper).",
-    date: "October 4–6",
+    date: "October 2–4",
     age: "BOYS Open",
     format: "4 quarters, typically lasting 8 minutes of actual play per quarter.",
     rules: [
@@ -1095,7 +1095,7 @@ const sportsCatalog: Sport[] = [
     image: "/images/hero-sports.jpg",
     description: "A dynamic padel tournament combining teamwork, quick reflexes, precision, and strategic shot-making.",
     teamSize: "2 playing",
-    date: "October 4–6",
+    date: "October 2–4",
     age: "BOYS U-17, BOYS U-19; GIRLS Open",
     format: "Matches are typically the best of 3 sets.",
     rules: [
