@@ -95,7 +95,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15 }}
-            className="mt-2 text-[clamp(2rem,10vw,3.5rem)] font-NexaXBold font-black uppercase leading-[0.95] sm:mt-3 sm:text-6xl md:text-7xl lg:mt-4 lg:text-[6.5rem]"
+            className="mt-2 text-[clamp(2rem,10vw,3.5rem)] font-NexaXBold font-black uppercase leading-[0.95] sm:mt-3 sm:text-6xl md:text-7xl lg:mt-4 lg:text-[5.5rem]"
           >
             JT SPORTSFEST
 
