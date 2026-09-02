@@ -262,33 +262,42 @@ export default function Footer() {
           <div className="flex flex-col items-center gap-1 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-2.5 lg:justify-end">
             <span>
               Made by:{" "}
-              {developers.map((developer, index) => (
-                <span key={developer.href}>
-                  <a
-                    href={developer.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="footer-text-action inline-flex items-center gap-1 font-semibold text-[#ffffff] transition-[color,transform] duration-600 hover:-translate-y-0.25 hover:text-[#a9c4b4]"
-                  >
-                    {developer.name}
-                    <FaGithub
-                      size={11}
-                      aria-hidden="true"
-                      className="text-[#ffffff]/70"
-                    />
-                  </a>
-                  {index < developers.length - 1 && (
-                    <>
-                      <span className="hidden text-[#ffffff]/40 sm:inline">
-                        {" "}•{" "}
-                      </span>
-                      <span className="text-white/30">
-                        Registrations By:{" "}
-                      </span>
-                    </>
-                  )}
-                </span>
-              ))}
+              <a
+                href={developers[0].href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-text-action inline-flex items-center gap-1 font-semibold text-[#ffffff] transition-[color,transform] duration-600 hover:-translate-y-0.25 hover:text-[#a9c4b4]"
+              >
+                {developers[0].name}
+                <FaGithub
+                  size={11}
+                  aria-hidden="true"
+                  className="text-[#ffffff]/70"
+                />
+              </a>
+            </span>
+
+            <span className="hidden text-[#ffffff]/40 sm:inline">
+              •
+            </span>
+
+            <span>
+              <span className="text-white/30">
+                Registrations By:{" "}
+              </span>
+              <a
+                href={developers[1].href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-text-action inline-flex items-center gap-1 font-semibold text-[#ffffff] transition-[color,transform] duration-600 hover:-translate-y-0.25 hover:text-[#a9c4b4]"
+              >
+                {developers[1].name}
+                <FaGithub
+                  size={11}
+                  aria-hidden="true"
+                  className="text-[#ffffff]/70"
+                />
+              </a>
             </span>
 
             <span className="hidden text-[#ffffff]/40 sm:inline">
