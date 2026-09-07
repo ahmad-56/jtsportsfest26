@@ -55,8 +55,8 @@ export default function Header() {
               priority
               className={`logo-img object-contain ${
                 isScrolled
-                  ? "h-12 w-12 lg:h-14 lg:w-14"
-                  : "h-16 w-16 lg:h-[75px] lg:w-[75px]"
+                  ? "h-10 w-10 lg:h-12 lg:w-12"
+                  : "h-12 w-12 lg:h-16 lg:w-16"
               }`}
             />
 

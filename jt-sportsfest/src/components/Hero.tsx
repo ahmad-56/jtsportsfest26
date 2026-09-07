@@ -116,17 +116,17 @@ export default function Hero() {
               rotate: 0,
             }}
             transition={{ duration: 0.8 }}
-            className="relative order-1 mt-0 flex w-full items-center justify-center lg:order-none lg:mt-2"
+            className="relative order-1 mt-9 flex w-full items-center justify-center sm:mt-0 lg:order-none lg:mt-2"
           >
             <div className="absolute h-4/5 w-4/5 max-w-md rounded-full bg-[#a9c4b4]/10 blur-3xl" />
 
             <Image
               src="/images/nobglogo.png"
               alt="SportsFest Edition XIII"
-              width={500}
-              height={500}
+              width={320}
+              height={200}
               priority
-              className="relative z-10 -my-8 h-[clamp(280px,72vw,380px)] w-auto max-w-full object-contain drop-shadow-[0_30px_50px_rgba(0,0,0,0.45)] sm:-my-9 sm:h-[400px] lg:-my-12 lg:h-[440px]"
+              className="relative z-10 -my-8 h-[clamp(200px,60vw,260px)] w-auto max-w-full object-contain drop-shadow-[0_30px_50px_rgba(0,0,0,0.45)] sm:-my-9 sm:h-[200px] lg:-my-2 lg:h-[340px]"
             />
           </motion.div>
 
