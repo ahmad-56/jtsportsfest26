@@ -140,6 +140,7 @@ export default function SportsPreview() {
       <SportDetails
         sport={selectedSport}
         onClose={() => setSelectedSport(null)}
+        onNavigate={setSelectedSport}
       />
     </>
   );

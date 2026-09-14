@@ -3,54 +3,96 @@
 import Image from "next/image";
 import {
   CalendarDays,
+  ChevronLeft,
+  ChevronRight,
   Trophy,
   Users,
   X,
   type LucideIcon,
 } from "lucide-react";
-import { useEffect } from "react";
-import type { Sport } from "@/data/sports";
+import { useEffect, useId, useRef, type KeyboardEvent } from "react";
+import { sports, type Sport } from "@/data/sports";
 
 type SportDetailsProps = {
   sport: Sport | null;
   onClose: () => void;
+  onNavigate: (sport: Sport) => void;
 };
 
-export default function SportDetails({
+export default function SportDetails(props: SportDetailsProps) {
+  if (!props.sport) return null;
+
+  return <SportDetailsDialog {...props} sport={props.sport} />;
+}
+
+function SportDetailsDialog({
   sport,
   onClose,
-}: SportDetailsProps) {
+  onNavigate,
+}: SportDetailsProps & { sport: Sport }) {
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const titleId = useId();
+  const index = sports.findIndex((item) => item.slug === sport.slug);
+  const previousSport = sports[(index - 1 + sports.length) % sports.length];
+  const nextSport = sports[(index + 1) % sports.length];
+
   useEffect(() => {
-    if (!sport) return;
-
+    const dialog = dialogRef.current;
+    const opener = document.activeElement;
     const previousOverflow = document.body.style.overflow;
+
+    dialog?.showModal();
     document.body.style.overflow = "hidden";
-
-    function closeWithEscape(event: KeyboardEvent) {
-      if (event.key === "Escape") onClose();
-    }
-
-    window.addEventListener("keydown", closeWithEscape);
+    headingRef.current?.focus({ preventScroll: true });
 
     return () => {
+      dialog?.close();
       document.body.style.overflow = previousOverflow;
-      window.removeEventListener("keydown", closeWithEscape);
+      if (opener instanceof HTMLElement && opener.isConnected) {
+        opener.focus({ preventScroll: true });
+      }
     };
-  }, [sport, onClose]);
+  }, []);
 
-  if (!sport) return null;
+  useEffect(() => {
+    if (panelRef.current) panelRef.current.scrollTop = 0;
+    if (contentRef.current) contentRef.current.scrollTop = 0;
+  }, [sport.slug]);
+
+  function handleKeyDown(event: KeyboardEvent<HTMLDialogElement>) {
+    if (event.altKey || event.ctrlKey || event.metaKey) return;
+    if (
+      event.target instanceof HTMLElement &&
+      event.target.closest("input, textarea, select, [contenteditable=true]")
+    ) return;
+
+    if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+      event.preventDefault();
+      headingRef.current?.focus({ preventScroll: true });
+      onNavigate(event.key === "ArrowLeft" ? previousSport : nextSport);
+    }
+  }
 
   return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-label={`${sport.name} details`}
-      className="fixed inset-0 z-[100] flex items-center justify-center overflow-x-hidden bg-[#071b16]/92 p-2 backdrop-blur-md sm:p-4 lg:p-6"
-      onClick={onClose}
+    <dialog
+      ref={dialogRef}
+      aria-labelledby={titleId}
+      onCancel={(event) => {
+        event.preventDefault();
+        onClose();
+      }}
+      onKeyDown={handleKeyDown}
+      onClick={(event) => {
+        if (event.target === event.currentTarget) onClose();
+      }}
+      className="fixed inset-0 m-auto w-[calc(100%-5.5rem)] max-w-6xl overflow-visible bg-transparent p-0 text-white outline-none backdrop:bg-[#071b16]/92 backdrop:backdrop-blur-md sm:w-[calc(100%-8rem)]"
     >
       <div
+        ref={panelRef}
         className="relative grid max-h-[94svh] min-w-0 w-full max-w-6xl overflow-x-hidden overflow-y-auto rounded-xl border border-white/15 bg-[#071b16] shadow-[0_30px_100px_rgba(0,0,0,0.7)] lg:h-[86vh] lg:grid-cols-[minmax(0,3fr)_minmax(0,7fr)] lg:overflow-hidden lg:rounded-2xl"
-        onClick={(event) => event.stopPropagation()}
       >
         <button
           type="button"
@@ -78,7 +120,7 @@ export default function SportDetails({
           </span>
         </div>
 
-        <div className="relative min-w-0 overflow-x-hidden p-4 text-white sm:p-6 lg:overflow-y-auto lg:p-8 xl:p-10">
+        <div ref={contentRef} className="relative min-w-0 overflow-x-hidden p-4 text-white sm:p-6 lg:overflow-y-auto lg:p-8 xl:p-10">
           <div className="pointer-events-none absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-[#a9c4b4]/15 blur-[90px]" />
 
           <div className="relative z-10 min-w-0">
@@ -86,7 +128,7 @@ export default function SportDetails({
               {sport.category}
             </p>
 
-            <h2 className="mt-3 min-w-0 break-words pr-12 text-3xl font-black uppercase leading-none sm:text-4xl lg:text-5xl">
+            <h2 ref={headingRef} id={titleId} tabIndex={-1} className="mt-3 min-w-0 break-words pr-12 text-3xl font-black uppercase leading-none outline-none sm:text-4xl lg:text-5xl">
               {sport.name}
             </h2>
 
@@ -137,7 +179,29 @@ export default function SportDetails({
           </div>
         </div>
       </div>
-    </div>
+
+      <nav aria-label="Browse sports">
+        <button
+          type="button"
+          onClick={() => onNavigate(previousSport)}
+          aria-label={`Previous sport: ${previousSport.name}`}
+          className="absolute -left-11 top-1/2 z-20 grid h-11 w-11 -translate-y-1/2 cursor-pointer place-items-center text-white/75 transition-opacity hover:text-white focus-visible:outline-2 focus-visible:outline-[#a9c4b4] sm:-left-16 sm:h-12 sm:w-12"
+        >
+          <ChevronLeft aria-hidden="true" className="h-9 w-9 sm:h-12 sm:w-12" />
+        </button>
+        <button
+          type="button"
+          onClick={() => onNavigate(nextSport)}
+          aria-label={`Next sport: ${nextSport.name}`}
+          className="absolute -right-11 top-1/2 z-20 grid h-11 w-11 -translate-y-1/2 cursor-pointer place-items-center text-white/75 transition-opacity hover:text-white focus-visible:outline-2 focus-visible:outline-[#a9c4b4] sm:-right-16 sm:h-12 sm:w-12"
+        >
+          <ChevronRight aria-hidden="true" className="h-9 w-9 sm:h-12 sm:w-12" />
+        </button>
+      </nav>
+      <p className="sr-only" aria-live="polite" aria-atomic="true">
+        {sport.name}. Sport {index + 1} of {sports.length}.
+      </p>
+    </dialog>
   );
 }
 
