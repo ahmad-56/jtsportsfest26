@@ -2,13 +2,9 @@
 
 import Image from "next/image";
 import {
-  CalendarDays,
   ChevronLeft,
   ChevronRight,
-  Trophy,
-  Users,
   X,
-  type LucideIcon,
 } from "lucide-react";
 import { useEffect, useId, useRef, type KeyboardEvent } from "react";
 import { sports, type Sport } from "@/data/sports";
@@ -103,7 +99,7 @@ function SportDetailsDialog({
           <X size={20} strokeWidth={2.5} />
         </button>
 
-        <div className="relative h-[170px] min-w-0 overflow-hidden bg-black/30 sm:h-[220px] lg:h-full">
+        <div className="relative hidden h-[170px] min-w-0 overflow-hidden bg-black/30 sm:h-[220px] lg:block lg:h-full">
           <Image
             src={sport.image || "/images/sports/placeholder.png"}
             alt={sport.name}
@@ -115,7 +111,7 @@ function SportDetailsDialog({
 
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#071b16]/70 via-transparent to-[#071b16]/10" />
 
-          <span className="absolute bottom-3 left-4 text-5xl font-black italic text-white/20 sm:text-6xl lg:bottom-6 lg:left-6 lg:text-7xl">
+          <span className="absolute bottom-3 left-4 text-4xl font-black italic text-white/20 sm:text-5xl lg:bottom-6 lg:left-6 lg:text-6xl">
             {sport.number}
           </span>
         </div>
@@ -124,23 +120,20 @@ function SportDetailsDialog({
           <div className="pointer-events-none absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-[#a9c4b4]/15 blur-[90px]" />
 
           <div className="relative z-10 min-w-0">
-            <p className="min-w-0 break-words pr-12 text-[10px] font-black uppercase tracking-[0.2em] text-[#a9c4b4] sm:text-xs sm:tracking-[0.22em]">
-              {sport.category}
+            <p className={`min-w-0 break-words pr-12 text-xs font-black uppercase tracking-[0.2em] sm:text-sm sm:tracking-[0.22em] ${sport.date.startsWith("September") ? "text-[#C7FFDA]" : "text-[#a9c4b4]"}`}>
+              {sport.date}
             </p>
 
             <h2 ref={headingRef} id={titleId} tabIndex={-1} className="mt-3 min-w-0 break-words pr-12 text-3xl font-black uppercase leading-none outline-none sm:text-4xl lg:text-5xl">
               {sport.name}
             </h2>
 
-            <div className="mt-5 grid min-w-0 grid-cols-2 gap-2.5 sm:gap-3 xl:grid-cols-4">
-              <DetailItem icon={Users} label="Team size" value={sport.teamSize} />
-              <DetailItem icon={CalendarDays} label="Category date" value={sport.date} />
-              <DetailItem icon={Users} label="Age groups" value={sport.age} />
-              <DetailItem icon={Trophy} label="Competition format" value={sport.format} />
-            </div>
+            <BulletSection title="Team size" items={sport.teamSize} />
+            <BulletSection title="Age groups" items={sport.age} />
+            <BulletSection title="Competition format" items={sport.format} />
 
-            <div className="mt-6 min-w-0 border-t border-white/10 pt-5 sm:mt-8 sm:pt-6">
-              <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#a9c4b4] sm:text-sm">
+            <div className="mt-7 min-w-0 sm:mt-8">
+              <h3 className="text-sm font-black uppercase tracking-[0.2em] text-[#a9c4b4] sm:text-base">
                 Event rules
               </h3>
 
@@ -148,9 +141,9 @@ function SportDetailsDialog({
                 {sport.rules.map((rule, index) => (
                   <li
                     key={`${sport.slug}-rule-${index}`}
-                    className="flex min-w-0 gap-3 text-xs leading-6 text-white/65 sm:gap-4 sm:text-sm sm:leading-7"
+                    className="grid min-w-0 grid-cols-[1.5rem_minmax(0,1fr)] items-start gap-x-3 text-sm leading-6 text-white/80 sm:grid-cols-[1.75rem_minmax(0,1fr)] sm:gap-x-4 sm:text-[15px] sm:leading-7"
                   >
-                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-[#a9c4b4]/10 text-[10px] font-black text-[#a9c4b4] sm:h-7 sm:w-7 sm:text-xs">
+                    <span className="flex h-6 w-6 items-center justify-center rounded-md bg-[#a9c4b4]/10 text-xs font-black leading-none text-[#a9c4b4] tabular-nums sm:h-7 sm:w-7">
                       {index + 1}
                     </span>
                     <span className="min-w-0 break-words">{rule}</span>
@@ -159,23 +152,21 @@ function SportDetailsDialog({
               </ul>
             </div>
 
-            {sport.note && (
-              <div className="mt-6 min-w-0 overflow-hidden border-l-2 border-[#a9c4b4] bg-[#a9c4b4]/10 p-4 sm:mt-8 sm:p-5">
-                <p className="break-words text-[10px] font-black uppercase tracking-[0.18em] text-[#a9c4b4] sm:text-xs">
-                  Allowed Kits and Footwear
-                </p>
-                <ul className="mt-2 list-disc space-y-1 pl-5 text-xs leading-6 text-white/65 marker:text-[#a9c4b4] sm:text-sm sm:leading-7">
-                  {sport.note.map((item, index) => (
-                    <li
-                      key={`${sport.slug}-note-${index}`}
-                      className="break-words pl-1"
-                    >
+            <BulletSection title="Allowed footwear" items={sport.allowedFootwear} />
+            {sport.imp_note?.length ? (
+              <section className="mt-7 min-w-0 overflow-hidden border-l-2 border-[#a9c4b4] bg-[#a9c4b4]/10 p-4 sm:mt-8 sm:p-5">
+                <h3 className="break-words text-sm font-black uppercase tracking-[0.18em] text-[#a9c4b4] sm:text-base">
+                  Important note
+                </h3>
+                <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-white/80 marker:text-[#a9c4b4] sm:text-[15px] sm:leading-7">
+                  {sport.imp_note.map((item, index) => (
+                    <li key={`${sport.slug}-important-note-${index}`} className="break-words pl-1">
                       {item}
                     </li>
                   ))}
                 </ul>
-              </div>
-            )}
+              </section>
+            ) : null}
           </div>
         </div>
       </div>
@@ -205,22 +196,26 @@ function SportDetailsDialog({
   );
 }
 
-type DetailItemProps = {
-  icon: LucideIcon;
-  label: string;
-  value: string;
+type BulletSectionProps = {
+  title: string;
+  items?: string[];
 };
 
-function DetailItem({ icon: Icon, label, value }: DetailItemProps) {
+function BulletSection({ title, items }: BulletSectionProps) {
+  if (!items?.length) return null;
+
   return (
-    <div className="min-w-0 overflow-hidden border border-white/10 bg-white/[0.035] p-3 sm:p-4">
-      <Icon size={18} className="text-[#a9c4b4]" />
-      <p className="mt-3 min-w-0 break-words text-[9px] font-black uppercase tracking-[0.12em] text-white/35 sm:mt-4 sm:text-[10px] sm:tracking-[0.18em]">
-        {label}
-      </p>
-      <p className="mt-2 min-w-0 break-words text-xs font-bold text-white/80 sm:text-sm">
-        {value}
-      </p>
-    </div>
+    <section className="mt-7 min-w-0 sm:mt-8">
+      <h3 className="text-sm font-black uppercase tracking-[0.2em] text-[#a9c4b4] sm:text-base">
+        {title}
+      </h3>
+      <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-white/80 marker:text-[#a9c4b4] sm:text-[15px] sm:leading-7">
+        {items.map((item, index) => (
+          <li key={`${title}-${index}`} className="break-words pl-1">
+            {item}
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }

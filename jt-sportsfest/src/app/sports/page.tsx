@@ -82,12 +82,9 @@ export default function SportsGrid() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#071b16]/80 via-[#071b16]/10 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-2 sm:p-4">
-                    <p className="truncate text-[8px] font-black uppercase tracking-wide text-[#a9c4b4] sm:text-xs">
-                      {sport.category}
+                    <p className={`truncate text-[8px] font-black uppercase tracking-wide ${sport.date.startsWith("September") ? "text-[#C7FFDA]" : "text-[#a9c4b4]"} sm:text-xs`}>
+                      {sport.date}
                     </p>
-                    <h3 className="mt-0.5 truncate text-[10px] font-black uppercase text-white sm:mt-1 sm:text-lg">
-                      {sport.name}
-                    </h3>
                     <p className="mt-1 text-[8px] font-bold uppercase tracking-wide text-white/60 sm:text-[10px] lg:text-xs">
                       View event details
                     </p>

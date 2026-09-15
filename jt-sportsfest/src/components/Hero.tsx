@@ -68,7 +68,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[100svh] scroll-mt-24 overflow-x-hidden bg-[#071b16] pt-20 text-white"
+      className="relative scroll-mt-24 overflow-x-hidden bg-[#071b16] pt-20 text-white sm:min-h-[100svh]"
     >
       <Image
         src="/images/hero4-sports.jpg"
@@ -81,7 +81,7 @@ export default function Hero() {
 
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(7,92,63,.45),transparent_43%)]" />
 
-      <div className="relative mx-auto flex min-h-[calc(100svh-5rem)] max-w-7xl items-center justify-center px-4 py-4 sm:px-6 sm:py-8 lg:py-12">
+      <div className="relative mx-auto flex max-w-7xl items-center justify-center px-4 py-6 sm:min-h-[calc(100svh-5rem)] sm:px-6 sm:py-8 lg:py-12">
         <div className="flex w-full flex-col items-center text-center">
           <motion.p
             initial={{ opacity: 0, y: 25 }}
