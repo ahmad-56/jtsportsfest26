@@ -1,3 +1,7 @@
+export type SportSectionContent =
+  | string[]
+  | { columns: Array<{ heading: string; items: string[] }> };
+
 export type Sport = {
   number: string;
   name: string;
@@ -5,9 +9,9 @@ export type Sport = {
   date: string;
   image: string;
   teamSize: string[];
-  age: string[];
-  format: string[];
-  rules: string[];
+  age: SportSectionContent;
+  format: SportSectionContent;
+  rules: Array<string | { heading: string }>; // Strings are numbered; heading objects are unnumbered.
   allowedFootwear?: string[];
   imp_note?: string[];
 };
@@ -20,34 +24,45 @@ export const sports: Sport[] = [
     date: "October 2–4",
     image: "/images/sports/football.png",
     teamSize: [
-      "5 A Side",
+      "5-A-Side",
       "3 Rolling Subs",
     ],
-    age: [
-      "BOYS U-17",
-      "BOYS U-19",
-      "GIRLS U-17",
-      "GIRLS U-19",
-    ],
+    age: {
+      columns: [
+        {
+          heading: "Boys",
+          items: [
+            "BOYS U-17",
+            "BOYS U-19",
+          ],
+        },
+        {
+          heading: "Girls",
+          items: [
+            "GIRLS U-17",
+            "GIRLS U-19",
+          ],
+        },
+      ],
+    },
     format: [
       "2 halves of 10 minutes duration with 5 minutes break",
     ],
     rules: [
-      "5 A Side, 3 Rolling Subs",
+      "5-A-Side, 3 Rolling Subs",
       "4 Size (Low Bounce) Ball to be used for the event",
-      "a yellow card cautions a player for unsporting behavior, dissent, or persistent fouls, resulting in the team playing short-handed for two minutes or until a goal is conceded.",
+      "A yellow card cautions a player for unsporting behavior, dissent, or persistent fouls, resulting in the team playing short-handed for two minutes or until a goal is conceded.",
       "A red card leads to an ejection for serious foul play or two yellow cards, forcing the team to play with one less player for two full minutes (the sent-off player cannot return or be substituted)",
       "5-meter (5m) distance rule requires all opposing players to retreat at least 5 meters away from the ball during restarts like free kicks, kick-ins, corner kicks, and kick-offs. Defenders must maintain this spacing until the ball is put back into play",
       "The team taking the restart has only 4 seconds to play the ball once ready, or possession passes to the opponent",
-      "2 halves of 10 minutes duration with 5 minutes break",
     ],
     allowedFootwear: [
-      "Footwear: Only Grippers allowed for Artificial Grass Field",
-      "Players should bring appropriate footwear",
+      "Only Grippers allowed for Artificial Grass Field",
+      
     ],
     imp_note: [
-      "KIT: Proper Sports Shirt with Shorts, Trouser allowed for Goal Keeper",
-      "Players should bring appropriate footwear and protective equipment.",
+      "Proper Sports Shirt with Shorts", 
+      "Trouser allowed for Goal Keeper",
     ],
   },
 
@@ -58,19 +73,32 @@ export const sports: Sport[] = [
     date: "October 2–4",
     image: "/images/sports/basket-ball.jpg",
     teamSize: [
-      "5 A Side with maximum 5 Substitutions allowed",
+      "5-A-Side",
+      "Maximum 5 Substitutions allowed",
     ],
-    age: [
-      "BOYS U-17",
-      "BOYS U-19",
-      "GIRLS U-17",
-      "GIRLS U-19",
-    ],
+    age: {
+      columns: [
+        {
+          heading: "Boys",
+          items: [
+            "BOYS U-17",
+            "BOYS U-19",
+          ],
+        },
+        {
+          heading: "Girls",
+          items: [
+            "GIRLS U-17",
+            "GIRLS U-19",
+          ],
+        },
+      ],
+    },
     format: [
-      "Games use four 8-minute quarters.",
+      "Four 8-minute Quarters.",
     ],
     rules: [
-      "5 A Side with maximum 5 Substitutions allowed",
+      "5-A-Side with maximum 5 Substitutions allowed",
       "Field goals: Shots inside the three-point arc are worth 2 points. Shots from behind the arc are worth 3 points.",
       "Free throws: Worth 1 point each; awarded after specific fouls.",
       "Game length: Games use four 8-minute quarters.",
@@ -93,19 +121,31 @@ export const sports: Sport[] = [
     date: "September 25–27",
     image: "/images/sports/cricket.jpg",
     teamSize: [
-      "11 A Side with 1 Super Sub",
+      "11-A-Side", 
+      "1 Super Sub",
     ],
-    age: [
-      "BOYS Open Hard Ball",
-      "BOYS Open Tape Ball",
-      "GIRLS Open Tape Ball",
-    ],
+    age: {
+      columns: [
+        {
+          heading: "Boys",
+          items: [
+            "BOYS Open Hard Ball",
+            "BOYS Open Tape Ball",
+          ],
+        },
+        {
+          heading: "Girls",
+          items: [
+            "GIRLS Open Tape Ball",
+          ],
+        },
+      ],
+    },
     format: [
       "8 Overs per inning Match (with 8 ball per Over)",
       "6 Overs per inning Match",
     ],
     rules: [
-      "11 a Side with 1 Super Sub",
       "White Ball to be used",
       "All ICC Rules for Cricket to be applied except for LBW",
       "8 Overs per inning Match (with 8 balls per Over)",
@@ -114,12 +154,11 @@ export const sports: Sport[] = [
       "6 Overs per inning Match",
     ],
     allowedFootwear: [
-      "Joggers",
-    ],
-    imp_note: [
       "Proper Sports Kit with White Shirt & white trouser",
       "Colored Kit",
-      "Proper Sports Kit (Shirt & trouser) with Joggers",
+    ],
+    imp_note: [
+
       "Teams must bring their own approved cricket equipment unless informed otherwise.",
       "The umpire’s decision will be considered final.",
     ],
@@ -135,26 +174,37 @@ export const sports: Sport[] = [
       "Singles",
       "Doubles",
     ],
-    age: [
-      "BOYS U-17 Singles",
-      "BOYS U-19 Singles",
-      "BOYS Open Doubles",
-      "GIRLS U-17 Singles",
-      "GIRLS U-19 Singles",
-      "Girls Open Doubles",
-    ],
+    age: {
+      columns: [
+        {
+          heading: "Boys",
+          items: [
+            "BOYS U-17 Singles",
+            "BOYS U-19 Singles",
+            "BOYS Open Doubles",
+          ],
+        },
+        {
+          heading: "Girls",
+          items: [
+            "GIRLS U-17 Singles",
+            "GIRLS U-19 Singles",
+            "Girls Open Doubles",
+          ],
+        },
+      ],
+    },
     format: [
-      "For Round 1, One game of 15 points will be played",
+      "Round 1: One game of 15 points will be played",
     ],
     rules: [
-      "For Round 1, One game of 15 points will be played",
-      "Standard Serving , General Faults & Play Rules to be followed",
+      "Standard Serving, General Faults & Play Rules to be followed",
     ],
     allowedFootwear: [
       "Only Non-marking shoes allowed to have sufficient grip on floor surface",
+      "Proper Sports Kit with Sports Shirt & Shorts (trousers for Girls)",
     ],
     imp_note: [
-      "Proper Sports Kit with Sports Shirt & Shorts (trousers for Girls),",
       "Participants are encouraged to bring their own paddles.",
     ],
   },
@@ -169,26 +219,37 @@ export const sports: Sport[] = [
       "Singles",
       "Doubles",
     ],
-    age: [
-      "BOYS U-17 Singles",
-      "BOYS U-19 Singles",
-      "BOYS Open Doubles",
-      "GIRLS U-17 Singles",
-      "GIRLS U-19 Singles",
-      "Girls Open Doubles",
-    ],
+    age: {
+      columns: [
+        {
+          heading: "Boys",
+          items: [
+            "BOYS U-17 Singles",
+            "BOYS U-19 Singles",
+            "BOYS Open Doubles",
+          ],
+        },
+        {
+          heading: "Girls",
+          items: [
+            "GIRLS U-17 Singles",
+            "GIRLS U-19 Singles",
+            "Girls Open Doubles",
+          ],
+        },
+      ],
+    },
     format: [
-      "For Round 1, One game of 15 points will be played",
+      "Round 1: One game of 15 points will be played",
     ],
     rules: [
-      "For Round 1, One game of 15 points will be played",
       "Standard Serving , General Faults & Play Rules to be followed",
     ],
     allowedFootwear: [
       "Only Non-marking shoes allowed to have sufficient grip on floor surface",
+      "Proper Sports Kit with Sports Shirt & Shorts (trousers for Girls)",
     ],
     imp_note: [
-      "Proper Sports Kit with Sports Shirt & Shorts (trousers for Girls), Only Non-marking shoes allowed to have sufficient grip on floor surface",
       "Participants should bring their own racquets if possible.",
     ],
   },
@@ -202,12 +263,24 @@ export const sports: Sport[] = [
     teamSize: [
       "Each team has 6 players on the court, with a total squad of 8 players.",
     ],
-    age: [
-      "BOYS U-17",
-      "BOYS U-19",
-      "GIRLS U-17",
-      "GIRLS U-19",
-    ],
+    age: {
+      columns: [
+        {
+          heading: "Boys",
+          items: [
+            "BOYS U-17",
+            "BOYS U-19",
+          ],
+        },
+        {
+          heading: "Girls",
+          items: [
+            "GIRLS U-17",
+            "GIRLS U-19",
+          ],
+        },
+      ],
+    },
     format: [
       "Best of Three Sets, with 15 points each.",
     ],
@@ -223,9 +296,7 @@ export const sports: Sport[] = [
     allowedFootwear: [
       "Players should wear appropriate sports shoes",
     ],
-    imp_note: [
-      "Players should wear appropriate sports shoes and attire.",
-    ],
+    imp_note: [],
   },
 
   {
@@ -237,11 +308,23 @@ export const sports: Sport[] = [
     teamSize: [
       "7 players per team on the court, with up to 2 substitutes",
     ],
-    age: [
-      "BOYS Open",
-      "GIRLS U-17",
-      "GIRLS U-19",
-    ],
+    age: {
+      columns: [
+        {
+          heading: "Boys",
+          items: [
+            "BOYS Open",
+          ],
+        },
+        {
+          heading: "Girls",
+          items: [
+            "GIRLS U-17",
+            "GIRLS U-19",
+          ],
+        },
+      ],
+    },
     format: [
       "Played in best-of-three sets.",
       "One set goes up to 15 points",
@@ -272,12 +355,24 @@ export const sports: Sport[] = [
     teamSize: [
       "Team size: 8 pullers",
     ],
-    age: [
-      "BOYS U-17",
-      "BOYS U-19",
-      "GIRLS U-17",
-      "GIRLS U-19",
-    ],
+    age: {
+      columns: [
+        {
+          heading: "Boys",
+          items: [
+            "BOYS U-17",
+            "BOYS U-19",
+          ],
+        },
+        {
+          heading: "Girls",
+          items: [
+            "GIRLS U-17",
+            "GIRLS U-19",
+          ],
+        },
+      ],
+    },
     format: [
       "Tug of War matches are completed in a best of three format",
     ],
@@ -305,11 +400,23 @@ export const sports: Sport[] = [
     teamSize: [
       "2 playing",
     ],
-    age: [
-      "BOYS U-17",
-      "BOYS U-19",
-      "GIRLS Open",
-    ],
+    age: {
+      columns: [
+        {
+          heading: "Boys",
+          items: [
+            "BOYS U-17",
+            "BOYS U-19",
+          ],
+        },
+        {
+          heading: "Girls",
+          items: [
+            "GIRLS Open",
+          ],
+        },
+      ],
+    },
     format: [
       "Matches are typically the best of 3 sets.",
     ],
@@ -337,10 +444,22 @@ export const sports: Sport[] = [
     teamSize: [
       "Individual",
     ],
-    age: [
-      "BOYS Open",
-      "GIRLS Open",
-    ],
+    age: {
+      columns: [
+        {
+          heading: "Boys",
+          items: [
+            "BOYS Open",
+          ],
+        },
+        {
+          heading: "Girls",
+          items: [
+            "GIRLS Open",
+          ],
+        },
+      ],
+    },
     format: [],
     rules: [
       "Standard chess rules will apply.",
@@ -359,14 +478,15 @@ export const sports: Sport[] = [
     slug: "arm-wrestling",
     date: "October 2–4",
     image: "/images/sports/arm-wrestling.png",
-    teamSize: [
-      "Individual",
-    ],
-    age: [
-      "Open",
-    ],
+    teamSize: [],
+    age: [],
     format: [
-      "Individual",
+      "Under 70Kg Boys",
+      "Under 80Kg Boys",
+      "Free Weight Boys",
+      "Under 60Kg Girls",
+      "Under 70Kg Girls",
+      "Free Weight Girls",
     ],
     rules: [
       "Arm wrestling matches require both competitors to keep their elbows on a padded surface and pin an opponent's hand to the touch pad",
@@ -396,20 +516,30 @@ export const sports: Sport[] = [
     teamSize: [
       "Individual",
     ],
-    age: [
-      "BOYS Open",
-      "GIRLS",
-    ],
-    format: [
-      "Individual",
-    ],
+    age: {
+      columns: [
+        {
+          heading: "Boys",
+          items: [
+            "BOYS - Open",
+          ],
+        },
+        {
+          heading: "Girls",
+          items: [
+            "GIRLS - Open",
+          ],
+        },
+      ],
+    },
+    format: [],
     rules: [
       "Players throw only after the previous turn ends.",
       "Official scoring will be maintained.",
       "Unsportsmanlike conduct is prohibited.",
-      "Judges' decisions are final.",
     ],
     imp_note: [
+      "Judges' decisions are final.",
       "Handle darts safely at all times.",
     ],
   },
@@ -420,28 +550,73 @@ export const sports: Sport[] = [
     slug: "athletics",
     date: "September 25–27",
     image: "/images/sports/atheletics.png",
-    teamSize: [
-      "Individual",
-    ],
-    age: [
-      "BOYS U-17",
-      "BOYS U-19",
-      "GIRLS U-17",
-      "GIRLS U-19",
-    ],
-    format: [
-      "Individual Events",
-    ],
+    teamSize: [],
+    age: {
+      columns: [
+        {
+          heading: "Boys",
+          items: [
+            "BOYS U-17",
+            "BOYS U-19",
+          ],
+        },
+        {
+          heading: "Girls",
+          items: [
+            "GIRLS U-17",
+            "GIRLS U-19",
+          ],
+        },
+      ],
+    },
+    format: {
+      columns: [
+        {
+          heading: "Boys",
+          items: [
+            "U17 Boys 100m Sprint",
+            "U17 Boys 400m Race",
+            "U17 Boys 4 x100m Relay Race",
+            "U17 Boys 110m Hurdles",
+            "U17 Boys Long Jump",
+            "U17 Boys Shot Put",
+            "U19 Boys 100m Sprint",
+            "U19 Boys 400m Race",
+            "U19 Boys 4 x100m Relay Race",
+            "U19 Boys 110m Hurdles",
+            "U19 Boys Long Jump",
+            "U19 Boys Shot Put",
+          ],
+        },
+        {
+          heading: "Girls",
+          items: [
+            "U17 Girls 100m Sprint",
+            "U17 Girls 400m Race",
+            "U17 Girls 4 x100m Relay Race",
+            "U19 Girls 100m Sprint",
+            "U19 Girls 400m Race",
+            "U19 Girls 4 x100m Relay Race",
+            "U17 Girls 50m Hurdles",
+            "U19 Girls 50m Hurdles",
+            "U17 Girls Long Jump",
+            "U19 Girls Long Jump",
+            "U17 Girls Shot Put",
+            "U19 Girls Shot Put",
+          ],
+        },
+      ],
+    },
     rules: [
-      "Running Events",
+      { heading: "Running Events" },
       "Starting: Runners must wait for the Starter's Caution and start behind the line. Moving before the caution causes a false start, leading to disqualification.",
       "Lanes: Sprint athletes must stay inside their assigned lanes from start to finish. Stepping out of a lane to gain an unfair advantage brings disqualification.",
       "Obstruction: Runners cannot push, block, or trip other competitors.",
       "Relays: The baton must pass completely within the designated exchange zone.",
       "Finish: The official placing is decided by the first part of the competitor's torso reaching the finish line plane. (Camera finish will only be recorded by Officials & their decision will be considered final). Review can be claimed within 30 minutes after the end of that event by paying the Review fee.",
-      "Jumping Events",
+      { heading: "Jumping Events" },
       "Long Jump: Athletes must take off behind or on the takeoff board line; stepping past it renders the jump a foul (invalid).",
-      "Throwing Events (Shot Put)",
+      { heading: "Throwing Events (Shot Put)" },
       "Sector Boundaries: The thrown implement must land completely inside the marked landing sector lines.",
       "Foul Lines: Athletes cannot step outside or touch the front line of the throwing circle or runway during the attempt.",
       "Other Standard Athletics Rules (IAAF) will be applicable.",
@@ -457,14 +632,12 @@ export const sports: Sport[] = [
     slug: "strongman",
     date: "October 2–4",
     image: "/images/sports/strongman.png",
-    teamSize: [
-      "Individual",
-    ],
-    age: [
-      "BOYS",
-    ],
+    teamSize: [],
+    age: [],
     format: [
-      "Individual",
+      "Pull Ups (Boys)",
+      "Push Ups (Boys)",
+      "Circuit (Boys)",
     ],
     rules: [
       "Grip the bar: Use an approved overhand or specialized grip (such as revolving thick-bars if specified by the event).",
@@ -507,16 +680,14 @@ export const sports: Sport[] = [
     age: [
       "BOYS Open",
     ],
-    format: [
-      "Individual",
-    ],
+    format: [],
     rules: [
       "Standard snooker rules apply.",
       "Respect opponents and equipment.",
       "Only registered players may compete.",
-      "Referees' decisions are final.",
     ],
     imp_note: [
+      "Referees' decisions are final.",
       "Handle cues and tables with care.",
     ],
   },
@@ -530,20 +701,32 @@ export const sports: Sport[] = [
     teamSize: [
       "Depends on game",
     ],
-    age: [
-      "BOYS Open",
-      "GIRLS (FIFA)",
-    ],
+    age: {
+      columns: [
+        {
+          heading: "Boys",
+          items: [
+            "BOYS Open",
+          ],
+        },
+        {
+          heading: "Girls",
+          items: [
+            "GIRLS Open",
+          ],
+        },
+      ],
+    },
     format: [
-      "FIFA",
+      "FIFA Matches",
     ],
     rules: [
       "Only approved game settings may be used.",
       "Cheating results in immediate disqualification.",
-      "Players must arrive before match time.",
       "Tournament officials' decisions are final.",
     ],
     imp_note: [
+      "Players must arrive before match time.",
       "Bring personal peripherals if permitted by organizers.",
     ],
   },
@@ -554,15 +737,29 @@ export const sports: Sport[] = [
     slug: "swimming",
     date: "October 2–4",
     image: "/images/hero-sports.jpg",
-    teamSize: [
-      "Individual",
-    ],
+    teamSize: [],
     age: [
       "BOYS UNDER-17",
       "BOYS UNDER-19",
     ],
     format: [
-      "Individual Events",
+      "U17 100m FC",
+      "U17 50m FC",
+      "U17 50m BC",
+      "U17 50m Br",
+      "U17 50m Bu",
+      "U17 100m Medley",
+      "U17 4 x 25m Medley Relay",
+      "U17 4 x 25m FC Relay",
+      "U19 100m FC",
+      "U19 50m FC",
+      "U19 50m BC",
+      "U19 50m Br",
+      "U19 50m Bu",
+      "U19 100m Medley",
+      "U19 4 x 25m Medley Relay",
+      "U19 4 x 25m FC Relay",
+
     ],
     rules: [
       "The Start: Freestyle, breaststroke, butterfly, and individual medley races begin with a forward dive off the starting block. Backstroke and medley relays start directly in the water gripping the starting handles.",
@@ -616,20 +813,30 @@ export const sports: Sport[] = [
     teamSize: [
       "Individual",
     ],
-    age: [
-      "BOYS",
-      "GIRLS",
-    ],
-    format: [
-      "Individual",
-    ],
+    age: {
+      columns: [
+        {
+          heading: "Boys",
+          items: [
+            "BOYS - Open",
+          ],
+        },
+        {
+          heading: "Girls",
+          items: [
+            "GIRLS - Open",
+          ],
+        },
+      ],
+    },
+    format: [],
     rules: [
       "Participants must follow all range safety instructions.",
       "Only official equipment is permitted.",
       "Each shot must be taken within the allotted time.",
-      "The judges’ decisions will be final.",
     ],
     imp_note: [
+      "The judges’ decisions will be final.",
       "Participants should handle equipment responsibly and follow all safety guidelines.",
     ],
   },
@@ -650,7 +857,6 @@ export const sports: Sport[] = [
       "Knockout",
     ],
     rules: [
-      "Team size: 6 players per side with maximum 2 rolling substitutions made from the sideline.",
       "Flat side only: Players may only control, pass, or shoot the ball using the flat face of the hockey stick.",
       "No feet: Using feet or any body part to direct or stop the ball deliberately is a foul.",
       "Stick limits: Sticks must never be raised above waist height (or shoulder height in specific loose contexts) to prevent dangerous play.",
@@ -678,17 +884,17 @@ export const sports: Sport[] = [
     age: [
       "Open",
     ],
-    format: [
-      "Team Challenge",
-    ],
+    format: [],
     rules: [
       "Teams must stay together throughout the event.",
       "All clues must be completed fairly.",
       "Damaging property is strictly prohibited.",
-      "Organizers' decisions are final.",
     ],
     allowedFootwear: [
       "Comfortable footwear is recommended.",
+    ],
+    imp_note:[
+      "Organizers' decisions are final.",
     ],
   },
 ];

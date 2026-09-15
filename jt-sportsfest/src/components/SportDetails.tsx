@@ -7,7 +7,7 @@ import {
   X,
 } from "lucide-react";
 import { useEffect, useId, useRef, type KeyboardEvent } from "react";
-import { sports, type Sport } from "@/data/sports";
+import { sports, type Sport, type SportSectionContent } from "@/data/sports";
 
 type SportDetailsProps = {
   sport: Sport | null;
@@ -72,6 +72,18 @@ function SportDetailsDialog({
     }
   }
 
+  const ruleItems: Array<{ heading: string } | { text: string; number: number }> = [];
+  let ruleNumber = 0;
+
+  for (const rule of sport.rules) {
+    if (typeof rule === "string") {
+      ruleNumber += 1;
+      ruleItems.push({ text: rule, number: ruleNumber });
+    } else {
+      ruleItems.push(rule);
+    }
+  }
+
   return (
     <dialog
       ref={dialogRef}
@@ -129,8 +141,8 @@ function SportDetailsDialog({
             </h2>
 
             <BulletSection title="Team size" items={sport.teamSize} />
-            <BulletSection title="Age groups" items={sport.age} />
-            <BulletSection title="Competition format" items={sport.format} />
+            <DetailSection title="Age groups" content={sport.age} />
+            <DetailSection title="Competition format" content={sport.format} />
 
             <div className="mt-7 min-w-0 sm:mt-8">
               <h3 className="text-sm font-black uppercase tracking-[0.2em] text-[#a9c4b4] sm:text-base">
@@ -138,21 +150,33 @@ function SportDetailsDialog({
               </h3>
 
               <ul className="mt-4 min-w-0 space-y-3 sm:mt-5 sm:space-y-4">
-                {sport.rules.map((rule, index) => (
-                  <li
-                    key={`${sport.slug}-rule-${index}`}
-                    className="grid min-w-0 grid-cols-[1.5rem_minmax(0,1fr)] items-start gap-x-3 text-sm leading-6 text-white/80 sm:grid-cols-[1.75rem_minmax(0,1fr)] sm:gap-x-4 sm:text-[15px] sm:leading-7"
-                  >
-                    <span className="flex h-6 w-6 items-center justify-center rounded-md bg-[#a9c4b4]/10 text-xs font-black leading-none text-[#a9c4b4] tabular-nums sm:h-7 sm:w-7">
-                      {index + 1}
-                    </span>
-                    <span className="min-w-0 break-words">{rule}</span>
-                  </li>
-                ))}
+                {ruleItems.map((rule, index) => {
+                  if ("heading" in rule) {
+                    return (
+                      <li key={`${sport.slug}-heading-${index}`} className="min-w-0 pt-3 first:pt-0 sm:pt-4">
+                        <h4 className="break-words text-sm font-bold leading-6 text-[#a9c4b4] sm:text-[15px] sm:leading-7">
+                          {rule.heading}
+                        </h4>
+                      </li>
+                    );
+                  }
+
+                  return (
+                    <li
+                      key={`${sport.slug}-rule-${index}`}
+                      className="grid min-w-0 grid-cols-[1.5rem_minmax(0,1fr)] items-start gap-x-3 text-sm leading-6 text-white/80 sm:grid-cols-[1.75rem_minmax(0,1fr)] sm:gap-x-4 sm:text-[15px] sm:leading-7"
+                    >
+                      <span className="flex h-6 w-6 items-center justify-center rounded-md bg-[#a9c4b4]/10 text-xs font-black leading-none text-[#a9c4b4] tabular-nums sm:h-7 sm:w-7">
+                        {rule.number}
+                      </span>
+                      <span className="min-w-0 break-words">{rule.text}</span>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
 
-            <BulletSection title="Allowed footwear" items={sport.allowedFootwear} />
+            <BulletSection title="Allowed footwear & kits" items={sport.allowedFootwear} />
             {sport.imp_note?.length ? (
               <section className="mt-7 min-w-0 overflow-hidden border-l-2 border-[#a9c4b4] bg-[#a9c4b4]/10 p-4 sm:mt-8 sm:p-5">
                 <h3 className="break-words text-sm font-black uppercase tracking-[0.18em] text-[#a9c4b4] sm:text-base">
@@ -201,6 +225,33 @@ type BulletSectionProps = {
   items?: string[];
 };
 
+function DetailSection({ title, content }: { title: string; content: SportSectionContent }) {
+  if (Array.isArray(content)) {
+    return <BulletSection title={title} items={content} />;
+  }
+
+  const columns = content.columns.filter((column) => column.items.length > 0);
+  if (!columns.length) return null;
+
+  return (
+    <section className="mt-7 min-w-0 sm:mt-8">
+      <h3 className="text-sm font-black uppercase tracking-[0.2em] text-[#a9c4b4] sm:text-base">
+        {title}
+      </h3>
+      <div className="mt-3 grid min-w-0 grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
+        {columns.map((column) => (
+          <div key={column.heading} className="min-w-0">
+            <h4 className="text-sm font-bold leading-6 text-[#a9c4b4] sm:text-[15px] sm:leading-7">
+              {column.heading}
+            </h4>
+            <BulletList items={column.items} />
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function BulletSection({ title, items }: BulletSectionProps) {
   if (!items?.length) return null;
 
@@ -209,13 +260,19 @@ function BulletSection({ title, items }: BulletSectionProps) {
       <h3 className="text-sm font-black uppercase tracking-[0.2em] text-[#a9c4b4] sm:text-base">
         {title}
       </h3>
-      <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-white/80 marker:text-[#a9c4b4] sm:text-[15px] sm:leading-7">
-        {items.map((item, index) => (
-          <li key={`${title}-${index}`} className="break-words pl-1">
-            {item}
-          </li>
-        ))}
-      </ul>
+      <BulletList items={items} />
     </section>
+  );
+}
+
+function BulletList({ items }: { items: string[] }) {
+  return (
+    <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-white/80 marker:text-[#a9c4b4] sm:text-[15px] sm:leading-7">
+      {items.map((item, index) => (
+        <li key={`${item}-${index}`} className="break-words pl-1">
+          {item}
+        </li>
+      ))}
+    </ul>
   );
 }
