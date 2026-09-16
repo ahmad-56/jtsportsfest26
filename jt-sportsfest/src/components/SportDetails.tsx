@@ -30,9 +30,7 @@ function SportDetailsDialog({
   const contentRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const [failedImage, setFailedImage] = useState<string | null>(null);
-  const imageSrc = sport.image && failedImage !== sport.image
-    ? sport.image
-    : "/images/bg/hero-sports.jpg";
+  const hasImage = Boolean(sport.image) && failedImage !== sport.image;
   const titleId = useId();
   const index = sports.findIndex((item) => item.slug === sport.slug);
   const previousSport = sports[(index - 1 + sports.length) % sports.length];
@@ -116,15 +114,23 @@ function SportDetailsDialog({
         </button>
 
         <div className="relative hidden min-h-0 min-w-0 overflow-hidden bg-black/30 lg:block lg:aspect-[3/4] lg:h-full lg:w-auto lg:shrink-0">
-          <Image
-            src={imageSrc}
-            alt={sport.name}
-            fill
-            sizes="(max-width: 1023px) 1px, min(calc(40vw - 3.2rem), 64.5dvh, 460px)"
-            className="object-contain"
-            onError={() => setFailedImage(sport.image)}
-            priority
-          />
+          {hasImage ? (
+            <Image
+              key={sport.image}
+              src={sport.image}
+              alt={sport.name}
+              fill
+              sizes="(max-width: 1023px) 1px, min(calc(40vw - 3.2rem), 64.5dvh, 460px)"
+              className="object-contain"
+              onError={() => setFailedImage(sport.image)}
+              priority
+            />
+          ) : (
+            <div className="flex h-full flex-col items-center justify-center gap-2 p-6 text-center">
+              <p className="text-xl font-bold text-[#a9c4b4]">{sport.name}</p>
+              <p className="text-sm text-white/60">Image unavailable</p>
+            </div>
+          )}
         </div>
 
         <div ref={contentRef} className="relative min-h-0 min-w-0 overflow-x-hidden overflow-y-auto overscroll-contain p-4 text-white sm:p-6 lg:flex-1 lg:p-8 xl:p-10">
