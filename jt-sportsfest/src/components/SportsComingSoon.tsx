@@ -7,7 +7,7 @@ export default function SportsComingSoon() {
       className="relative grid min-h-[26rem] place-items-center overflow-hidden border-y border-[#a9c4b4]/30 bg-[#071b16] px-6 py-20 text-center text-white shadow-[inset_0_1px_18px_rgba(169,196,180,0.08)] sm:min-h-[32rem]"
     >
       <Image
-        src="/images/hero9-sports.jpg"
+        src="/images/bg/hero9-sports.jpg"
         alt=""
         fill
         sizes="100vw"

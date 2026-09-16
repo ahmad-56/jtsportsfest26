@@ -20,7 +20,7 @@ export default function SportsGrid() {
         className="relative overflow-hidden bg-[#071b16] pb-20 pt-28 text-white sm:pt-32 md:py-32"
       >
         <Image
-          src="/images/hero3-sports.jpg"
+          src="/images/bg/hero3-sports.jpg"
           alt=""
           fill
           sizes="100vw"
@@ -96,7 +96,7 @@ export default function SportsGrid() {
             <Reveal className="lg:col-span-3 lg:[container-type:inline-size]">
                 <div className="sports-preview-card group relative aspect-square w-full cursor-default overflow-hidden border-[3px] border-[#a9c4b4] bg-[#071b16] text-left sm:border-4 lg:h-[calc((100cqw_-_2rem)/3)] lg:aspect-auto">
                   <Image
-                    src="/images/hero9-sports.jpg"
+                    src="/images/bg/hero9-sports.jpg"
                     alt=""
                     fill
                     sizes="(max-width: 639px) calc(100vw - 7rem), 310px"

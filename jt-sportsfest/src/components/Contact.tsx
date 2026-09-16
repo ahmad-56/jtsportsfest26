@@ -45,7 +45,7 @@ export default function Contact() {
       className="relative overflow-hidden bg-[#071b16] py-16 text-white md:py-24 lg:py-32"
     >
       <Image
-        src="/images/hero2-sports.jpg"
+        src="/images/bg/hero2-sports.jpg"
         alt=""
         fill
         sizes="100vw"

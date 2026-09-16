@@ -20,9 +20,9 @@ export const sports: Sport[] = [
   {
     number: "01",
     name: "Futsal",
-    slug: "football",
+    slug: "futsal",
     date: "October 2–4",
-    image: "/images/sports/football.png",
+    image: "/images/sports/futsal.png",
     teamSize: [
       "5-A-Side",
       "3 Rolling Subs",
@@ -71,7 +71,7 @@ export const sports: Sport[] = [
     name: "Basketball",
     slug: "basketball",
     date: "October 2–4",
-    image: "/images/sports/basket-ball.jpg",
+    image: "/images/sports/basketball.PNG",
     teamSize: [
       "5-A-Side",
       "Maximum 5 Substitutions allowed",
@@ -119,7 +119,7 @@ export const sports: Sport[] = [
     name: "Cricket",
     slug: "cricket",
     date: "September 25–27",
-    image: "/images/sports/cricket.jpg",
+    image: "/images/sports/cricket.png",
     teamSize: [
       "11-A-Side", 
       "1 Super Sub",
@@ -141,17 +141,34 @@ export const sports: Sport[] = [
         },
       ],
     },
-    format: [
-      "8 Overs per inning Match (with 8 ball per Over)",
-      "6 Overs per inning Match",
-    ],
+    format: {
+      columns: [
+        {
+          heading: "Hard Ball",
+          items: [
+            "8 Overs per inning Match",
+            "8 balls per Over",
+          ],
+        },
+        {
+          heading: "Tape Ball",
+          items: [
+            "6 Overs per inning Match",
+            "6 balls per Over",
+          ],
+        },
+      ],
+    },
     rules: [
+      { heading: "Hard Ball" },
       "White Ball to be used",
       "All ICC Rules for Cricket to be applied except for LBW",
       "8 Overs per inning Match (with 8 balls per Over)",
       "One bowler can bowl maximum 2 overs in an innings",
       "2 Golden balls will be bowled per innings, for which score will be doubled (e.g. if 2 scored, that will be counted as 4)",
+      { heading: "Tape Ball" },
       "6 Overs per inning Match",
+      "All ICC Rules for Cricket to be applied except for LBW",
     ],
     allowedFootwear: [
       "Proper Sports Kit with White Shirt & white trouser",
@@ -169,7 +186,7 @@ export const sports: Sport[] = [
     name: "Table Tennis",
     slug: "table-tennis",
     date: "October 2–4",
-    image: "/images/sports/table-tennis.jpg",
+    image: "/images/sports/table-tennis.PNG",
     teamSize: [
       "Singles",
       "Doubles",
@@ -214,7 +231,7 @@ export const sports: Sport[] = [
     name: "Badminton",
     slug: "badminton",
     date: "October 2–4",
-    image: "/images/sports/badminton.png",
+    image: "/images/sports/badminton.PNG",
     teamSize: [
       "Singles",
       "Doubles",
@@ -259,7 +276,7 @@ export const sports: Sport[] = [
     name: "Volleyball",
     slug: "volleyball",
     date: "October 2–4",
-    image: "/images/sports/volleyball.png",
+    image: "/images/sports/volleyball.PNG",
     teamSize: [
       "Each team has 6 players on the court, with a total squad of 8 players.",
     ],
@@ -304,7 +321,7 @@ export const sports: Sport[] = [
     name: "Throwball",
     slug: "throwball",
     date: "October 2–4",
-    image: "/images/sports/throwball.png",
+    image: "/images/sports/throwball.PNG",
     teamSize: [
       "7 players per team on the court, with up to 2 substitutes",
     ],
@@ -351,7 +368,7 @@ export const sports: Sport[] = [
     name: "Tug of War",
     slug: "tug-of-war",
     date: "September 25–27",
-    image: "/images/sports/tug-of-war.jpg",
+    image: "/images/sports/tug-of-war.PNG",
     teamSize: [
       "Team size: 8 pullers",
     ],
@@ -396,7 +413,7 @@ export const sports: Sport[] = [
     name: "Padel",
     slug: "padel",
     date: "October 2–4",
-    image: "/images/hero-sports.jpg",
+    image: "/images/sports/padel.PNG",
     teamSize: [
       "2 playing",
     ],
@@ -477,7 +494,7 @@ export const sports: Sport[] = [
     name: "Arm Wrestling",
     slug: "arm-wrestling",
     date: "October 2–4",
-    image: "/images/sports/arm-wrestling.png",
+    image: "/images/sports/armwrestling.PNG",
     teamSize: [],
     age: [],
     format: [
@@ -512,7 +529,7 @@ export const sports: Sport[] = [
     name: "Darts",
     slug: "darts",
     date: "October 2–4",
-    image: "/images/sports/darts.png",
+    image: "/images/sports/darts.PNG",
     teamSize: [
       "Individual",
     ],
@@ -549,7 +566,7 @@ export const sports: Sport[] = [
     name: "Athletics",
     slug: "athletics",
     date: "September 25–27",
-    image: "/images/sports/atheletics.png",
+    image: "/images/sports/athletics.png",
     teamSize: [],
     age: {
       columns: [
@@ -631,7 +648,7 @@ export const sports: Sport[] = [
     name: "Strong Man",
     slug: "strongman",
     date: "October 2–4",
-    image: "/images/sports/strongman.png",
+    image: "/images/sports/strongman.PNG",
     teamSize: [],
     age: [],
     format: [
@@ -673,7 +690,7 @@ export const sports: Sport[] = [
     name: "Snooker",
     slug: "snooker",
     date: "October 2–4",
-    image: "/images/hero-sports.jpg",
+    image: "/images/sports/snooker.PNG",
     teamSize: [
       "Individual",
     ],
@@ -697,7 +714,7 @@ export const sports: Sport[] = [
     name: "Gaming",
     slug: "gaming",
     date: "October 2–4",
-    image: "/images/sports/gaming.png",
+    image: "/images/sports/gaming.PNG",
     teamSize: [
       "Depends on game",
     ],
@@ -736,7 +753,7 @@ export const sports: Sport[] = [
     name: "Swimming",
     slug: "swimming",
     date: "October 2–4",
-    image: "/images/hero-sports.jpg",
+    image: "/images/sports/swimming.PNG",
     teamSize: [],
     age: [
       "BOYS UNDER-17",
@@ -809,7 +826,7 @@ export const sports: Sport[] = [
     name: "Archery",
     slug: "archery",
     date: "October 2–4",
-    image: "/images/sports/archery.png",
+    image: "/images/sports/archery.PNG",
     teamSize: [
       "Individual",
     ],
@@ -846,7 +863,7 @@ export const sports: Sport[] = [
     name: "Hockey",
     slug: "hockey",
     date: "October 2–4",
-    image: "/images/hero-sports.jpg",
+    image: "/images/sports/hockey.png",
     teamSize: [
       "Team size: 6 players per side with maximum 2 rolling substitutions made from the sideline.",
     ],
@@ -876,7 +893,7 @@ export const sports: Sport[] = [
     name: "Scavenger Hunt",
     slug: "scavenger-hunt",
     date: "October 2–4",
-    image: "/images/hero-sports.jpg",
+    image: "/images/sports/scavengerhunt.png",
     teamSize: [
       "4 playing",
       "2 subs",

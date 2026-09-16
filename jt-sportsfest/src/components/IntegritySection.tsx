@@ -5,7 +5,7 @@ export default function IntegritySection() {
   return (
     <section className="relative overflow-hidden border-y border-[#a9c4b4]/30 bg-[#071b16] px-4 py-10 text-white shadow-[inset_0_1px_18px_rgba(169,196,180,0.08)] sm:px-6 sm:py-12">
       <Image
-        src="/images/hero6-sports.jpg"
+        src="/images/bg/hero6-sports.jpg"
         alt=""
         fill
         sizes="100vw"

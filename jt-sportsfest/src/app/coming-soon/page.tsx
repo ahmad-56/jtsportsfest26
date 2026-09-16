@@ -18,7 +18,7 @@ export default function ComingSoonPage() {
 
       <main className="relative grid min-h-svh place-items-center overflow-hidden bg-[#071b16] px-6 pb-16 pt-32 text-center text-white sm:pt-36">
         <Image
-          src="/images/hero3-sports.jpg"
+          src="/images/bg/hero3-sports.jpg"
           alt=""
           fill
           priority

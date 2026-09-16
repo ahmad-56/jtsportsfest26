@@ -450,6 +450,15 @@ h6 {
 
 .sports-preview-card {
   flex: 0 0 var(--sports-preview-card-width);
+  /* Match the vertical teal gradient embedded in the sport artwork. */
+  border-image: linear-gradient(
+    to bottom,
+    #70bdbb 0%,
+    #5faab0 25%,
+    #4990a0 50%,
+    #337690 75%,
+    #236584 100%
+  ) 1;
 }
 
 .sports-preview-track-next {

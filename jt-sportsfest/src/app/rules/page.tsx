@@ -69,7 +69,7 @@ export default function CodeOfConductPage() {
 
       <section className="relative overflow-hidden border-b border-white/10 px-4 pb-12 pt-28 sm:px-6 sm:pb-20 sm:pt-36">
         <Image
-          src="/images/hero4-sports.jpg"
+          src="/images/bg/hero4-sports.jpg"
           alt=""
           fill
           priority

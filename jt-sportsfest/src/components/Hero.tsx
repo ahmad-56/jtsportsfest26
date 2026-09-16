@@ -71,7 +71,7 @@ export default function Hero() {
       className="relative scroll-mt-24 overflow-x-hidden bg-[#071b16] pt-20 text-white sm:min-h-[100svh]"
     >
       <Image
-        src="/images/hero4-sports.jpg"
+        src="/images/bg/hero4-sports.jpg"
         alt=""
         fill
         priority

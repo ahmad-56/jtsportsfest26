@@ -6,7 +6,7 @@ import {
   ChevronRight,
   X,
 } from "lucide-react";
-import { useEffect, useId, useRef, type KeyboardEvent } from "react";
+import { useEffect, useId, useRef, useState, type KeyboardEvent } from "react";
 import { sports, type Sport, type SportSectionContent } from "@/data/sports";
 
 type SportDetailsProps = {
@@ -27,9 +27,12 @@ function SportDetailsDialog({
   onNavigate,
 }: SportDetailsProps & { sport: Sport }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
-  const panelRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
+  const [failedImage, setFailedImage] = useState<string | null>(null);
+  const imageSrc = sport.image && failedImage !== sport.image
+    ? sport.image
+    : "/images/bg/hero-sports.jpg";
   const titleId = useId();
   const index = sports.findIndex((item) => item.slug === sport.slug);
   const previousSport = sports[(index - 1 + sports.length) % sports.length];
@@ -39,14 +42,17 @@ function SportDetailsDialog({
     const dialog = dialogRef.current;
     const opener = document.activeElement;
     const previousOverflow = document.body.style.overflow;
+    const previousRootOverflow = document.documentElement.style.overflow;
 
     dialog?.showModal();
     document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
     headingRef.current?.focus({ preventScroll: true });
 
     return () => {
       dialog?.close();
       document.body.style.overflow = previousOverflow;
+      document.documentElement.style.overflow = previousRootOverflow;
       if (opener instanceof HTMLElement && opener.isConnected) {
         opener.focus({ preventScroll: true });
       }
@@ -54,7 +60,6 @@ function SportDetailsDialog({
   }, []);
 
   useEffect(() => {
-    if (panelRef.current) panelRef.current.scrollTop = 0;
     if (contentRef.current) contentRef.current.scrollTop = 0;
   }, [sport.slug]);
 
@@ -96,11 +101,10 @@ function SportDetailsDialog({
       onClick={(event) => {
         if (event.target === event.currentTarget) onClose();
       }}
-      className="fixed inset-0 m-auto w-[calc(100%-5.5rem)] max-w-6xl overflow-visible bg-transparent p-0 text-white outline-none backdrop:bg-[#071b16]/92 backdrop:backdrop-blur-md sm:w-[calc(100%-8rem)]"
+      className="fixed inset-0 m-auto max-h-none w-[calc(100%-5.5rem)] max-w-6xl overflow-visible bg-transparent p-0 text-white outline-none backdrop:bg-[#071b16]/92 backdrop:backdrop-blur-md sm:w-[calc(100%-8rem)]"
     >
       <div
-        ref={panelRef}
-        className="relative grid max-h-[94svh] min-w-0 w-full max-w-6xl overflow-x-hidden overflow-y-auto rounded-xl border border-white/15 bg-[#071b16] shadow-[0_30px_100px_rgba(0,0,0,0.7)] lg:h-[86vh] lg:grid-cols-[minmax(0,3fr)_minmax(0,7fr)] lg:overflow-hidden lg:rounded-2xl"
+        className="relative grid max-h-[calc(100dvh-2rem)] min-w-0 w-full max-w-6xl grid-rows-[minmax(0,1fr)] overflow-hidden rounded-xl border border-white/15 bg-[#071b16] shadow-[0_30px_100px_rgba(0,0,0,0.7)] lg:flex lg:h-[min(86dvh,calc((100vw_-_8rem)*8/15),38.4rem)] lg:rounded-2xl"
       >
         <button
           type="button"
@@ -111,26 +115,19 @@ function SportDetailsDialog({
           <X size={20} strokeWidth={2.5} />
         </button>
 
-        <div className="relative hidden h-[170px] min-w-0 overflow-hidden bg-black/30 sm:h-[220px] lg:block lg:h-full">
+        <div className="relative hidden min-h-0 min-w-0 overflow-hidden bg-black/30 lg:block lg:aspect-[3/4] lg:h-full lg:w-auto lg:shrink-0">
           <Image
-            src={sport.image || "/images/sports/placeholder.png"}
+            src={imageSrc}
             alt={sport.name}
             fill
-            sizes="(max-width: 1023px) 100vw, 30vw"
+            sizes="(max-width: 1023px) 1px, min(calc(40vw - 3.2rem), 64.5dvh, 460px)"
             className="object-contain"
+            onError={() => setFailedImage(sport.image)}
             priority
           />
-
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#071b16]/70 via-transparent to-[#071b16]/10" />
-
-          <span className="absolute bottom-3 left-4 text-4xl font-black italic text-white/20 sm:text-5xl lg:bottom-6 lg:left-6 lg:text-6xl">
-            {sport.number}
-          </span>
         </div>
 
-        <div ref={contentRef} className="relative min-w-0 overflow-x-hidden p-4 text-white sm:p-6 lg:overflow-y-auto lg:p-8 xl:p-10">
-          <div className="pointer-events-none absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-[#a9c4b4]/15 blur-[90px]" />
-
+        <div ref={contentRef} className="relative min-h-0 min-w-0 overflow-x-hidden overflow-y-auto overscroll-contain p-4 text-white sm:p-6 lg:flex-1 lg:p-8 xl:p-10">
           <div className="relative z-10 min-w-0">
             <p className={`min-w-0 break-words pr-12 text-xs font-black uppercase tracking-[0.2em] sm:text-sm sm:tracking-[0.22em] ${sport.date.startsWith("September") ? "text-[#C7FFDA]" : "text-[#a9c4b4]"}`}>
               {sport.date}
