@@ -231,7 +231,7 @@ export const sports: Sport[] = [
     name: "Badminton",
     slug: "badminton",
     date: "October 2–4",
-    image: "/images/sports/badminton.PNG",
+    image: "/images/sports/badminton.png",
     teamSize: [
       "Singles",
       "Doubles",
