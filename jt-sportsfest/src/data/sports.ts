@@ -71,7 +71,7 @@ export const sports: Sport[] = [
     name: "Basketball",
     slug: "basketball",
     date: "October 2–4",
-    image: "/images/sports/basketball.png",
+    image: "/images/sports/basketball.PNG",
     teamSize: [
       "5-A-Side",
       "Maximum 5 Substitutions allowed",
@@ -186,7 +186,7 @@ export const sports: Sport[] = [
     name: "Table Tennis",
     slug: "table-tennis",
     date: "October 2–4",
-    image: "/images/sports/table-tennis.png",
+    image: "/images/sports/table-tennis.PNG",
     teamSize: [
       "Singles",
       "Doubles",
@@ -231,7 +231,7 @@ export const sports: Sport[] = [
     name: "Badminton",
     slug: "badminton",
     date: "October 2–4",
-    image: "/images/sports/badminton.png",
+    image: "/images/sports/badminton.PNG",
     teamSize: [
       "Singles",
       "Doubles",
@@ -276,7 +276,7 @@ export const sports: Sport[] = [
     name: "Volleyball",
     slug: "volleyball",
     date: "October 2–4",
-    image: "/images/sports/volleyball.png",
+    image: "/images/sports/volleyball.PNG",
     teamSize: [
       "Each team has 6 players on the court, with a total squad of 8 players.",
     ],
