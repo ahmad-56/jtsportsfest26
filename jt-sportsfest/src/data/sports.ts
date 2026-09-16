@@ -71,7 +71,7 @@ export const sports: Sport[] = [
     name: "Basketball",
     slug: "basketball",
     date: "October 2–4",
-    image: "/images/sports/basketball.PNG",
+    image: "/images/sports/basketball.png",
     teamSize: [
       "5-A-Side",
       "Maximum 5 Substitutions allowed",
@@ -186,7 +186,7 @@ export const sports: Sport[] = [
     name: "Table Tennis",
     slug: "table-tennis",
     date: "October 2–4",
-    image: "/images/sports/table-tennis.PNG",
+    image: "/images/sports/table-tennis.png",
     teamSize: [
       "Singles",
       "Doubles",
@@ -276,7 +276,7 @@ export const sports: Sport[] = [
     name: "Volleyball",
     slug: "volleyball",
     date: "October 2–4",
-    image: "/images/sports/volleyball.PNG",
+    image: "/images/sports/volleyball.png",
     teamSize: [
       "Each team has 6 players on the court, with a total squad of 8 players.",
     ],
@@ -321,7 +321,7 @@ export const sports: Sport[] = [
     name: "Throwball",
     slug: "throwball",
     date: "October 2–4",
-    image: "/images/sports/throwball.PNG",
+    image: "/images/sports/throwball.png",
     teamSize: [
       "7 players per team on the court, with up to 2 substitutes",
     ],
@@ -368,7 +368,7 @@ export const sports: Sport[] = [
     name: "Tug of War",
     slug: "tug-of-war",
     date: "September 25–27",
-    image: "/images/sports/tug-of-war.PNG",
+    image: "/images/sports/tug-of-war.png",
     teamSize: [
       "Team size: 8 pullers",
     ],
@@ -413,7 +413,7 @@ export const sports: Sport[] = [
     name: "Padel",
     slug: "padel",
     date: "October 2–4",
-    image: "/images/sports/padel.PNG",
+    image: "/images/sports/padel.png",
     teamSize: [
       "2 playing",
     ],
@@ -494,7 +494,7 @@ export const sports: Sport[] = [
     name: "Arm Wrestling",
     slug: "arm-wrestling",
     date: "October 2–4",
-    image: "/images/sports/armwrestling.PNG",
+    image: "/images/sports/armwrestling.png",
     teamSize: [],
     age: [],
     format: [
@@ -529,7 +529,7 @@ export const sports: Sport[] = [
     name: "Darts",
     slug: "darts",
     date: "October 2–4",
-    image: "/images/sports/darts.PNG",
+    image: "/images/sports/darts.png",
     teamSize: [
       "Individual",
     ],
@@ -648,7 +648,7 @@ export const sports: Sport[] = [
     name: "Strong Man",
     slug: "strongman",
     date: "October 2–4",
-    image: "/images/sports/strongman.PNG",
+    image: "/images/sports/strongman.png",
     teamSize: [],
     age: [],
     format: [
@@ -690,7 +690,7 @@ export const sports: Sport[] = [
     name: "Snooker",
     slug: "snooker",
     date: "October 2–4",
-    image: "/images/sports/snooker.PNG",
+    image: "/images/sports/snooker.png",
     teamSize: [
       "Individual",
     ],
@@ -714,7 +714,7 @@ export const sports: Sport[] = [
     name: "Gaming",
     slug: "gaming",
     date: "October 2–4",
-    image: "/images/sports/gaming.PNG",
+    image: "/images/sports/gaming.png",
     teamSize: [
       "Depends on game",
     ],
@@ -753,7 +753,7 @@ export const sports: Sport[] = [
     name: "Swimming",
     slug: "swimming",
     date: "October 2–4",
-    image: "/images/sports/swimming.PNG",
+    image: "/images/sports/swimming.png",
     teamSize: [],
     age: [
       "BOYS UNDER-17",
@@ -826,7 +826,7 @@ export const sports: Sport[] = [
     name: "Archery",
     slug: "archery",
     date: "October 2–4",
-    image: "/images/sports/archery.PNG",
+    image: "/images/sports/archery.png",
     teamSize: [
       "Individual",
     ],
