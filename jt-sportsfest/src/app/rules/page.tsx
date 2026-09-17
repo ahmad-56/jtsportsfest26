@@ -36,9 +36,9 @@ const rules = [
       "Using unfair means, cheating or attempting to gain an unauthorized advantage over other participants in order to win a competition is prohibited.",
   },
   {
-    title: "Smoking, Vaping & Alcohol",
+    title: "Smoking & Vaping",
     description:
-      "Cigarettes, vapes, e-cigarettes, alcohol and all other intoxicating substances are prohibited on campus. Any vape or e-cigarette discovered will be confiscated and will not be returned.",
+      "Cigarettes, vapes, e-cigarettes and any other intoxicating substances are prohibited on campus. Any vape or e-cigarette discovered will be confiscated and will not be returned.",
   },
   {
     title: "Noise & Disturbance",
