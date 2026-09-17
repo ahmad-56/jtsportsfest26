@@ -13,7 +13,7 @@ const rules = [
   {
     title: "Protest Policy",
     description:
-    "Teams/Delegations would be charged over Rs 4000 if they protest against refrees or indulge in serious fights.",
+    "Teams/Delegations would be charged over Rs 10,000 if they protest against refrees or indulge in serious fights.",
   },
   {
     title: "Physical Violence",
