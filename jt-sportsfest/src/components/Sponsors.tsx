@@ -19,7 +19,7 @@ const sponsors = [
   },
   {
     name: "Midea",
-    logo: "/images/sponsors/Midea.png",
+    logo: "/images/sponsors/midea.png",
   },
   {
     name: "Print Master",
@@ -45,7 +45,7 @@ export default function Sponsors() {
   return (
     <section
       id="sponsors"
-      className="relative overflow-hidden border-y border-[#a9c4b4]/30 bg-[#071b16] py-10 text-white shadow-[inset_0_1px_18px_rgba(169,196,180,0.08)]"
+      className="relative overflow-hidden border-y-2 border-[#a9c4b4]/50 bg-[#071b16] py-10 text-white shadow-[inset_0_1px_18px_rgba(169,196,180,0.08)]"
     >
       <Image
         src="/images/bg/hero5-sports.jpg"
@@ -57,7 +57,7 @@ export default function Sponsors() {
       <div className="pointer-events-none absolute inset-0 bg-[#000000]/60" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(7,92,63,0.32),transparent_60%)]" />
 
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#a9c4b4] to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-gradient-to-r from-transparent via-[#a9c4b4] to-transparent" />
 
       <div className="relative mx-auto max-w-7xl px-6">
         <h2 className="text-center text-3xl font-black uppercase md:text-5xl">
@@ -80,7 +80,7 @@ export default function Sponsors() {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#a9c4b4] to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-px bg-gradient-to-r from-transparent via-[#a9c4b4] to-transparent" />
     </section>
   );
 }

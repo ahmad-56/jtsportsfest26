@@ -77,7 +77,7 @@ h6 {
   display: flex;
   width: max-content;
   gap: 24px;
-  animation: sponsorSlide 25s linear infinite;
+  animation: sponsorSlide 32s linear infinite;
 }
 
 .sponsor-slider:hover .sponsor-track {
@@ -126,7 +126,7 @@ h6 {
 
   .sponsor-track {
     gap: 14px;
-    animation-duration: 18s;
+    animation-duration: 24s;
   }
 
   .sponsor-card {
