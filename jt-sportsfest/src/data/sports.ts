@@ -481,6 +481,7 @@ export const sports: Sport[] = [
     rules: [
       "Standard chess rules will apply.",
       "Touch-move rule is enforced.",
+      "Time control: 10 + 5",
       "Players must respect time controls.",
     ],
     imp_note: [
