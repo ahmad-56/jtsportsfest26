@@ -31,6 +31,30 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+
+  openGraph: {
+    type: "website",
+    siteName: "JT SportsFest XIII",
+    images: [
+      {
+        url: "/images/imgforlink.png",
+        width: 447,
+        height: 467,
+        alt: "JT SportsFest XIII",
+        type: "image/png",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    images: [
+      {
+        url: "/images/imgforlink.png",
+        alt: "JT SportsFest XIII",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
