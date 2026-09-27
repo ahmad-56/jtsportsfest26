@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   title: "JT SportsFest XIII | LGS Johar Town",
 
   description:
-    "Join JT SportsFest XIII at Lahore Grammar School Johar Town Senior Boys Campus, from September 25–27 and October 2–4, 2026, featuring 20+ sports for boys and girls.",
+    "13th Edition of JT Sportsfest, Hosted by the Sports Council. | 25 • 26 • 27 September 2026 | 2 • 3 • 4 October 2026",
 
   alternates: {
     canonical: "/",
