@@ -24,8 +24,8 @@ export const sports: Sport[] = [
     date: "October 2–4",
     image: "/images/sports/futsal.png",
     teamSize: [
-      "5-A-Side",
-      "3 Rolling Subs",
+      "6-A-Side",
+      "2 Rolling Subs",
     ],
     age: {
       columns: [
@@ -49,7 +49,7 @@ export const sports: Sport[] = [
       "2 halves of 10 minutes duration with 5 minutes break",
     ],
     rules: [
-      "5-A-Side, 3 Rolling Subs",
+      "6-A-Side, 2 Rolling Subs",
       "4 Size (Low Bounce) Ball to be used for the event",
       "A yellow card cautions a player for unsporting behavior, dissent, or persistent fouls, resulting in the team playing short-handed for two minutes or until a goal is conceded.",
       "A red card leads to an ejection for serious foul play or two yellow cards, forcing the team to play with one less player for two full minutes (the sent-off player cannot return or be substituted)",
