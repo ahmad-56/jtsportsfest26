@@ -92,6 +92,33 @@ export default function SportsGrid() {
                 </button>
               </Reveal>
             ))}
+            {/* single-card static panel */}
+            <Reveal>
+              <div className="sports-preview-card group relative aspect-square w-full cursor-default overflow-hidden border-[3px] border-[#a9c4b4] bg-[#071b16] text-left sm:border-4">
+                <Image
+                  src="/images/bg/hero3-sports.jpg"
+                  alt=""
+                  fill
+                  sizes="(min-width: 1280px) 296px, (min-width: 1024px) calc((100vw - 6rem) / 4), (min-width: 640px) calc((100vw - 3.75rem) / 2), calc((100vw - 3.625rem) / 2)"
+                  className="object-cover opacity-70 transition duration-500 group-hover:scale-105 group-hover:opacity-45"
+                />
+
+                <div className="absolute inset-0 bg-black/60" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(7,92,63,0.32),transparent_58%)]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071b16]/80 via-[#071b16]/10 to-transparent" />
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-3 text-center sm:p-4">
+                  <p className="text-[10px] font-black uppercase tracking-wide text-[#a9c4b4] sm:text-xs">
+                    Brought to you by
+                  </p>
+                  <h3 className="mt-1 text-base font-black uppercase leading-tight text-white sm:text-xl lg:text-2xl">
+                    JT Sports society
+                  </h3>
+                  <p className="mt-2 text-[9px] font-bold uppercase tracking-wide text-white/70 sm:text-xs">
+                    SportsFest XIII
+                  </p>
+                </div>
+              </div>
+            </Reveal>
             {/* final panel */}
             <Reveal className="lg:col-span-3 lg:[container-type:inline-size]">
                 <div className="sports-preview-card group relative aspect-square w-full cursor-default overflow-hidden border-[3px] border-[#a9c4b4] bg-[#071b16] text-left sm:border-4 lg:h-[calc((100cqw_-_2rem)/3)] lg:aspect-auto">

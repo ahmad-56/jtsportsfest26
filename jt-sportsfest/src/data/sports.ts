@@ -410,50 +410,6 @@ export const sports: Sport[] = [
 
   {
     number: "09",
-    name: "Padel",
-    slug: "padel",
-    date: "October 2–4",
-    image: "/images/sports/padel.PNG",
-    teamSize: [
-      "2 playing",
-    ],
-    age: {
-      columns: [
-        {
-          heading: "Boys",
-          items: [
-            "BOYS U-17",
-            "BOYS U-19",
-          ],
-        },
-        {
-          heading: "Girls",
-          items: [
-            "GIRLS Open",
-          ],
-        },
-      ],
-    },
-    format: [
-      "Matches are typically the best of 3 sets.",
-    ],
-    rules: [
-      "Scoring System: Matches follow standard tennis scoring: 15, 30, 40, and game. At 40–40 (deuce), a single \"Golden Point\" decides the game in many circuits, or play continues until a two-point advantage is secured.",
-      "Sets and Matches: A set is won by the first team to reach 6 games with at least a 2-game lead. At 6–6, a tie-break is played to 7 points (must win by 2). Matches are typically the best of 3 sets.",
-      "Underhand Motion: Serves must be hit underhand, with contact made at or below waist height after letting the ball bounce once behind the service line.",
-      "Diagonal Delivery: The ball must land in the opposing diagonal service box.",
-      "Wall Interaction on Serve: A legal serve can hit the glass walls after bouncing in the box, but if it hits the wire mesh fence directly after the bounce, it is a fault. Servers receive two attempts per point.",
-      "Floor Bounce First: During a rally, the ball must always bounce once on the opponent's floor before hitting any wall or fence.",
-      "Using the Walls: After the ball bounces on the opponent's side, it can hit the glass or mesh walls, and players can legally return it by hitting it against their own glass walls back over the net.",
-      "Direct Wall Hits (Out): If a player hits the ball directly into the walls or fence without it bouncing on the floor first, it is out.",
-    ],
-    imp_note: [
-      "Participants are encouraged to bring their own padel racquets if available.",
-    ],
-  },
-
-  {
-    number: "10",
     name: "Chess",
     slug: "chess",
     date: "October 2–4",
@@ -491,7 +447,7 @@ export const sports: Sport[] = [
   },
 
   {
-    number: "11",
+    number: "10",
     name: "Arm Wrestling",
     slug: "arm-wrestling",
     date: "October 2–4",
@@ -526,7 +482,7 @@ export const sports: Sport[] = [
   },
 
   {
-    number: "12",
+    number: "11",
     name: "Darts",
     slug: "darts",
     date: "October 2–4",
@@ -563,7 +519,7 @@ export const sports: Sport[] = [
   },
 
   {
-    number: "13",
+    number: "12",
     name: "Athletics",
     slug: "athletics",
     date: "September 25–27",
@@ -645,7 +601,7 @@ export const sports: Sport[] = [
   },
 
   {
-    number: "14",
+    number: "13",
     name: "Strong Man",
     slug: "strongman",
     date: "October 2–4",
@@ -687,7 +643,7 @@ export const sports: Sport[] = [
   },
 
   {
-    number: "15",
+    number: "14",
     name: "Snooker",
     slug: "snooker",
     date: "October 2–4",
@@ -711,7 +667,7 @@ export const sports: Sport[] = [
   },
 
   {
-    number: "16",
+    number: "15",
     name: "Gaming",
     slug: "gaming",
     date: "October 2–4",
@@ -750,7 +706,7 @@ export const sports: Sport[] = [
   },
 
   {
-    number: "17",
+    number: "16",
     name: "Swimming",
     slug: "swimming",
     date: "October 2–4",
@@ -793,7 +749,7 @@ export const sports: Sport[] = [
   },
 
   {
-    number: "18",
+    number: "17",
     name: "Water Polo",
     slug: "water-polo",
     date: "October 2–4",
@@ -823,7 +779,7 @@ export const sports: Sport[] = [
   },
 
   {
-    number: "19",
+    number: "18",
     name: "Archery",
     slug: "archery",
     date: "October 2–4",
@@ -860,7 +816,7 @@ export const sports: Sport[] = [
   },
 
   {
-    number: "20",
+    number: "19",
     name: "Hockey",
     slug: "hockey",
     date: "October 2–4",
@@ -890,7 +846,7 @@ export const sports: Sport[] = [
   },
 
   {
-    number: "21",
+    number: "20",
     name: "Scavenger Hunt",
     slug: "scavenger-hunt",
     date: "October 2–4",
