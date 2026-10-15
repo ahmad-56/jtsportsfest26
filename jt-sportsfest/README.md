@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# JT SportsFest XIII
 
-## Getting Started
+The website for the 13th edition of JT SportsFest at LGS Johar Town. It brings the event details, sports categories, rules, and registration together so participants can find what they need before taking part.
 
-First, run the development server:
+The site is built with Next.js, React, and TypeScript, with Tailwind CSS for styling and Motion for animations. It uses the local Nexa font files in `src/app/fonts`.
+
+## Running it locally
+
+You'll need Node.js and npm installed. From the repository root, open the app folder, install the dependencies, and start the development server:
 
 ```bash
+cd jt-sportsfest
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open [localhost:3000](http://localhost:3000). Changes to the source files will appear as you save them.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+If you're already in the `jt-sportsfest` folder, skip the `cd` step. You only need to install dependencies on the first run or when they change.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Where to make changes
 
-## Learn More
+- `src/app/page.tsx` puts the home page sections together.
+- `src/app/sports/page.tsx` contains the sports grid and its static panels.
+- `src/data/sports.ts` holds the sports list, dates, categories, and event rules. Keep the sport numbers in order when adding or removing an entry.
+- `src/components` contains shared pieces such as the header, footer, and sport details panel.
+- `src/app/globals.css` contains shared styles.
+- `public/images` holds the site's images.
 
-To learn more about Next.js, take a look at the following resources:
+The registration page in `src/app/register/page.tsx` embeds a Fillout form. The registration count API reads its endpoint from `REGISTRATION_COUNT_URL`; set that in `.env.local` if you need to work on the live count. The endpoint should return JSON with a non-negative `total` value.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Checking your changes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Run these from the app folder:
 
-## Deploy on Vercel
+```bash
+npm run lint
+npm run build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The build also checks image paths for missing files and filename casing. This helps catch images that work on Windows but break after deployment. You can run that check separately with `npm run check:images`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+After a successful build, use `npm start` to preview the production version locally.
