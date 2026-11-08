@@ -45,7 +45,7 @@ export default function Sponsors() {
   return (
     <section
       id="sponsors"
-      className="relative overflow-hidden border-y-2 border-[#a9c4b4]/50 bg-[#071b16] py-10 text-white shadow-[inset_0_1px_18px_rgba(169,196,180,0.08)]"
+      className="relative scroll-mt-24 overflow-hidden border-y-2 border-[#a9c4b4]/50 bg-[#071b16] py-10 text-white shadow-[inset_0_1px_18px_rgba(169,196,180,0.08)]"
     >
       <Image
         src="/images/bg/hero5-sports.jpg"

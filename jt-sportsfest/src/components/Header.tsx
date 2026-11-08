@@ -11,6 +11,7 @@ const links = [
   { label: "About", href: "/#about" },
   { label: "Code Of Conduct", href: "/rules" },
   { label: "Sports", href: "/sports" },
+  { label: "Sponsors", href: "/#sponsors" },
   { label: "Contact", href: "/#contact" },
 ];
 
