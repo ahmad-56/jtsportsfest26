@@ -92,7 +92,6 @@ export default function SportsGrid() {
                 </button>
               </Reveal>
             ))}
-            {/* single-card static panel */}
             <Reveal>
               <div className="sports-preview-card group relative aspect-square w-full cursor-default overflow-hidden border-[3px] border-[#a9c4b4] bg-[#071b16] text-left sm:border-4">
                 <Image
@@ -119,7 +118,6 @@ export default function SportsGrid() {
                 </div>
               </div>
             </Reveal>
-            {/* final panel */}
             <Reveal className="lg:col-span-3 lg:[container-type:inline-size]">
                 <div className="sports-preview-card group relative aspect-square w-full cursor-default overflow-hidden border-[3px] border-[#a9c4b4] bg-[#071b16] text-left sm:border-4 lg:h-[calc((100cqw_-_2rem)/3)] lg:aspect-auto">
                   <Image

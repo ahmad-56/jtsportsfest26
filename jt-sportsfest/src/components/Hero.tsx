@@ -35,7 +35,6 @@ function EventDates() {
         </p>
       </div>
 
-      {/* Divider line */}
       <div className="h-10 w-px sm:h-12" />
 
       <div className="min-w-0">

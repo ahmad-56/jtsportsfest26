@@ -2,7 +2,7 @@
 
 This is the website for the 13th edition of JT SportsFest at LGS Johar Town. It gives participants a place to browse the sports, check the rules, register, and help contact the organising team.
 
-![JT SportsFest homepage](screenshots/home.png)
+![JT SportsFest homepage](jt-sportsfest/screenshots/home.png)
 
 ## Visit the website
 
@@ -20,38 +20,40 @@ https://jtsportsfest26.vercel.app/
 
 ## Running Locally:
 
-You'll need Next.js and npm installed. From the project folder, run:
+You'll need Node.js and cd jt-sportsfest
+npm installed. From the repository root, run:
 
 ```bash
+cd jt-sportsfest
 npm install
 npm run dev
 ```
 Open [localhost:3000](http://localhost:3000/) to view the site; it updates as you save your changes.
-Important Note: You must be in the root folder while running the commands.
+Run the npm commands from the `jt-sportsfest` app folder. If you are already there, skip the `cd` command.
 ## Structure:
 
 ### Home:
 The site uses a greenish theme with Nexa Bold Font headings. The header becomes more compact as you scroll. The homepage introduces the sports (in its respective section - this is to ensure that user is met with most important thing without scrolling too much), sponsors, and the event management team contacts.
 
-![JT SportsFest homepage](screenshots/home.png)
+![JT SportsFest homepage](jt-sportsfest/screenshots/home.png)
 
 ### Sports & Categories:
 
 The sports page has all 20 sports in one grid. Each card has its own image and event dates, so participants can browse before opening the details. A static panel was added to finish off the grid (4x5), for mobiles it is optimized to have an extra row to complete the grid (2x11).
 
-![The JT SportsFest sports grid](screenshots/sports.png)
+![The JT SportsFest sports grid](jt-sportsfest/screenshots/sports.png)
 
 ### Sports Details:
 
 Clicking a sport opens a panel which states all the rules relevant to the sport. The rules include team size, age groups, competition format, and game rules. Footwear requirements and extra notes may be added too depending on the sport's requirements. I also added arrows for easier navigation between each rules.
 
-![Pop Up Image](screenshots/popup.png)
+![Pop Up Image](jt-sportsfest/screenshots/popup.png)
 
 ### Code of Conduct:
 
 The Code of conduct and other general rules are stated inside the ```code of conduct``` page. It covers things like identification, behaviour, and care for the school's facilities and equipment.
 
-![The SportsFest code of conduct page](screenshots/rules.png)
+![The SportsFest code of conduct page](jt-sportsfest/screenshots/rules.png)
 
 ### Registration:
 
@@ -61,7 +63,7 @@ The registration page embeds a Fillout form. The project also initially had an A
 
 The contact section lists the event heads and registration directors alongside their phone and email links. An embedded map and a Google Maps link of the school is attached here for users to easily find their way to the destination. 
 
-![The SportsFest team contacts and school location](screenshots/contact.png)
+![The SportsFest team contacts and school location](jt-sportsfest/screenshots/contact.png)
 
 ## Search and sharing
 

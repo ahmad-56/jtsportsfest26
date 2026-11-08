@@ -6,8 +6,6 @@ import Footer from "@/components/Footer";
 import SportsPreview from "@/components/SportsPreview";
 import IntegritySection from "@/components/IntegritySection";
 import Sponsors from "@/components/Sponsors";
-/* import SportsComingSoon from "@/components/SportsComingSoon"; */
-/* import RegisterNowSection from "@/components/RegisterNowSection"; */
 
 export default function HomePage() {
   return (

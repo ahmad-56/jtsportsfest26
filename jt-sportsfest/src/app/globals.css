@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 :root {
-  /* Palette sampled from the badge artwork itself, not its navy backdrop. */
   --navy: #071b16;
   --navy-light: #0d3025;
   --green: #075c3f;
@@ -43,7 +42,6 @@ h6 {
   overflow: hidden;
 }
 
-/* Faded slider edges */
 .sponsor-slider::before,
 .sponsor-slider::after {
   content: "";
@@ -232,7 +230,6 @@ h6 {
   font-variant-numeric: tabular-nums;
 }
 
-/* Top half */
 .timer-top {
   top: 0;
   z-index: 2;
@@ -247,7 +244,6 @@ h6 {
   top: 0;
 }
 
-/* Bottom half */
 .timer-bottom {
   bottom: 0;
   z-index: 1;
@@ -400,7 +396,6 @@ h6 {
   }
 }
 
-/* Footer actions remain still on hover and respond only when pressed. */
 @keyframes footerButtonClick {
   0% {
     transform: scale(1);
@@ -436,7 +431,7 @@ h6 {
   }
 }
 
-/* Sports preview conveyor: retain two cards and move only one edge card. */
+/* Sports carousel */
 .sports-preview-track {
   --sports-preview-gap: 0.75rem;
   --sports-preview-card-width: 100%;
@@ -450,7 +445,6 @@ h6 {
 
 .sports-preview-card {
   flex: 0 0 var(--sports-preview-card-width);
-  /* Match the vertical teal gradient embedded in the sport artwork. */
   border-image: linear-gradient(
     to bottom,
     #70bdbb 0%,
